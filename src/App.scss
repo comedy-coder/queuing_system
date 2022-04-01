@@ -1,0 +1,38 @@
+@use './sass/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,800;0,900;1,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 100%;
+}
+body {
+    font-family: $font;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 18px;
+    
+    color: $text-color;
+}
+.container {
+    max-width: 1440px;
+    height: 810px;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
