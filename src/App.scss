@@ -15,7 +15,7 @@ body {
     font-family: $font;
     font-weight: 400;
     line-height: 1;
-    font-size: 18px;
+    font-size: 16px;
     
     color: $text-color;
 }
@@ -35,4 +35,14 @@ ul {
 
 img {
     max-width: 100%;
+}
+
+@each $color, $val in $colors {
+    .color-#{$color} {
+        color: $val;
+    }
+
+    .bg-#{$color} {
+        background-color: $val;
+    }
 }
