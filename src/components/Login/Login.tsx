@@ -3,7 +3,7 @@ import "./login.scss";
 import backgournd from "../../assets/images/login/Group341.png";
 import logo from "../../assets/images/login/Logo_alta.png";
 import Button from "../Button/Button";
-import EyeInvisibleOutlined from "@ant-design/icons";
+
 
 const Login = () => {
   const testfunction = (event: React.MouseEvent<HTMLButtonElement>) => {
