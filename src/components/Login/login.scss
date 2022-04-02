@@ -1,0 +1,80 @@
+@use '../../sass/mixin' as *;
+@use '../../sass/variables' as *;
+.login_page{
+    @include flex(center , flex-start);
+   height: 100%;
+   border-radius: 16px;
+  
+   
+   
+}
+.login_left-wrap{
+    height: 100%;
+    width: 100%;
+    @include flex (center,unset);
+    flex-direction: column;
+    flex: 1;
+    border-radius: 16px;
+}
+.login_left{
+    @include flex(center,center);
+    height: 100%;
+    width: 592px;
+    padding: 82px 94px 259px;
+    background-color: $bg-color;
+    &__logo{
+         margin-bottom: 75px;
+    }
+    &__form {
+        @include flex (center, center)
+    }
+    &__account{
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    &__account:nth-child(2){
+        
+        margin-bottom: 12px;
+    }
+    &__input{
+        font-size: 18px;
+        width: 400px;
+        height: 44px;
+        padding: 8.5px 0px 8.5px 12px;
+        border: 1.5px solid #D4D4D7;
+        border-radius: 8px;
+        
+        
+    }
+    &__input:focus{
+        border: none;
+    }
+    &__title{
+        margin-bottom: 4px;
+        display: block;
+        line-height: 27px;
+    }
+    &__question{
+
+    font-weight: 400;
+    color: #E73F3F;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 19px;
+    cursor: pointer;
+    }
+    &__button{
+        width: 100%;
+        @include flex(center,center)
+    }
+}
+.login_right{
+    @include flex(center,center);
+    flex :1;
+    width: 848px;
+    background-size:contain;
+   background-position:top;
+   background: cover;
+   height: 100%;
+   background-repeat: no-repeat;
+}
