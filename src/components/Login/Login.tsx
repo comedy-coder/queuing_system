@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./login.scss";
 import backgournd from "../../assets/images/login/Group341.png";
 import logo from "../../assets/images/login/Logo_alta.png";
 import Button from "../Button/Button";
-
-
+import { useAuth } from "../../Context/AuthContext";
+type UserContextType = {
+  currentUser: AuthUser | null;
+};
 const Login = () => {
+  const { currentUser: UserContextType } = useAuth();
   const testfunction = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    console.log("abc");
   };
+  const nameRef = useRef<HTMLInputElement>(null!);
+  const passwordRef = useRef<HTMLInputElement>(null!);
   return (
     <div className="container">
       <div className="login_page">
@@ -25,7 +29,10 @@ const Login = () => {
                   className="login_left__input"
                   type="text"
                   name="name"
+                  id="name"
                   placeholder="First Name..."
+                  ref={nameRef}
+                  required
                 />
               </div>
 
@@ -36,6 +43,8 @@ const Login = () => {
                   name="password"
                   placeholder="First Name..."
                   className="login_left__input"
+                  id="password"
+                  ref={passwordRef}
                 />
               </div>
               <div className="login_left__question">Quên mật khẩu?</div>

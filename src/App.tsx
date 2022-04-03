@@ -1,14 +1,14 @@
-import React from 'react';
-import './App.scss'
-import Login from './components/Login/Login';
-import AuthContextProvier, { useAuth } from './Context/AuthContext';
+import React from "react";
+import "./App.scss";
+import Login from "./components/Login/Login";
+import { AuthProvider } from "./Context/AuthContext";
+
 function App() {
   return (
     <div className="App">
-  <AuthContextProvier >
+      <AuthProvider>
         <Login />
-
-      </AuthContextProvier>
+      </AuthProvider>
     </div>
   );
 }
