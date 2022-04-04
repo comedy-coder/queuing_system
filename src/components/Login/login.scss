@@ -47,9 +47,12 @@
         
     }
     &__input:focus {
-        border: 1px solid red;
+      outline:none;
+      border: 1.5px solid blue;
     }
-    
+    &__input.error{
+        border: 1.5px solid #E73F3F;
+    }
     &__title{
         margin-bottom: 4px;
         display: block;

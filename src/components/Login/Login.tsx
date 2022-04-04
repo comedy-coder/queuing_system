@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./login.scss";
 import backgournd from "../../assets/images/login/Group341.png";
 import logo from "../../assets/images/login/Logo_alta.png";
@@ -11,6 +11,17 @@ const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const EmailRef = useRef<HTMLInputElement>(null!);
+  const PasswordRef = useRef<HTMLInputElement>(null!);
+
+  useEffect(() => {
+    const menuToogle = () => {
+      if (error) EmailRef.current.classList.toggle("error");
+      if (error) PasswordRef.current.classList.toggle("error");
+      if (error) PasswordRef.current.setAttribute("type", "text");
+    };
+    menuToogle();
+  }, [error]);
   const testfunction = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     auth
@@ -42,6 +53,7 @@ const Login = () => {
                   placeholder=""
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
+                  ref={EmailRef}
                   required
                 />
               </div>
@@ -54,12 +66,13 @@ const Login = () => {
                   placeholder=""
                   className="login_left__input"
                   id="password"
+                  ref={PasswordRef}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                 />
               </div>
               <div className="login_left__question">
-                {error ? <ErrorText error={error} /> : "Quên mật khẩu"}
+                {error ? <ErrorText error={error} /> : "Quên mật khẩu ?"}
               </div>
               <div className="login_left__button">
                 <Button
@@ -72,7 +85,7 @@ const Login = () => {
                 </Button>
               </div>
               <div className="login_left__question1">
-                {error ? "Quên mật khẩu?" : ""}
+                {error ? "Quên mật khẩu ?" : ""}
               </div>
             </form>
           </div>
