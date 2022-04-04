@@ -1,0 +1,104 @@
+@use '../../sass/mixin' as *;
+@use '../../sass/variables' as *;
+.forgot_page{
+    @include flex(center , flex-start);
+   height: 100%;
+   border-radius: 16px;
+  
+   
+   
+}
+.forgot_left-wrap{
+    height: 100%;
+    width: 100%;
+    @include flex (center,unset);
+    flex-direction: column;
+    flex: 1;
+    border-radius: 16px;
+}
+.forgot_left{
+    @include flex(center,center);
+    height: 100%;
+    width: 592px;
+    padding: 82px 94px 259px;
+    background-color: $bg-color;
+    &__logo{
+         margin-bottom: 75px;
+    }
+    &__form {
+        @include flex (center, center)
+    }
+    &__account{
+        font-size: 18px;
+        margin-bottom: 48px;
+        position: relative;
+        @include flex(center,center);
+        flex-direction: column;
+    }
+    &__account:nth-child(2){
+        
+        margin-bottom: 12px;
+    }
+    &__input{
+        font-size: 18px;
+        width: 400px;
+        height: 44px;
+        padding: 8.5px 0px 8.5px 12px;
+        border: 1.5px solid #D4D4D7;
+        border-radius: 8px;
+        
+        
+    }
+    &__input:focus {
+      outline:none;
+      border: 1.5px solid blue;
+    }
+    &__input.error{
+        border: 1.5px solid #E73F3F;
+    }
+    &__title{
+        margin-bottom: 4px;
+        display: block;
+        line-height: 27px;
+    }
+    &__question{
+   
+
+    font-weight: 400;
+    color: #E73F3F;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 19px;
+    cursor: pointer;
+    }
+    &__button{
+        width: 100%;
+        @include flex(center,center);
+        margin-bottom : 8px;
+    }
+    &__question1{
+    @include flex(center,center);
+    font-weight: 400;
+    color: #E73F3F;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+    }
+}
+.forgot_right{
+    @include flex(center,center);
+    flex :1;
+    width: 848px;
+    background-size:contain;
+   background-position:top;
+   background: cover;
+   height: 100%;
+   background-repeat: no-repeat;
+}
+
+.eye_icon{
+    position: absolute;
+    right: 13.66px;
+    top: 60%;
+    cursor: pointer;
+}

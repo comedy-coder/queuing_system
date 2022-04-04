@@ -1,5 +1,4 @@
-
-import "./button.scss"
+import "./button.scss";
 type ButtonProps = {
   backgroundColor?: string;
   handleClick: (event: React.MouseEvent<HTMLButtonElement>, id: number) => void;
