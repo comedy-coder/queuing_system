@@ -1,19 +1,28 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import "./login.scss";
 import backgournd from "../../assets/images/login/Group341.png";
 import logo from "../../assets/images/login/Logo_alta.png";
 import Button from "../Button/Button";
-import { useAuth } from "../../Context/AuthContext";
-type UserContextType = {
-  currentUser: AuthUser | null;
-};
+import { auth } from "../../utils/init-firebase";
+import logging from "../../utils/logging";
+import ErrorText from "../ErrorText";
+
 const Login = () => {
-  const { currentUser: UserContextType } = useAuth();
+  const [email, setEmail] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const testfunction = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        logging.info(result);
+      })
+      .catch((error) => {
+        setError("Sai mật khẩu hoặc tên đăng nhập");
+      });
   };
-  const nameRef = useRef<HTMLInputElement>(null!);
-  const passwordRef = useRef<HTMLInputElement>(null!);
+
   return (
     <div className="container">
       <div className="login_page">
@@ -27,11 +36,12 @@ const Login = () => {
                 <span className="login_left__title">Tên đăng nhập *</span>
                 <input
                   className="login_left__input"
-                  type="text"
+                  type="email"
                   name="name"
                   id="name"
-                  placeholder="First Name..."
-                  ref={nameRef}
+                  placeholder=""
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                   required
                 />
               </div>
@@ -41,13 +51,16 @@ const Login = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="First Name..."
+                  placeholder=""
                   className="login_left__input"
                   id="password"
-                  ref={passwordRef}
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
               </div>
-              <div className="login_left__question">Quên mật khẩu?</div>
+              <div className="login_left__question">
+                {error ? <ErrorText error={error} /> : "Quên mật khẩu"}
+              </div>
               <div className="login_left__button">
                 <Button
                   handleClick={(event) => {
@@ -57,6 +70,9 @@ const Login = () => {
                 >
                   Đăng Nhập
                 </Button>
+              </div>
+              <div className="login_left__question1">
+                {error ? "Quên mật khẩu?" : ""}
               </div>
             </form>
           </div>

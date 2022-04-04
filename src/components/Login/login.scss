@@ -46,15 +46,17 @@
         
         
     }
-    &__input:focus{
-        border: none;
+    &__input:focus {
+        border: 1px solid red;
     }
+    
     &__title{
         margin-bottom: 4px;
         display: block;
         line-height: 27px;
     }
     &__question{
+   
 
     font-weight: 400;
     color: #E73F3F;
@@ -65,7 +67,16 @@
     }
     &__button{
         width: 100%;
-        @include flex(center,center)
+        @include flex(center,center);
+        margin-bottom : 8px;
+    }
+    &__question1{
+    @include flex(center,center);
+    font-weight: 400;
+    color: #E73F3F;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
     }
 }
 .login_right{
@@ -78,3 +89,4 @@
    height: 100%;
    background-repeat: no-repeat;
 }
+
