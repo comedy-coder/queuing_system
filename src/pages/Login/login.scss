@@ -31,6 +31,7 @@
     &__account{
         font-size: 18px;
         margin-bottom: 16px;
+        position: relative;
     }
     &__account:nth-child(2){
         
@@ -93,3 +94,9 @@
    background-repeat: no-repeat;
 }
 
+.eye_icon{
+    position: absolute;
+    right: 13.66px;
+    top: 60%;
+    cursor: pointer;
+}

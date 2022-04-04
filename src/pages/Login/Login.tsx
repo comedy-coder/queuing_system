@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import "./login.scss";
 import backgournd from "../../assets/images/login/Group341.png";
 import logo from "../../assets/images/login/Logo_alta.png";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import { auth } from "../../utils/init-firebase";
 import logging from "../../utils/logging";
-import ErrorText from "../ErrorText";
+import ErrorText from "../../components/ErrorText/index";
+import { EyeInvisibleOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -13,21 +15,35 @@ const Login = () => {
   const [password, setPassword] = useState<string>("");
   const EmailRef = useRef<HTMLInputElement>(null!);
   const PasswordRef = useRef<HTMLInputElement>(null!);
+  const [isTooglePassword, setisTooglePassword] = useState(false);
 
+  const navigate = useNavigate();
+  const handleForgotPassword = () => {
+    navigate("/forgotpassword");
+  };
   useEffect(() => {
     const menuToogle = () => {
       if (error) EmailRef.current.classList.toggle("error");
       if (error) PasswordRef.current.classList.toggle("error");
-      if (error) PasswordRef.current.setAttribute("type", "text");
     };
     menuToogle();
   }, [error]);
+  const passWordToogle = () => {
+    if (isTooglePassword) {
+      PasswordRef.current.setAttribute("type", "password");
+      setisTooglePassword(false);
+    } else {
+      PasswordRef.current.setAttribute("type", "text");
+      setisTooglePassword(true);
+    }
+  };
   const testfunction = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     auth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         logging.info(result);
+        navigate("/");
       })
       .catch((error) => {
         setError("Sai mật khẩu hoặc tên đăng nhập");
@@ -70,9 +86,21 @@ const Login = () => {
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                 />
+                <span className="eye_icon" onClick={passWordToogle}>
+                  <EyeInvisibleOutlined />
+                </span>
               </div>
-              <div className="login_left__question">
-                {error ? <ErrorText error={error} /> : "Quên mật khẩu ?"}
+              <div
+                className="login_left__question"
+                onClick={handleForgotPassword}
+              >
+                {error ? (
+                  <span>
+                    <ErrorText error={error} />
+                  </span>
+                ) : (
+                  "Quên mật khẩu ?"
+                )}
               </div>
               <div className="login_left__button">
                 <Button
