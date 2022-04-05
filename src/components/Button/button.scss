@@ -1,19 +1,22 @@
 @use "../../sass/variables" as * ;
 .btn {
     outline: none;
-    border: none;
+    border: 1.5px solid transparent;
     color :  #fff;
     font-size: 16px;
     border-radius: 8px;
     gap : 8px;
-    padding: 8px 38.5px;
+    padding: 8px 24px;
     cursor: pointer;
     font-weight: 700;
     width: 162px;
     &__txt {
         line-height: 1.5rem;
     }
-       
+       &.bd-red {
+           border: solid 1.5px #FF9138;
+           color: #FF9138;
+       }
         
    
 }

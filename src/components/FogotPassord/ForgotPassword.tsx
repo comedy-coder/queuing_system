@@ -1,10 +1,17 @@
-import React from "react";
 import logo from "../../assets/images/login/Logo_alta.png";
-import Button from "../Button/Button";
+import React from "react";
 import background from "../../assets/images/login/Frame.png";
 import "./Forgot.scss";
+
+import ForgotStep1 from "./ForgotStep1";
+import ForgotStep2 from "./ForgotStep2";
+import { useState } from "react";
+
 const ForgotPassword = () => {
-  const handleBack = () => {};
+  const [changeElement, setChangeELement] = useState(true);
+  const conFirm = () => {
+    setChangeELement(false);
+  };
   return (
     <div className="container">
       <div className="forgot_page">
@@ -14,24 +21,11 @@ const ForgotPassword = () => {
               <img srcSet={`${logo} 2x`} alt="" />
             </div>
             <form className="forgot_left__from">
-              <div className="forgot_left__account">
-                <span className="forgot_left__title">Đặt lại mật khẩu </span>
-                <input
-                  className="forgot_left__input"
-                  type="email"
-                  name="name"
-                  id="name"
-                  placeholder=""
-                  required
-                />
-              </div>
-
-              <div className="forgot_left__button">
-                <Button handleClick={handleBack} backgroundColor="orange">
-                  Đăng Nhập
-                </Button>
-                <Button handleClick={handleBack}>Đăng Nhập</Button>
-              </div>
+              {changeElement ? (
+                <ForgotStep1 conFirm={conFirm} />
+              ) : (
+                <ForgotStep2 />
+              )}
             </form>
           </div>
         </div>

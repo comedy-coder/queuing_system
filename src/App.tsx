@@ -18,8 +18,8 @@ function App() {
             </AuthRoute>
           }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="login" element={<Login />} />
+        <Route path="forgotpassword" element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
   );

@@ -112,7 +112,10 @@ const Login = () => {
                   Đăng Nhập
                 </Button>
               </div>
-              <div className="login_left__question1">
+              <div
+                className="login_left__question1"
+                onClick={handleForgotPassword}
+              >
                 {error ? "Quên mật khẩu ?" : ""}
               </div>
             </form>

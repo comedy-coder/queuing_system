@@ -46,4 +46,7 @@ img {
     .bg-#{$color} {
         background-color: $val;
     }
+    .bd-#{$color} {
+        border: solid 1.5px $val;
+    }
 }

@@ -32,7 +32,7 @@
         font-size: 18px;
         margin-bottom: 48px;
         position: relative;
-        @include flex(center,center);
+     
         flex-direction: column;
     }
     &__account:nth-child(2){
@@ -46,6 +46,8 @@
         padding: 8.5px 0px 8.5px 12px;
         border: 1.5px solid #D4D4D7;
         border-radius: 8px;
+        margin-bottom: 16px;
+       
         
         
     }
@@ -59,7 +61,18 @@
     &__title{
         margin-bottom: 4px;
         display: block;
+        line-height: 33px;
+        font-weight: 700;
+        font-size: 22px;
+        display: block;
+        text-align: center
+    }
+    &__account &__noti
+    {   @include flex(unset ,unset) ;
         line-height: 27px;
+        font-size: 18px;
+        color: #37474F;
+        margin-bottom: 4px;
     }
     &__question{
    
@@ -73,8 +86,9 @@
     }
     &__button{
         width: 100%;
-        @include flex(center,center);
+        @include flex(center, space-around);
         margin-bottom : 8px;
+        padding: 0px 10px
     }
     &__question1{
     @include flex(center,center);
@@ -96,9 +110,15 @@
    background-repeat: no-repeat;
 }
 
-.eye_icon{
+.eye_icon1{
     position: absolute;
-    right: 13.66px;
-    top: 60%;
+    right:17.66px;
+    top: 25%;
+    cursor: pointer;
+}
+.eye_icon2{
+    position: absolute;
+    right:17.66px;
+    top: 75%;
     cursor: pointer;
 }
