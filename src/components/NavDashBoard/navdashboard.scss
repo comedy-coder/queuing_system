@@ -1,0 +1,31 @@
+@use "../../sass/variables" as *;
+@use "../../sass/mixin" as *;
+
+.container-wrapper{
+    width: 200px ;
+    position: fixed;
+    
+}
+
+.navbar{
+    &__logo{
+        @include flex(center,center);
+        width : 100%;
+        margin: 32px auto 54px;
+    }
+    &__menu{
+        &__item{
+            
+            padding:  12px;
+                                span {
+                    line-height: 24px;
+                   font-weight: 600;
+                   display: inline-block;
+                   
+                           
+            
+
+                }
+        }
+    }
+}

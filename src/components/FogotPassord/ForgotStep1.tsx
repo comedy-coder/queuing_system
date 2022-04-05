@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 type AProps = {
   conFirm: () => void;
