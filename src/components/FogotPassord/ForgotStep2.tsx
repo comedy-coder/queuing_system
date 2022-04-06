@@ -1,6 +1,6 @@
 import { EyeInvisibleOutlined } from "@ant-design/icons";
 import { useState, useRef } from "react";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 const ForgotStep2 = () => {
   const [isTooglePassword, setisTooglePassword] = useState(false);

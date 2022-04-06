@@ -9,9 +9,6 @@ const AuthRoute: React.FC<IAuthPageProps> = (props) => {
   const auth = getAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    AuthCheck();
-  }, [auth]);
   const AuthCheck = onAuthStateChanged(auth, (user) => {
     if (user) {
       setLoading(false);
@@ -20,6 +17,9 @@ const AuthRoute: React.FC<IAuthPageProps> = (props) => {
       navigate("/login");
     }
   });
+  useEffect(() => {
+    AuthCheck();
+  }, [auth, AuthCheck]);
   if (loading) return <p>...loading</p>;
   return <>{children}</>;
 };

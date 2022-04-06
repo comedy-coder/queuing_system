@@ -1,4 +1,5 @@
 @use "../../sass/variables" as * ;
+@use "../../sass/mixin" as * ;
 .btn {
     outline: none;
     border: 1.5px solid transparent;
@@ -10,13 +11,24 @@
     cursor: pointer;
     font-weight: 700;
     width: 162px;
+  
     &__txt {
         line-height: 1.5rem;
     }
-       &.bd-red {
-           border: solid 1.5px #FF9138;
-           color: #FF9138;
-       }
-        
+    
+    &.bd-red {
+        border: solid 1.5px #FF9138;
+        color: #FF9138;
+    }
+    &.cl-orange {
+      
+        color: #FF7506;
+    }
+    &.sz-big {
+        @include flex(center,unset);
+            height: 48px;
+            font-size: 16px;
+            width: 176px;
+    }
    
 }

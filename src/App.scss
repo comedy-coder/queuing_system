@@ -49,4 +49,7 @@ img {
     .bd-#{$color} {
         border: solid 1.5px $val;
     }
+    .cl-#{$color} {
+        color:  $val;
+    }
 }

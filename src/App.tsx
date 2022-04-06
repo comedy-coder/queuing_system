@@ -20,11 +20,14 @@ function App() {
             </AuthRoute>
           }
         >
-           <Route path="" element={Dashboard} />
-           <Route path="device" element={Devices} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/device" element={<Devices />} />
+          <Route path="/dich-vu" element={<Devices />} />
+          <Route path="/cap-so" element={<Devices />} />
+          <Route path="/bao-cao" element={<Devices />} />
+          <Route path="/setting" element={<Devices />} />
         </Route>
-        
-        
+
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="login" element={<Login />} />
       </Routes>
