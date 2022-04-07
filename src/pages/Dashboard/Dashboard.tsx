@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
+import DashboardGraph from "../../components/DashboardGraph/DashboardGraph";
 import DashboardItem from "../../components/DashboardITem/DashboardItem";
 import { dashboarditem } from "../../exportimage/image";
 import "./dashboard.scss";
@@ -48,6 +49,9 @@ const Dashboard = () => {
               </Grid>
             ))}
           </Grid>
+        </div>
+        <div className="dashboard-linegraph">
+          <DashboardGraph />
         </div>
       </div>
     </div>
