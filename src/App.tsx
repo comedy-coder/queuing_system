@@ -5,8 +5,8 @@ import Login from "./pages/Login/Login";
 import Homepage from "./pages/Homepage/Homepage";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
 import ForgotPassword from "./components/FogotPassord/ForgotPassword";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Devices from "./components/Devices/Devices";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Devices from "./pages/Devices/Devices";
 
 function App() {
   return (
