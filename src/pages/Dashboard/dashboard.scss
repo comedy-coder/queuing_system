@@ -1,3 +1,21 @@
-.dashboard-wrapper{
-    padding-left: 200px;
+@use "../../sass/mixin" as *;
+@use "../../sass/variables" as *;
+.dashboard{
+    &-wrap{
+   
+    height: 722px;
+    width: 839px;
+    background-color:#F6F6F6 ;
+    margin-left: 200px;
+    padding: 16px 24px 30px;
+    }
+    &-title{
+        color : $main-color;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+    
 }
+

@@ -7,6 +7,10 @@ import AuthRoute from "./components/AuthRoute/AuthRoute";
 import ForgotPassword from "./components/FogotPassord/ForgotPassword";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Devices from "./pages/Devices/Devices";
+import Service from "./pages/Services/Service";
+import Level from "./pages/Levels/Level";
+import Report from "./pages/Report/Report";
+import Setting from "./pages/Setting/Setting";
 
 function App() {
   return (
@@ -22,10 +26,10 @@ function App() {
         >
           <Route path="/" element={<Dashboard />} />
           <Route path="/device" element={<Devices />} />
-          <Route path="/dich-vu" element={<Devices />} />
-          <Route path="/cap-so" element={<Devices />} />
-          <Route path="/bao-cao" element={<Devices />} />
-          <Route path="/setting" element={<Devices />} />
+          <Route path="/dich-vu" element={<Service />} />
+          <Route path="/cap-so" element={<Level />} />
+          <Route path="/bao-cao" element={<Report />} />
+          <Route path="/setting" element={<Setting />} />
         </Route>
 
         <Route path="forgotpassword" element={<ForgotPassword />} />

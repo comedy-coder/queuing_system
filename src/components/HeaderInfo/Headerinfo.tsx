@@ -16,9 +16,14 @@ const Headerinfo = ({ title, sub }: PropsType) => {
       "style",
       "background-color : white"
     );
+  else
+    backGroundRightRef.current?.setAttribute(
+      "style",
+      "background-color : #F7F7F7"
+    );
 
   return (
-    <div className="headerinfo-wrap" style={{ backgroundColor: "#F7F7F7" }}>
+    <div className="headerinfo-wrap">
       <div className="headerinfo-left">
         <div className="headerinfo-left__desc">
           <span className="headerinfo-left__title">{title}</span>

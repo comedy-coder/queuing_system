@@ -1,0 +1,31 @@
+@use "../../sass/mixin" as *;
+.dashboarditem{
+    &-wrap
+    {   background-color: white;
+        width: 186px;
+        height: 120px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+        padding: 12px;
+    }
+    &-main{
+        @include flex(center,center);
+        margin-bottom:12px;
+    }
+    &__title{
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18px;
+        margin-left: 12px;
+        margin-right: 22px;
+    }
+    &-sub {
+        @include flex(center, space-between)
+    }
+    &__number{
+        font-size: 30px;
+        line-height: 45px;
+        font-weight: 700;
+        color: #535261;
+    }
+}
