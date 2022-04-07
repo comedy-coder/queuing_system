@@ -36,7 +36,7 @@ const Dashboard = () => {
       <div className="dashboard-wrap">
         <div className="dashboard-title">Biểu đồ cấp số</div>
         <div className="dashboard-group">
-          <Grid container spacing={1.5}>
+          <Grid container spacing={1.63}>
             {Items.map((items, index) => (
               <Grid item key={index}>
                 <DashboardItem
