@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./dashboardgraph.scss";
+import date from "../../assets/images/dashboard/graphic.png";
 // import { useReducer ,useRef} from "react";
 
 const DashboardGraph = () => {
@@ -23,6 +24,7 @@ const DashboardGraph = () => {
           <option value="tháng">Tháng</option>
         </select>
       </div>
+      <img src={date} alt="" />
     </>
   );
 };
