@@ -5,6 +5,7 @@ import DashboardItem from "../../components/DashboardITem/DashboardItem";
 import { dashboarditem } from "../../exportimage/image";
 import "./dashboard.scss";
 import { Link } from "react-router-dom";
+import DashboardCover from "../../components/DashboardCover/DashboardCover";
 
 const Dashboard = () => {
   const Items = [
@@ -55,6 +56,9 @@ const Dashboard = () => {
         </div>
         <div className="dashboard-linegraph">
           <DashboardGraph />
+        </div>
+        <div className="dashboard-cover">
+          <DashboardCover />
         </div>
       </div>
     </div>
