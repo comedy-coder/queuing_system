@@ -4,6 +4,7 @@ import DashboardGraph from "../../components/DashboardGraph/DashboardGraph";
 import DashboardItem from "../../components/DashboardITem/DashboardItem";
 import { dashboarditem } from "../../exportimage/image";
 import "./dashboard.scss";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const Items = [
@@ -40,12 +41,14 @@ const Dashboard = () => {
           <Grid container spacing={1.63}>
             {Items.map((items, index) => (
               <Grid item key={index}>
-                <DashboardItem
-                  icon={items.icon}
-                  image={items.image}
-                  title={items.title}
-                  number={items.number}
-                />
+                <Link to="cap-so">
+                  <DashboardItem
+                    icon={items.icon}
+                    image={items.image}
+                    title={items.title}
+                    number={items.number}
+                  />
+                </Link>
               </Grid>
             ))}
           </Grid>
