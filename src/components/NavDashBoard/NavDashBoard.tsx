@@ -66,16 +66,18 @@ const NavDashBoard = () => {
         ))}
       </div>
       <div className="navbar__logout">
-        <Button
-          backgroundColor="orange1"
-          handleClick={handleLogout}
-          icon={image.img8}
-          color="orange"
-          size="big"
-        >
-          {" "}
-          Đăng xuất{" "}
-        </Button>
+        <Link to="./login">
+          <Button
+            backgroundColor="orange1"
+            handleClick={handleLogout}
+            icon={image.img8}
+            color="orange"
+            size="big"
+          >
+            {" "}
+            Đăng xuất{" "}
+          </Button>
+        </Link>
       </div>
     </div>
   );

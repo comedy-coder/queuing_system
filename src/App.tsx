@@ -11,6 +11,7 @@ import Service from "./pages/Services/Service";
 import Level from "./pages/Levels/Level";
 import Report from "./pages/Report/Report";
 import Setting from "./pages/Setting/Setting";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/cap-so" element={<Level />} />
           <Route path="/bao-cao" element={<Report />} />
           <Route path="/setting" element={<Setting />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
         <Route path="forgotpassword" element={<ForgotPassword />} />

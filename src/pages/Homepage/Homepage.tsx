@@ -37,6 +37,11 @@ const Homepage = () => {
       path: "/setting",
       sub: "Quản lý vai trò",
     },
+    {
+      display: "Thông tin cá nhân",
+      path: "/profile",
+      sub: "",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 
