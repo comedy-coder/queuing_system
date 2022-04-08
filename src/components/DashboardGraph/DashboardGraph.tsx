@@ -24,7 +24,7 @@ const DashboardGraph = () => {
         <div className="dashboardgraph-title">
           Bản thống kê theo {`${value}`}
           <div className="dashboardgraph-day">
-            {value === "tháng" ? "Năm 2021" : "Tháng 11/2021"}
+            {value === "Tháng" ? "Năm 2021" : "Tháng 11/2021"}
           </div>
         </div>
         <div className="dashboardgraph-gruop" onChange={(e) => handleChange(e)}>
