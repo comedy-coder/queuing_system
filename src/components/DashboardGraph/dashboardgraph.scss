@@ -23,9 +23,7 @@
             line-height: 24px;
             font-weight: 600;
         }
-        select {
-         color: #FF7506;
-        }
+       
     }
     &-select{
             padding: 10px 12px;
@@ -38,6 +36,17 @@
             border-radius: 8px;
             border: 1.5px solid #D4D4D7;
             outline: none;
+            width: 106px;
+          
+            
+                -webkit-appearance:none; /* Safari and Chrome */
+                appearance:none;
+           
+            background-image: url('../../assets/images/dashboard/arrow.png');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 10px) center;
+            background-size: 20px;
+            
             
     }
    

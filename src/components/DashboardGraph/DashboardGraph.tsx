@@ -3,6 +3,7 @@ import "./dashboardgraph.scss";
 import date from "../../assets/images/dashboard/graphicdate.png";
 import week from "../../assets/images/dashboard/graphicweek.png";
 import month from "../../assets/images/dashboard/graphicmonth.png";
+import arrow from "../../assets/images/dashboard/arrow.png";
 
 const DashboardGraph = () => {
   const handleChange = (e: any) => {
@@ -28,7 +29,11 @@ const DashboardGraph = () => {
         </div>
         <div className="dashboardgraph-gruop" onChange={(e) => handleChange(e)}>
           <label>Xem theo</label>
-          <select name="cars" className="dashboardgraph-select">
+          <select
+            name="cars"
+            className="dashboardgraph-select"
+            style={{ backgroundImage: arrow }}
+          >
             <option value="ngày">Ngày</option>
             <option value="tuần">Tuần</option>
             <option value="tháng">Tháng</option>
