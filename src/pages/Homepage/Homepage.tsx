@@ -38,15 +38,15 @@ const Homepage = () => {
       sub: "Quản lý vai trò",
     },
     {
-      display: "Thông tin cá nhân",
+      display: "",
       path: "/profile",
-      sub: "",
+      sub: "Thông tin cá nhân",
     },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 
   return (
-    <div className="container">
+    <div className="container" style={{ borderRadius: "16px" }}>
       <NavDashBoard />
       <Headerinfo
         title={title[titleIndex].display}
