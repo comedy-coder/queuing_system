@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "../../components/SearchBox/Search";
 import Selector from "../../components/Selector/Selector";
+import Table from "../../components/Table/Table";
 import "./device.scss";
 const Devices = () => {
   return (
@@ -23,6 +24,7 @@ const Devices = () => {
         </div>
         <Search />
       </div>
+      <Table />
     </div>
   );
 };
