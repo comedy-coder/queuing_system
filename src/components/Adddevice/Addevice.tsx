@@ -8,7 +8,7 @@ const Adđevice = () => {
       <div className="adddevice-main">
         <div className="adddevice-main__top">Thông tin thiết bị</div>
         <div className="adddevice-main__group">
-          <Grid container my={6}>
+          <Grid container my={1} columnSpacing={4}>
             <Grid item xs={6}>
               <div className="adddevice-main__info">
                 <div className="adddevice-main__title">Mã thiết bị</div>
