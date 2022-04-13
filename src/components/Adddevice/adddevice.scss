@@ -1,0 +1,55 @@
+.adddevice
+{
+    &-wrap {
+        margin: 0px 0px 0px 200px;
+        background-color:#F7F7F7;
+        height: 722px;
+        padding: 24px 0px 24px 24px;
+       border-bottom-left-radius: 12px;
+       border-bottom-right-radius: 12px;
+    }
+    &-title
+    {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FF7506;
+        margin-bottom: 16px;
+    }
+    &-main{
+        background-color: white;
+        height: 550px;
+        width: 1152px;
+        padding: 16px 24px;
+        &__top{
+            font-style: normal;
+                font-weight: 700;
+        font-size: 20px;
+            line-height: 30px;   
+            color: #FF7506;
+        }
+        &__group{
+            
+        }
+        &__title{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #282739;
+            margin-bottom: 8px;
+        }
+        &__input{
+            width: 540px;
+            height: 44px;
+            padding: 10px 270px 10px 12px;
+            border: 1.5px solid #D4D4D7;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 16px;
+
+        }
+    }
+}

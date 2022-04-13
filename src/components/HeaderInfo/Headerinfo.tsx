@@ -9,6 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 type PropsType = {
   title?: string;
   sub?: string;
+  sub1?: string;
 };
 
 const arrowElenmet = (sub: string | undefined) => {
@@ -21,7 +22,16 @@ const arrowElenmet = (sub: string | undefined) => {
       </>
     );
 };
-const Headerinfo = ({ title, sub }: PropsType) => {
+const arrowElenmet1 = (sub1: string | undefined, sub: string | undefined) => {
+  if (sub1 && sub)
+    return (
+      <>
+        <img srcSet={`${arrow} 2x`} alt="" />
+      </>
+    );
+  else return "";
+};
+const Headerinfo = ({ title, sub, sub1 }: PropsType) => {
   const backGroundRightRef = useRef<HTMLHeadingElement | null>(null);
   const { pathname } = useLocation();
   useEffect(() => {
@@ -47,6 +57,10 @@ const Headerinfo = ({ title, sub }: PropsType) => {
           {arrowElenmet(sub)}
           <span className="headerinfo-left__sub" ref={ProfileRef}>
             {sub}
+          </span>
+          {arrowElenmet1(sub1, sub)}
+          <span className="headerinfo-left__sub" ref={ProfileRef}>
+            {sub1}
           </span>
         </div>
       </div>

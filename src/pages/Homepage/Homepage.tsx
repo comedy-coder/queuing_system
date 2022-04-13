@@ -42,6 +42,12 @@ const Homepage = () => {
       path: "/profile",
       sub: "Thông tin cá nhân",
     },
+    {
+      display: "Thiết bị",
+      path: "/device/adddevice",
+      sub: "Danh sách thiết bị",
+      sub1: "Thêm thiết bị",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 
@@ -51,6 +57,7 @@ const Homepage = () => {
       <Headerinfo
         title={title[titleIndex].display}
         sub={title[titleIndex].sub}
+        sub1={title[titleIndex].sub1}
       />
       <Outlet />
     </div>

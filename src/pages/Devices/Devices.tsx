@@ -1,9 +1,12 @@
 import React from "react";
+import AddButton from "../../components/AddButton/AddButton";
 import Search from "../../components/SearchBox/Search";
 import Selector from "../../components/Selector/Selector";
 import Table from "../../components/Table/Table";
 import "./device.scss";
+import { Link } from "react-router-dom";
 const Devices = () => {
+  const handleChange = () => {};
   return (
     <div className="device-wrap">
       <div className="device-title">Danh sách thiết bị</div>
@@ -25,6 +28,11 @@ const Devices = () => {
         <Search />
       </div>
       <Table />
+      <div className="button-positon">
+        <Link to="/device/adddevice">
+          <AddButton handleClick={handleChange}> Thêm thiết bị</AddButton>
+        </Link>
+      </div>
     </div>
   );
 };

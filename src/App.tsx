@@ -12,6 +12,7 @@ import Level from "./pages/Levels/Level";
 import Report from "./pages/Report/Report";
 import Setting from "./pages/Setting/Setting";
 import Profile from "./pages/Profile/Profile";
+import Adddevice from "./components/Adddevice/Addevice";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           }
         >
           <Route path="/" element={<Dashboard />} />
+          <Route path="/device/adddevice" element={<Adddevice />} />
           <Route path="/device" element={<Devices />} />
           <Route path="/dich-vu" element={<Service />} />
           <Route path="/cap-so" element={<Level />} />

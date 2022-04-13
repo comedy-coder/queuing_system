@@ -1,11 +1,13 @@
 @use "../../sass/mixin" as *;
 .device{
     &-wrap {
+        position: relative;
         margin: 0px 0px 0px 200px;
         background-color:#F7F7F7;
         height: 722px;
         padding: 24px 0px 24px 24px;
-        border-radius: 12px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
     &-title
     {
@@ -24,4 +26,9 @@
         @include flex(center,space-between);
         margin-right: 104px;
     }
+}
+.button-positon{
+    position: absolute;
+    right: 0;
+    top: 23%;
 }
