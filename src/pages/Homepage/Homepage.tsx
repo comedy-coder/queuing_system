@@ -48,6 +48,12 @@ const Homepage = () => {
       sub: "Danh sách thiết bị",
       sub1: "Thêm thiết bị",
     },
+    {
+      display: "Thiết bị",
+      path: "/device/detail",
+      sub: "Danh sách thiết bị",
+      sub1: "Chi tiết thiết bị",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 
