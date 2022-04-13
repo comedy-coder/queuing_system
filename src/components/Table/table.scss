@@ -1,6 +1,10 @@
 @use "../../sass/mixin" as *;
 .device{
+    &-pages{
+        margin: 24px 104px 20px 848px;
+    }
     &-data{
+
         table{
             border-radius: 12px;
             border-spacing: 0px;
@@ -63,6 +67,7 @@
         {
             background-color: white;
         }
+
        
     }
 }
