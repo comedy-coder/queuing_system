@@ -1,5 +1,5 @@
 @use "../../sass/mixin" as *;
-.device{
+.tableservice{
     &-pages{
         margin: 24px 104px 20px 848px;
     }
@@ -9,11 +9,11 @@
             border-radius: 12px;
             border-spacing: 0px;
             margin-top: 16px;
-         
+            width: 1112px;
         }
         
         th {
-   
+            
            padding: 12.5px 8px;
            background-color: #FF9138;
            color: white;
@@ -22,6 +22,7 @@
            line-height: 24px;
            position: relative;
            border: none;
+            
           
        
         }
@@ -52,6 +53,7 @@
             font-size: 14px;
             line-height: 21px;
             overflow-x: hidden;
+            height: 49px;
             a{
                 cursor: pointer;
                 text-decoration: underline;

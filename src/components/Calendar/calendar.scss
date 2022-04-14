@@ -1,0 +1,36 @@
+@use "../../sass/mixin" as * ;
+.calendar{
+    &-wrap
+    { 
+        width: 320px;
+        height: 72px;
+    }
+    &-button
+    {   padding :6.5px 10.5px;
+        color: #7E7D88;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 12px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        outline: none;
+        border: 1.5px solid #D4D4D7;
+        @include flex(center,flex-start);
+        background-color:white;
+       
+    }
+    &-title{
+        color: #282739;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        margin-bottom: 4px;
+    }
+    &-group {
+        @include flex(center,flex-start);
+        img {
+            margin: 4px;
+        }
+    }
+}

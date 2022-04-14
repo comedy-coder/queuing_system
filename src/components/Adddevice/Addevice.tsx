@@ -14,7 +14,7 @@ const Adđevice = () => {
   };
   return (
     <div className="adddevice-wrap">
-      <div className="adddevice-title">Quản lý thiết bị</div>
+      <div className="adddevice-title">Quản lý dịch vụ</div>
       <div className="adddevice-main">
         <div className="adddevice-main__top">Thông tin thiết bị</div>
         <div className="adddevice-main__group">

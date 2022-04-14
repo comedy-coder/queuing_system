@@ -60,6 +60,12 @@ const Homepage = () => {
       sub: "Danh sách thiết bị",
       sub1: "Cập nhật thiết bị",
     },
+    {
+      display: "Dịch vụ",
+      path: "/dich-vu/addservice",
+      sub: "Danh sách dịch vụ",
+      sub1: "Thêm thiết bị",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 
