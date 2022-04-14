@@ -11,6 +11,7 @@
     
        
     }
+
     &-title
     {
         font-weight: 700;
@@ -26,6 +27,9 @@
         padding: 16px 24px;
         box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
         border-radius: 16px;
+        &__group{
+            position: relative;
+        }
         &__top{
             font-style: normal;
                 font-weight: 700;
@@ -60,8 +64,8 @@
         }
         &__input1
         {
-            width: 1104px;
-            height: 44px;
+            width: 540px;
+            height: 132px;
             padding: 10px 270px 10px 12px;
             border: 1.5px solid #D4D4D7;
             box-sizing: border-box;
@@ -87,4 +91,10 @@
             }
         }
     }
+}
+.test
+{position: absolute;
+    top: 49.5%;
+    left:0;
+
 }

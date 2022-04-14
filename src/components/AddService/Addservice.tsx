@@ -14,53 +14,56 @@ const Addservice = () => {
   };
   return (
     <div className="addservice-wrap">
-      <div className="addservice-title">Quản lý thiết bị</div>
+      <div className="addservice-title">Quản lý dịch vụ</div>
       <div className="addservice-main">
-        <div className="addservice-main__top">Thông tin thiết bị</div>
+        <div className="addservice-main__top">Thông tin dịch vụ</div>
         <div className="addservice-main__group">
           <Grid container my={2} columnSpacing={4}>
             <Grid item xs={6}>
               <div className="addservice-main__info">
                 <div className="addservice-main__title">
-                  Mã thiết bị : <img srcSet={`${sao} 2x`} alt="" />
+                  Mã dịch vụ: <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
                   className="addservice-main__input"
-                  placeholder="Nhập mã thiết bị"
+                  placeholder="201"
                 />
               </div>
             </Grid>
             <Grid item xs={6}>
               <div className="addservice-main__info">
                 <div className="addservice-main__title">
-                  Loại thiết bị : <img srcSet={`${sao} 2x`} alt="" />
+                  Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
-                  className="addservice-main__input"
-                  placeholder="Chọn loại thiết bị"
+                  className="addservice-main__input1"
+                  placeholder="Mô tả dịch vụ"
                 />
               </div>
             </Grid>
-            <Grid item xs={6}>
-              <div className="addservice-main__info">
-                <div className="addservice-main__title">
-                  Tên thiết bị : <img srcSet={`${sao} 2x`} alt="" />
+            <div className="test">
+              <Grid item xs={6}>
+                <div className="addservice-main__info">
+                  <div className="addservice-main__title">
+                    Tên dịch vụ : <img srcSet={`${sao} 2x`} alt="" />
+                  </div>
+                  <input
+                    type="text"
+                    className="addservice-main__input"
+                    placeholder="Khám tim mạch"
+                  />
                 </div>
-                <input
-                  type="text"
-                  className="addservice-main__input"
-                  placeholder="Nhập tên thiết bị"
-                />
-              </div>
-            </Grid>{" "}
+              </Grid>{" "}
+            </div>
           </Grid>
-          <span className="addservice-main__desc">
-            {" "}
-            <img srcSet={`${sao} 2x`} alt="" /> Là trường thông tin bắt buộc
-          </span>
         </div>
+        <div className="addservice-main__top">Quy tắc cấp số</div>
+        <span className="addservice-main__desc">
+          {" "}
+          <img srcSet={`${sao} 2x`} alt="" /> Là trường thông tin bắt buộc
+        </span>
       </div>
       <div className="addservice-main__button">
         <Button
