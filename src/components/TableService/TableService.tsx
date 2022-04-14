@@ -40,7 +40,7 @@ const TableService = () => {
             <td>Mô tả dịch vụ </td>
             <td>
               {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
+              <img srcSet={`${greendot} 2x`} alt="" /> Ngưng hoạt động
             </td>
 
             <td>

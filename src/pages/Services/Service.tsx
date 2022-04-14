@@ -5,7 +5,7 @@ import Search from "../../components/SearchBox/Search";
 import "./service.scss";
 import Calendar from "../../components/Calendar/Calendar";
 import TableService from "../../components/TableService/TableService";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AddButton from "../../components/AddButton/AddButton";
 
 const Service = () => {

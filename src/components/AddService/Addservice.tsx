@@ -60,6 +60,49 @@ const Addservice = () => {
           </Grid>
         </div>
         <div className="addservice-main__top">Quy tắc cấp số</div>
+        <div className="addservice-rules">
+          <input type="checkbox" className="addservice-checkbox"></input>
+          <span>
+            {" "}
+            Tăng tự động từ :{" "}
+            <input
+              type="text"
+              className="addservice-text"
+              placeholder="0001"
+            />{" "}
+            đến{" "}
+            <input className="addservice-text" type="text" placeholder="9999" />
+          </span>
+        </div>
+        <div className="addservice-rules">
+          <input type="checkbox" className="addservice-checkbox"></input>
+          <span>
+            {" "}
+            Prelix:{" "}
+            <input
+              type="text"
+              className="addservice-text green"
+              placeholder="0001"
+            />{" "}
+          </span>
+        </div>
+        <div className="addservice-rules">
+          <input type="checkbox" className="addservice-checkbox"></input>
+          <span>
+            {" "}
+            Surflix:{" "}
+            <input
+              type="text"
+              className="addservice-text red"
+              placeholder="0001"
+            />{" "}
+          </span>
+        </div>
+        <div className="addservice-rules ">
+          <input type="checkbox" className="addservice-checkbox"></input>
+          <span> Reset mỗi ngày: </span>
+        </div>
+
         <span className="addservice-main__desc">
           {" "}
           <img srcSet={`${sao} 2x`} alt="" /> Là trường thông tin bắt buộc
