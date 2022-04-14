@@ -54,6 +54,12 @@ const Homepage = () => {
       sub: "Danh sách thiết bị",
       sub1: "Chi tiết thiết bị",
     },
+    {
+      display: "Thiết bị",
+      path: "/device/update",
+      sub: "Danh sách thiết bị",
+      sub1: "Cập nhật thiết bị",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 

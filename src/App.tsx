@@ -14,6 +14,7 @@ import Setting from "./pages/Setting/Setting";
 import Profile from "./pages/Profile/Profile";
 import Adddevice from "./components/Adddevice/Addevice";
 import DeviceDetail from "./components/DeviceDetail/DeviceDetail";
+import UpDatedevice from "./components/DeviceUpDate/DeviceUpDate";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/device/adddevice" element={<Adddevice />} />
           <Route path="/device/detail" element={<DeviceDetail />} />
+          <Route path="/device/update" element={<UpDatedevice />} />
           <Route path="/device" element={<Devices />} />
           <Route path="/dich-vu" element={<Service />} />
           <Route path="/cap-so" element={<Level />} />

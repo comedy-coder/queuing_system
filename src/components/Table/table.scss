@@ -51,7 +51,11 @@
             font-size: 14px;
             line-height: 21px;
             overflow-x: hidden;
-          
+            a{
+                cursor: pointer;
+                text-decoration: underline;
+                color: #4277FF;
+            }
       
             
         }

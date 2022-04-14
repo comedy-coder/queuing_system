@@ -1,0 +1,118 @@
+@use "../../sass/mixin" as *;
+.updatedevice
+{
+    &-wrap {
+        margin: 0px 0px 0px 200px;
+        background-color:#F7F7F7;
+        height: 722px;
+        padding: 24px 0px 24px 24px;
+       border-bottom-left-radius: 12px;
+       border-bottom-right-radius: 12px;
+    
+       
+    }
+    &-title
+    {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FF7506;
+        margin-bottom: 16px;
+    }
+    &-main{
+        background-color: white;
+        height: 550px;
+        width: 1152px;
+        padding: 16px 24px;
+        box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+        border-radius: 16px;
+        &__top{
+            font-style: normal;
+                font-weight: 700;
+        font-size: 20px;
+            line-height: 30px;   
+            color: #FF7506;
+        }
+       
+        &__title{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #282739;
+            margin-bottom: 8px;
+            @include flex(center,flex-start);
+            img {
+                margin-left : 4px;
+            }
+        }
+        &__input{
+            width: 540px;
+            height: 44px;
+            padding: 10px 270px 10px 12px;
+            border: 1.5px solid #D4D4D7;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 16px;
+
+        }
+        &__group1{
+            
+/* white */
+width: 1104px;
+height: 80px;
+background: #FFFFFF;
+/* Orange/$-Orange-300 */
+            padding: 8px 16px;
+border: 1.5px solid #FFAC6A;
+box-sizing: border-box;
+border-radius: 8px;
+        }
+        &__item{
+            background: #FFAC6A;
+            padding: 4.5px 12px;
+
+box-shadow: 0px 0px 6px #E7E9F2;
+border-radius: 9px;
+outline: none;
+border: none;
+@include flex(center,flex-start);
+color:white;
+cursor: pointer;
+span{
+    margin-right: 10px;
+} 
+        }
+        &__input1
+        {
+            width: 1104px;
+            height: 44px;
+            padding: 10px 270px 10px 12px;
+            border: 1.5px solid #D4D4D7;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            
+            margin-bottom: 16px;
+        }
+        &__desc{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            @include flex(center,flex-start);
+            img {
+                margin-right: 4px;
+            }
+        }
+        &__button{
+            margin:24px 396px auto 368px;
+            button {
+                margin-left: 32px;
+            }
+        }
+    }
+}

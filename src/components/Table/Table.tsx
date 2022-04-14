@@ -35,7 +35,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -56,7 +58,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -77,7 +81,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -97,7 +103,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -118,7 +126,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -138,7 +148,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>{" "}
           <tr>
             <td>KIO_01</td>
@@ -158,7 +170,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -179,7 +193,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
           <tr>
             <td>KIO_01</td>
@@ -199,7 +215,9 @@ const Table = () => {
             <td>
               <Link to="/device/detail">Chi tiết</Link>
             </td>
-            <td>Cập nhật</td>
+            <td>
+              <Link to="/device/update">Cập nhật</Link>
+            </td>
           </tr>
         </tbody>
       </table>

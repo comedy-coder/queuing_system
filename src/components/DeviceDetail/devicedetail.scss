@@ -1,6 +1,7 @@
 @use "../../sass/mixin" as *;
 .devicedetail{
 &-wrap {
+    position: relative;
     margin: 0px 0px 0px 200px;
     background-color:#F7F7F7;
     height: 722px;
@@ -18,8 +19,8 @@
 }
 &-main{
     background-color: white;
-    height: 550px;
-    width: 1152px;
+    height: 604px;
+    width: 1112px;
     padding: 16px 24px;
     box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
     border-radius: 16px;
@@ -48,5 +49,9 @@ margin-left: 43px;
     }
 }
 
-   
+    &-button{
+        position: absolute;
+        top: 11%;
+        right: 0;
+    }
 }
