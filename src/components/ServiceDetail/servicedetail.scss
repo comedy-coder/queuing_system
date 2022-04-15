@@ -1,0 +1,82 @@
+@use "../../sass/mixin" as *;
+.servicedetail{
+   
+&-wrap {
+    position: relative;
+    margin: 0px 0px 0px 200px;
+    background-color:#F7F7F7;
+    height: 722px;
+    @include flex(center,flex-start);
+    padding: 24px 0px 24px 24px;
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+}
+&-rules{
+   div{
+
+    color: #282739;
+    font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+margin-bottom: 12px;
+   }
+
+ span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #282739;
+    
+ }
+}
+&-title
+{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FF7506;
+    margin-bottom: 16px;
+}
+&-main{
+    background-color: white;
+    height: 606px;
+    width: 370px;
+    padding: 16px 24px;
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+    &__top{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;   
+        color: #FF7506;
+        margin-bottom: 32px;
+    }
+    &__info{
+        color: #282739;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        span {
+            font-weight: 400;
+            margin-left: 12px;
+        
+        }
+    }
+}
+
+&-main1{
+    background-color: white;
+    height: 606px;
+    width: 718px;
+    padding: 16px 24px;
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+    margin-left: 24px;
+    &__top{
+        @include flex(center,flex-start);
+        margin-right: 12px;
+    }
+}
+}

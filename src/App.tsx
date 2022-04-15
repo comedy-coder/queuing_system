@@ -17,6 +17,8 @@ import DeviceDetail from "./components/DeviceDetail/DeviceDetail";
 import UpDatedevice from "./components/DeviceUpDate/DeviceUpDate";
 import Addservice from "./components/AddService/Addservice";
 
+import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
+
 function App() {
   return (
     <BrowserRouter>
@@ -36,6 +38,8 @@ function App() {
           <Route path="/device" element={<Devices />} />
           <Route path="/dich-vu" element={<Service />} />
           <Route path="/dich-vu/addservice" element={<Addservice />} />
+          <Route path="/dich-vu/detail" element={<ServiceDetail />} />
+          <Route path="/dich-vu/update" element={<Addservice />} />
           <Route path="/cap-so" element={<Level />} />
           <Route path="/bao-cao" element={<Report />} />
           <Route path="/setting" element={<Setting />} />

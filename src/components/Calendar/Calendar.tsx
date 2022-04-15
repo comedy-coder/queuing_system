@@ -2,9 +2,12 @@ import React from "react";
 import calendar from "../../assets/images/addbutton/calendar.png";
 import arrow from "../../assets/images/addbutton/arrow.png";
 import "./calendar.scss";
-const Calendar = () => {
+type CalendarProp = {
+  styles?: React.CSSProperties;
+};
+const Calendar = ({ styles }: CalendarProp) => {
   return (
-    <div className="calendar-wrap">
+    <div className="calendar-wrap" style={styles}>
       <div className="calendar-title">Chọn thời gian</div>
       <div className="calendar-group">
         <button className="calendar-button">

@@ -66,6 +66,18 @@ const Homepage = () => {
       sub: "Danh sách dịch vụ",
       sub1: "Thêm thiết bị",
     },
+    {
+      display: "Dịch vụ",
+      path: "/dich-vu/update",
+      sub: "Danh sách dịch vụ",
+      sub1: "Chi tiết > Cập nhật",
+    },
+    {
+      display: "Dịch vụ",
+      path: "/dich-vu/detail",
+      sub: "Danh sách dịch vụ",
+      sub1: "Chi tiết ",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 

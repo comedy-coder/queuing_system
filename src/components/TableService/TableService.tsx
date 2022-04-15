@@ -28,10 +28,10 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -44,26 +44,10 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>Mô tả dịch vụ </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -76,26 +60,10 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>Mô tả dịch vụ </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -108,10 +76,10 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -124,10 +92,42 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>KIO_01</td>
+            <td>Kiosk</td>
+            <td>Mô tả dịch vụ </td>
+            <td>
+              {" "}
+              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
+            </td>
+
+            <td>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
+            </td>
+            <td>
+              <Link to="/dich-vu/update">Cập nhật</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>KIO_01</td>
+            <td>Kiosk</td>
+            <td>Mô tả dịch vụ </td>
+            <td>
+              {" "}
+              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
+            </td>
+
+            <td>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
+            </td>
+            <td>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>{" "}
           <tr>
@@ -140,10 +140,10 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -156,10 +156,10 @@ const TableService = () => {
             </td>
 
             <td>
-              <Link to="/tableservice/detail">Chi tiết</Link>
+              <Link to="/dich-vu/detail">Chi tiết</Link>
             </td>
             <td>
-              <Link to="/tableservice/update">Cập nhật</Link>
+              <Link to="/dich-vu/update">Cập nhật</Link>
             </td>
           </tr>
         </tbody>
