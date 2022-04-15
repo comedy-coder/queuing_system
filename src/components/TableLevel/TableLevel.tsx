@@ -31,7 +31,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -46,7 +46,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -61,7 +61,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -76,7 +76,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -91,7 +91,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -106,7 +106,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -121,7 +121,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -136,7 +136,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
           <tr>
@@ -151,7 +151,7 @@ const Table = () => {
             </td>
             <td>Kiosk</td>
             <td>
-              <Link to="/level/detail">Chi tiết</Link>
+              <Link to="/cap-so/detail">Chi tiết</Link>
             </td>
           </tr>
         </tbody>

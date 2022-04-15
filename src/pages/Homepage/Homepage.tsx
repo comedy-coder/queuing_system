@@ -79,10 +79,16 @@ const Homepage = () => {
       sub1: "Chi tiết ",
     },
     {
-      display: "Dịch vụ",
+      display: "Cấp số",
       path: "/cap-so/addlevel",
       sub: "Danh sách cấp số",
       sub1: "Cấp số mới ",
+    },
+    {
+      display: "Cấp số",
+      path: "/cap-so/detail",
+      sub: "Danh sách cấp số",
+      sub1: "Chi tiết",
     },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);

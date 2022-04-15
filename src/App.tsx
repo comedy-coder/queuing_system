@@ -19,6 +19,7 @@ import Addservice from "./components/AddService/Addservice";
 import AddLevel from "./components/AddLevel/AddLevel";
 
 import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
+import LevelDetail from "./components/LevelDetail/LevelDetail";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/dich-vu/update" element={<Addservice />} />
           <Route path="/cap-so" element={<Level />} />
           <Route path="/cap-so/addlevel" element={<AddLevel />} />
+          <Route path="/cap-so/detail" element={<LevelDetail />} />
           <Route path="/bao-cao" element={<Report />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/profile" element={<Profile />} />
