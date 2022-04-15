@@ -1,7 +1,9 @@
 import React from "react";
 import Calendar from "../Calendar/Calendar";
-import Search from "../SearchBox/Search";
+
 import Selector from "../Selector/Selector";
+import TableDetailService from "../TableDetailService/TableDetailService";
+
 import "./servicedetail.scss";
 const ServiceDetail = () => {
   return (
@@ -63,6 +65,7 @@ const ServiceDetail = () => {
           />
           <Calendar styles={{ marginLeft: "12px" }} />
         </div>
+        <TableDetailService />
       </div>
     </div>
   );
