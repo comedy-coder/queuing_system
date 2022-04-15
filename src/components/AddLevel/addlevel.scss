@@ -61,3 +61,13 @@
         }
     }
 }
+.main-x{
+    position: relative;
+}
+.main-y{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: white;
+    border: none;
+}
