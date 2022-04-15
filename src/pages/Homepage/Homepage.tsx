@@ -78,6 +78,12 @@ const Homepage = () => {
       sub: "Danh sách dịch vụ",
       sub1: "Chi tiết ",
     },
+    {
+      display: "Dịch vụ",
+      path: "/cap-so/addlevel",
+      sub: "Danh sách cấp số",
+      sub1: "Cấp số mới ",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 

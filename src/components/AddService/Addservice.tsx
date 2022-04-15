@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 const Addservice = () => {
   const navigate = useNavigate();
   const handleBack = () => {
-    navigate("/device");
+    navigate("/dich-vu");
   };
   const handleNext = () => {
-    navigate("/device");
+    navigate("/dich-vu");
   };
   return (
     <div className="addservice-wrap">

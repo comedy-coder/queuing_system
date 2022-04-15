@@ -1,11 +1,19 @@
 import React from "react";
 import Calendar from "../Calendar/Calendar";
-
+import AddButton from "../AddButton/AddButton";
 import Selector from "../Selector/Selector";
 import TableDetailService from "../TableDetailService/TableDetailService";
 
 import "./servicedetail.scss";
+import { useNavigate } from "react-router-dom";
 const ServiceDetail = () => {
+  const navigate = useNavigate();
+  const handleChange = () => {
+    navigate("/dich-vu/update");
+  };
+  const handleBack = () => {
+    navigate("/dich-vu");
+  };
   return (
     <div className="servicedetail-wrap">
       <div className="servicedetail-main">
@@ -66,6 +74,12 @@ const ServiceDetail = () => {
           <Calendar styles={{ marginLeft: "12px" }} />
         </div>
         <TableDetailService />
+      </div>
+      <div className="servicedetail-button">
+        <AddButton handleClick={handleChange}> Cập nhật danh sách</AddButton>
+      </div>
+      <div className="servicedetail-button1">
+        <AddButton handleClick={handleBack}> Quay lại</AddButton>
       </div>
     </div>
   );

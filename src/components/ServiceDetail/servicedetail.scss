@@ -1,6 +1,15 @@
 @use "../../sass/mixin" as *;
 .servicedetail{
-   
+    &-button{
+        position: absolute;
+        top: 8%;
+        right: 0;
+    }
+    &-button1{
+        position: absolute;
+        top: 20%;
+        right: 0;
+    }
 &-wrap {
     position: relative;
     margin: 0px 0px 0px 200px;

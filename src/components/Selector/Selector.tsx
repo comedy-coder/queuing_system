@@ -32,6 +32,10 @@ const Selector: React.FC<SelectorProp | null> = ({
         className={`sl ${sz} ${activeSelect}`}
         style={{ backgroundImage: arrow }}
       >
+        {" "}
+        <option value="" disabled selected>
+          Chọn dịch vụ
+        </option>
         <option>{option1}</option>
         <option>{option2}</option>
         <option>{option3}</option>

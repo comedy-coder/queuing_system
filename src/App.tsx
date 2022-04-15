@@ -16,6 +16,7 @@ import Adddevice from "./components/Adddevice/Addevice";
 import DeviceDetail from "./components/DeviceDetail/DeviceDetail";
 import UpDatedevice from "./components/DeviceUpDate/DeviceUpDate";
 import Addservice from "./components/AddService/Addservice";
+import AddLevel from "./components/AddLevel/AddLevel";
 
 import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/dich-vu/detail" element={<ServiceDetail />} />
           <Route path="/dich-vu/update" element={<Addservice />} />
           <Route path="/cap-so" element={<Level />} />
+          <Route path="/cap-so/addlevel" element={<AddLevel />} />
           <Route path="/bao-cao" element={<Report />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/profile" element={<Profile />} />
