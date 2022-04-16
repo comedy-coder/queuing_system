@@ -60,7 +60,13 @@ const NavDashBoard = () => {
             <Link to={item.path}>
               <img srcSet={`${item.img} 2x`} alt="" />
               <span>{item.display}</span>
-              {index === 5 ? <img srcSet={`${item.icon} 2x`} alt="" /> : ""}
+              {index === 5 ? (
+                <div className="">
+                  <img srcSet={`${item.icon} 2x`} alt="" />
+                </div>
+              ) : (
+                ""
+              )}
             </Link>
           </div>
         ))}

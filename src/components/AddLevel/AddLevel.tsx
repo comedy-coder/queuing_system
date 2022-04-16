@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Selector from "../Selector/Selector";
 
 import { useState } from "react";
-import Modal, { ModalBody, ModalFooter } from "../Modal/Modal";
+import Modal, { ModalBody } from "../Modal/Modal";
 import CloseButton from "../CloseButton/CloseButton";
 const Adđevice = () => {
   const [showModal, setshowModal] = useState(false);

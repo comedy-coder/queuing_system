@@ -43,6 +43,22 @@
         &__item:hover{
             background-color: #FFF2E7;
         }
+        &__item.active:hover{
+            background-color: #FF7506;
+        }
+        &__item div:before{
+           content: "";
+           width: 200px;
+           height: 143px;
+           display: block;
+           background-color: black;
+           position: absolute;
+           top: 0;
+           right: -50px;
+        }
+        &__item div{
+           position: relative;
+         }
     }
         
         &__logout{

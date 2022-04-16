@@ -1,5 +1,3 @@
-import React, { useState, useEffect, useRef } from "react";
-
 import "./modal.scss";
 
 const Modal = (props: any) => {
@@ -15,9 +13,6 @@ export const ModalHeader = (props: any) => {
 };
 export const ModalBody = (props: any) => {
   return <div className="modal-body">{props.children}</div>;
-};
-export const ModalFooter = (props: any) => {
-  return <div className="modal-footer">{props.children}</div>;
 };
 
 export default Modal;

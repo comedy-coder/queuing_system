@@ -1,12 +1,11 @@
 @use "../../sass/mixin" as *;
-.tableservice{
+.tablereport{
     &-pages{
         margin: 24px 104px 20px 848px;
     }
     &-data{
 
-        table{
-            text-align: left;
+        table{ text-align: left;
             border-radius: 12px;
             border-spacing: 0px;
             margin-top: 16px;
@@ -49,7 +48,7 @@
             border-top-right-radius :12px;
         }
         td {
-            padding: 3.5px 47px 3.5px 8px;
+            padding: 14px 17px;
             font-weight: 400;
             font-size: 14px;
             line-height: 21px;
