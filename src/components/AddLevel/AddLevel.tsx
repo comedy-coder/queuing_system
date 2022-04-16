@@ -1,18 +1,26 @@
 import React from "react";
 import inso from "../../assets/images/modal/inso.png";
-import close from "../../assets/images/modal/close.png";
+
 import Button from "../Button/Button";
 import "./addlevel.scss";
 import { useNavigate } from "react-router-dom";
 import Selector from "../Selector/Selector";
-import Modal from "../Modal/Modal";
+
+import { useState } from "react";
+import Modal, { ModalBody, ModalFooter } from "../Modal/Modal";
+import CloseButton from "../CloseButton/CloseButton";
 const Adđevice = () => {
+  const [showModal, setshowModal] = useState(false);
+
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/cap-so");
   };
   const handleNext = () => {
-    navigate("/cap-so");
+    setshowModal(true);
+  };
+  const handlecloseModal = () => {
+    setshowModal(false);
   };
   return (
     <div className="addlevel-wrap">
@@ -39,13 +47,16 @@ const Adđevice = () => {
           >
             In số
           </Button>
-          <Modal active={true}>
-            <div className="main-x">
-              <img srcSet={`${inso} 2x`} alt="" />
-              <button className="main-y">
-                <img srcSet={`${close} 2x`} alt="" />
-              </button>
-            </div>
+          <Modal show={showModal}>
+            <ModalBody>
+              <div className="main-x">
+                <img srcSet={`${inso} 2x`} alt="" />
+
+                <div className="main-y">
+                  <CloseButton handleClick={handlecloseModal}></CloseButton>
+                </div>
+              </div>
+            </ModalBody>
           </Modal>
         </div>
       </div>
