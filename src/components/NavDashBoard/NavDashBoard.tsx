@@ -4,6 +4,7 @@ import "./navdashboard.scss";
 import image from "../../exportimage/image";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
+import NavDashBoardSub from "../NavDashBoardSub/NavDashBoardSub";
 
 const NavDashBoard = () => {
   const handleLogout = () => {};
@@ -38,7 +39,6 @@ const NavDashBoard = () => {
       display: "Cài đặt hệ thống",
       path: "/setting",
       img: image.img6,
-      icon: image.img7,
     },
   ];
   const { pathname } = useLocation();
@@ -60,13 +60,7 @@ const NavDashBoard = () => {
             <Link to={item.path}>
               <img srcSet={`${item.img} 2x`} alt="" />
               <span>{item.display}</span>
-              {index === 5 ? (
-                <div className="">
-                  <img srcSet={`${item.icon} 2x`} alt="" />
-                </div>
-              ) : (
-                ""
-              )}
+              {index === 5 ? <NavDashBoardSub /> : ""}
             </Link>
           </div>
         ))}
