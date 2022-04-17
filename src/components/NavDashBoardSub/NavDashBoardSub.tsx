@@ -24,7 +24,10 @@ const NavDashBoardSub = () => {
   const Navindex = Navdashboard.findIndex((e) => e.path === pathname);
   return (
     <div className="navdashboardsub">
-      <img srcSet={`${icon} 2x`} alt="" />
+      <div className="navdashboardsub-img">
+        <img srcSet={`${icon} 2x`} alt="" />
+      </div>
+
       <div className="navdashboardsub-group">
         {Navdashboard.map((item, index) => (
           <Link to={item.path} key={index}>

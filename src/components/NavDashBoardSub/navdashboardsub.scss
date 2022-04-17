@@ -3,6 +3,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    &-img:hover {
+        background-color: blue;
+          
+    }
+    &-img{
+        display: flex;
+    }
+    
     &-group
     {
         position: absolute !important;
@@ -11,7 +19,7 @@
         background-color: white;
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;
-     
+        display: none;
       
     }
     &-item {
@@ -24,6 +32,7 @@
         display: flex;
         align-items: center;
         padding: 12px 16px;
+        
         
         
     }
