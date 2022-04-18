@@ -5,6 +5,7 @@ import image from "../../exportimage/image";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 import NavDashBoardSub from "../NavDashBoardSub/NavDashBoardSub";
+import { useRef } from "react";
 
 const NavDashBoard = () => {
   const handleLogout = () => {};
@@ -37,13 +38,29 @@ const NavDashBoard = () => {
     },
     {
       display: "Cài đặt hệ thống",
-      path: "/setting",
+
       img: image.img6,
     },
   ];
   const { pathname } = useLocation();
   const ativeNav = Navbar.findIndex((e) => e.path === pathname);
+  const Navdashboard = [
+    {
+      display: "Quản lý vai trò",
+      path: "/setting",
+    },
+    {
+      display: "Quản lý tài khoản",
+      path: "/setting/tai-khoan",
+    },
+    {
+      display: "Quản lý người dùng",
+      path: "/setting/nguoi-dung",
+    },
+  ];
+  const subRef = useRef(null);
 
+  const Navindex = Navdashboard.findIndex((e) => e.path === pathname);
   return (
     <div className="container-wrapper">
       <div className="navbar__logo">
@@ -57,13 +74,29 @@ const NavDashBoard = () => {
             }`}
             key={index}
           >
-            <Link to={item.path}>
+            <Link to={item.path ? item.path : "#"}>
               <img srcSet={`${item.img} 2x`} alt="" />
               <span>{item.display}</span>
               {index === 5 ? <NavDashBoardSub /> : ""}
             </Link>
           </div>
         ))}
+        <div className="navdashboardsub-group">
+          {Navdashboard.map((item, index) => (
+            <Link to={item.path} key={index}>
+              <div
+                className={`navdashboardsub-item ${
+                  index === 0 ? "bd-top" : ""
+                } ${index === 2 ? "bd-bot" : ""} ${
+                  Navindex === index ? "active" : ""
+                }`}
+                ref={subRef}
+              >
+                {item.display}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
       <div className="navbar__logout">
         <Link to="./login">
