@@ -4,9 +4,9 @@ import "./navdashboard.scss";
 import image from "../../exportimage/image";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
-import NavDashBoardSub from "../NavDashBoardSub/NavDashBoardSub";
-import { useRef } from "react";
 
+import { useRef } from "react";
+import icon from "../../assets/images/homepage/dot.png";
 const NavDashBoard = () => {
   const handleLogout = () => {};
   const Navbar = [
@@ -77,7 +77,7 @@ const NavDashBoard = () => {
             <Link to={item.path ? item.path : "#"}>
               <img srcSet={`${item.img} 2x`} alt="" />
               <span>{item.display}</span>
-              {index === 5 ? <NavDashBoardSub /> : ""}
+              {index === 5 ?   <img srcSet={`${icon} 2x`} alt="" /> : ""}
             </Link>
           </div>
         ))}
