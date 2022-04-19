@@ -1,20 +1,21 @@
 @use "../../sass/mixin" as *;
-.tabledetailservice{
+.account{
     &-pages{
-        margin-left:400px;
-        margin-top: 16px;;
+        margin: 24px 104px 20px 848px;
     }
     &-data{
 
         table{
+            text-align: left;
             border-radius: 12px;
             border-spacing: 0px;
             margin-top: 16px;
-            width: 668px;
+            width: 1112px;
+         
         }
         
         th {
-            width: 334px;
+   
            padding: 12.5px 17px;
            background-color: #FF9138;
            color: white;
@@ -23,14 +24,13 @@
            line-height: 24px;
            position: relative;
            border: none;
-            
           
        
         }
         th::before{
             content: "";
             width: 1px;
-            height: 440px;
+            height: 490px;
             background-color: #FFE3CD;
             display: block;
             position: absolute;
@@ -49,12 +49,11 @@
             border-top-right-radius :12px;
         }
         td {
-            padding: 3.5px 47px 3.5px 8px;
+            padding: 14px 16px 14px 17px;
             font-weight: 400;
             font-size: 14px;
             line-height: 21px;
             overflow-x: hidden;
-            height: 49px;
             a{
                 cursor: pointer;
                 text-decoration: underline;

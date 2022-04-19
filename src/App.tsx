@@ -10,7 +10,7 @@ import Devices from "./pages/Devices/Devices";
 import Service from "./pages/Services/Service";
 import Level from "./pages/Levels/Level";
 import Report from "./pages/Report/Report";
-import Setting from "./pages/Setting/Setting";
+import Account from "./pages/Setting/Account/Account";
 import Profile from "./pages/Profile/Profile";
 import Adddevice from "./components/Adddevice/Addevice";
 import DeviceDetail from "./components/DeviceDetail/DeviceDetail";
@@ -20,6 +20,7 @@ import AddLevel from "./components/AddLevel/AddLevel";
 
 import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 import LevelDetail from "./components/LevelDetail/LevelDetail";
+import AddAcount from "./components/AddAccount/AddAcount";
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
           <Route path="/cap-so/addlevel" element={<AddLevel />} />
           <Route path="/cap-so/detail" element={<LevelDetail />} />
           <Route path="/bao-cao" element={<Report />} />
-          <Route path="/setting" element={<Setting />} />
+          <Route path="/setting/tai-khoan" element={<Account />} />
+          <Route path="/setting/tai-khoan/addaccount" element={<AddAcount />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
 

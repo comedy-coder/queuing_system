@@ -90,6 +90,17 @@ const Homepage = () => {
       sub: "Danh sách cấp số",
       sub1: "Chi tiết",
     },
+    {
+      display: "Cài đặt hệ thống",
+      path: "/setting/tai-khoan",
+      sub: "Quản lý tài khoản",
+    },
+    {
+      display: "Cài đặt hệ thống",
+      path: "/setting/tai-khoan/addaccount",
+      sub: "Quản lý tài khoản",
+      sub1: "Thêm tài khoản",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 
