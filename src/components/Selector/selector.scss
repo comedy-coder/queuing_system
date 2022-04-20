@@ -44,4 +44,15 @@
         line-height: 24px;
         margin-bottom: 4px;
     }
+    
+}
+.selector-wrap{
+    select {
+        option {
+            width: 226px;
+            height: 44px;
+            display: block;
+    }
+    }
+   
 }
