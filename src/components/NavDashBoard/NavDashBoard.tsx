@@ -47,7 +47,7 @@ const NavDashBoard = () => {
   const Navdashboard = [
     {
       display: "Quản lý vai trò",
-      path: "/setting",
+      path: "/setting/vai-tro",
     },
     {
       display: "Quản lý tài khoản",

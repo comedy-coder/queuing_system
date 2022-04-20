@@ -1,5 +1,5 @@
 @use "../../sass/mixin" as *;
-.addservice
+.updateaccount
 {
     &-wrap {
         margin: 0px 0px 0px 200px;
@@ -11,49 +11,6 @@
     
        
     }
-    &-text{
-      
-            border: 1.5px solid #D4D4D7;
-            box-sizing: border-box;
-            border-radius: 8px;
-             color: #D4D4D7;
-            padding : 8px ;
-            width: 50px;
-            background-color: white;
-            outline: none;
-            margin: 4px;
-           
-            &.red{
-                margin-left: 77px;
-            }
-            &.green{
-                margin-left: 86px;
-            }
-    }
-   
-    
-    &-rules{
-        @include flex(center,flex-start); 
-        span {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #535261;
-            margin: 6px;
-        }
-       
-    }
-        &-checkbox{
-      border: none;
-      outline: 2px solid #4277FF;
-      width: 15px;
-      height: 15px;
-     
-    }
-        
-
-    
-
     &-title
     {
         font-weight: 700;
@@ -66,12 +23,9 @@
         background-color: white;
         height: 550px;
         width: 1152px;
-        padding: 16px 24px;
+  padding: 16px 24px;
         box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
         border-radius: 16px;
-        &__group{
-            position: relative;
-        }
         &__top{
             font-style: normal;
                 font-weight: 700;
@@ -94,7 +48,7 @@
         &__input{
             width: 540px;
             height: 44px;
-            padding: 10px 270px 10px 12px;
+      padding: 10px 270px 10px 12px;
             border: 1.5px solid #D4D4D7;
             box-sizing: border-box;
             border-radius: 8px;
@@ -106,9 +60,9 @@
         }
         &__input1
         {
-            width: 540px;
-            height: 132px;
-            padding: 10px 270px 10px 12px;
+            width: 1104px;
+            height: 44px;
+      padding: 10px 270px 10px 12px;
             border: 1.5px solid #D4D4D7;
             box-sizing: border-box;
             border-radius: 8px;
@@ -116,18 +70,12 @@
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 16px;
-           
         }
-        &__input1::placeholder{
-            text-align: start;
-           }
-        
         &__desc{
             font-size: 14px;
             font-weight: 400;
             line-height: 21px;
             @include flex(center,flex-start);
-            margin-top: 24px;
             img {
                 margin-right: 4px;
             }
@@ -139,10 +87,4 @@
             }
         }
     }
-}
-.test
-{position: absolute;
-    top: 49.5%;
-    left:0;
-
 }

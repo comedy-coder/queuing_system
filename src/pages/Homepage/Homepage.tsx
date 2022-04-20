@@ -101,6 +101,24 @@ const Homepage = () => {
       sub: "Quản lý tài khoản",
       sub1: "Thêm tài khoản",
     },
+    {
+      display: "Cài đặt hệ thống",
+      path: "/setting/tai-khoan/update",
+      sub: "Quản lý tài khoản",
+      sub1: "Cập nh tài khoản",
+    },
+    {
+      display: "Cài đặt hệ thống",
+      path: "/setting/vai-tro",
+      sub: "Quản lý vai trò",
+      sub1: "",
+    },
+    {
+      display: "Cài đặt hệ thống",
+      path: "/setting/vai-tro/addrole",
+      sub: "Quản lý vai trò",
+      sub1: "Thêm vai trò",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 

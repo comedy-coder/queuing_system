@@ -32,7 +32,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -49,7 +49,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -66,7 +66,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -83,7 +83,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -100,7 +100,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -117,7 +117,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -134,7 +134,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -151,7 +151,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -168,7 +168,7 @@ const TableAccount = () => {
             </td>
 
             <td>
-              <Link to="/account/detail">Cập nhật</Link>
+              <Link to="/tai-khoan/update">Cập nhật</Link>
             </td>
           </tr>
         </tbody>

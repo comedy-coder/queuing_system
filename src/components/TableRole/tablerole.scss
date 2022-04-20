@@ -1,0 +1,80 @@
+@use "../../sass/mixin" as *;
+.tablerole{
+    &-pages{
+        margin: 24px 104px 20px 848px;
+    }
+    &-data{
+
+        table{ text-align: left;
+            border-radius: 12px;
+            border-spacing: 0px;
+            margin-top: 16px;
+            width: 1112px;
+        }
+        
+        th {
+            
+           padding: 12.5px 17px;
+           background-color: #FF9138;
+           color: white;
+           font-weight: 600;
+           font-size: 16px;
+           line-height: 24px;
+           position: relative;
+           border: none;
+            
+          
+       
+        }
+        th::before{
+            content: "";
+            width: 1px;
+            height: 490px;
+            background-color: #FFE3CD;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        th:first-child::before{
+            display: none;
+        }
+        th:first-child{
+            border-top-left-radius: 12px;
+            padding-left: 16px;
+        }
+        th:last-child
+        {
+            border-top-right-radius :12px;
+        }
+        td {
+            padding: 14px 17px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+            overflow-x: hidden;
+            height: 49px;
+            a{
+                cursor: pointer;
+                text-decoration: underline;
+                color: #4277FF;
+            }
+      
+            
+        }
+        td:first-child{
+           
+            padding-left: 16px;
+        }
+        tr:nth-child(2n+1) td 
+        {
+            background-color: #FFF2E7;
+        }
+        tr:nth-child(2n) td 
+        {
+            background-color: white;
+        }
+
+       
+    }
+}

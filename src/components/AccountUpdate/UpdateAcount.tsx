@@ -2,10 +2,10 @@ import { Grid } from "@mui/material";
 import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
-import "./addaccount.scss";
+import "./updateaccount.scss";
 import { useNavigate } from "react-router-dom";
 import Selector from "../Selector/Selector";
-const AddAcount = () => {
+const UpdateAcount = () => {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/setting/tai-khoan");
@@ -14,100 +14,108 @@ const AddAcount = () => {
     navigate("/setting/tai-khoan");
   };
   return (
-    <div className="addaccount-wrap">
-      <div className="addaccount-title">Quản lý tài khoản</div>
-      <div className="addaccount-main">
-        <div className="addaccount-main__top">Thông tin tài khoản</div>
-        <div className="addaccount-main__group">
+    <div className="updateaccount-wrap">
+      <div className="updateaccount-title">Quản lý tài khoản</div>
+      <div className="updateaccount-main">
+        <div className="updateaccount-main__top">Thông tin tài khoản</div>
+        <div className="updateaccount-main__group">
           <Grid container my={2} columnSpacing={4}>
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Họ tên : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
-                  className="addaccount-main__input"
-                  placeholder="Họ tên"
+                  className="updateaccount-main__input"
+                  placeholder="Nguyen Van A"
                 />
               </div>
             </Grid>
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Tên đăng nhập: : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
-                  className="addaccount-main__input"
-                  placeholder="Nhập tên đăng nhập"
+                  className="updateaccount-main__input"
+                  placeholder="tuyetnguyen123"
                 />
               </div>
             </Grid>
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Số điện thoại : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
-                  className="addaccount-main__input"
-                  placeholder="Nhập số điện thoại"
+                  className="updateaccount-main__input"
+                  placeholder="0902345678"
                 />
               </div>
             </Grid>{" "}
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Mật khẩu: : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <input type="password" className="addaccount-main__input" />
+                <input
+                  type="password"
+                  className="updateaccount-main__input"
+                  placeholder="Tuyetnguyen12"
+                />
               </div>
             </Grid>{" "}
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Email: <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
-                  className="addaccount-main__input"
-                  placeholder="Nhập email"
+                  className="updateaccount-main__input"
+                  placeholder="NguyenA154@gmail.com"
                 />
               </div>
             </Grid>{" "}
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Nhập lại mật khẩu :<img srcSet={`${sao} 2x`} alt="" />{" "}
                 </div>
-                <input type="password" className="addaccount-main__input" />
+                <input
+                  type="password"
+                  className="updateaccount-main__input"
+                  placeholder="Tuyetnguyen12"
+                />
               </div>
             </Grid>
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Vai trò : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <Selector option1="Chọn vai trò " size="over" />
               </div>
             </Grid>
             <Grid item xs={6}>
-              <div className="addaccount-main__info">
-                <div className="addaccount-main__title">
+              <div className="updateaccount-main__info">
+                <div className="updateaccount-main__title">
                   Tình trạng: <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <Selector option2="Chọn hoạt động" size="over" />
               </div>
             </Grid>
           </Grid>
-          <span className="addaccount-main__desc">
+          <span className="updateaccount-main__desc">
             {" "}
             <img srcSet={`${sao} 2x`} alt="" /> Là trường thông tin bắt buộc
           </span>
         </div>
       </div>
-      <div className="addaccount-main__button">
+      <div className="updateaccount-main__button">
         <Button
           handleClick={handleBack}
           backgroundColor="orange1"
@@ -124,4 +132,4 @@ const AddAcount = () => {
   );
 };
 
-export default AddAcount;
+export default UpdateAcount;

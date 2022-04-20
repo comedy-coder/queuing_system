@@ -21,6 +21,10 @@ import AddLevel from "./components/AddLevel/AddLevel";
 import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 import LevelDetail from "./components/LevelDetail/LevelDetail";
 import AddAcount from "./components/AddAccount/AddAcount";
+import UpdateAcount from "./components/AccountUpdate/UpdateAcount";
+import Role from "./pages/Setting/Role/Role";
+import AddRole from "./components/AddRole/AddRole";
+// import Addrole from "./components/AddRole/AddRole";
 
 function App() {
   return (
@@ -47,8 +51,11 @@ function App() {
           <Route path="/cap-so/addlevel" element={<AddLevel />} />
           <Route path="/cap-so/detail" element={<LevelDetail />} />
           <Route path="/bao-cao" element={<Report />} />
+          <Route path="/setting/vai-tro" element={<Role />} />
+          <Route path="/setting/vai-tro/addrole" element={<AddRole />} />
           <Route path="/setting/tai-khoan" element={<Account />} />
           <Route path="/setting/tai-khoan/addaccount" element={<AddAcount />} />
+          <Route path="/setting/tai-khoan/update" element={<UpdateAcount />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
 
