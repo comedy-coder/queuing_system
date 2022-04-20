@@ -96,20 +96,7 @@
             margin-bottom: 16px;
 
         }
-        &__input1
-        {
-            width: 560px;
-            height: 132px;
-            padding: 10px 270px 10px 12px;
-            border: 1.5px solid #D4D4D7;
-            box-sizing: border-box;
-            border-radius: 8px;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            margin-bottom: 16px;
-           
-        }
+       
      
         &__desc{
             font-size: 14px;
@@ -139,4 +126,19 @@
 }
 .mg-top {
     margin-top: 10px;
+}
+textarea{
+    width: 560px;
+    height: 132px;
+    padding: 10px 12px 10px 12px;
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color:#535261 ;
+    font-family: 'Nunito';
+font-style: normal;
 }

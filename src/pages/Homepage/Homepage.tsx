@@ -125,6 +125,12 @@ const Homepage = () => {
       sub: "Quản lý vai trò",
       sub1: "Cập nhật vai trò",
     },
+    {
+      display: "Cài đặt hệ thống",
+      path: "/setting/nguoi-dung",
+      sub: "Nhật ký người dùng",
+      sub1: "",
+    },
   ];
   const titleIndex = title.findIndex((e) => e.path === pathname);
 

@@ -125,7 +125,7 @@ const UpdateAcount = () => {
           Hủy bỏ
         </Button>
         <Button handleClick={handleNext} backgroundColor="orange" color="white">
-          Thêm thiết bị
+          Cập nhật
         </Button>
       </div>
     </div>

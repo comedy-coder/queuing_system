@@ -23,7 +23,7 @@ const Service = () => {
           />
           <Calendar />
         </div>
-        <Search />
+        <Search width="300px" left="265.5px" title="Từ khóa" />
       </div>
       <TableService />
       <div className="button-positon">

@@ -36,11 +36,7 @@ const Addservice = () => {
                 <div className="addservice-main__title">
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <input
-                  type="text"
-                  className="addservice-main__input1"
-                  placeholder="Mô tả dịch vụ"
-                />
+                <textarea>Mô tả dịch vụ</textarea>
               </div>
             </Grid>
             <div className="test">

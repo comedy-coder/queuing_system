@@ -25,7 +25,7 @@ const Devices = () => {
             option3="Mất kết nối"
           />
         </div>
-        <Search />
+        <Search width="300px" title="Từ khóa" left="266.5px" />
       </div>
       <Table />
       <div className="button-positon">

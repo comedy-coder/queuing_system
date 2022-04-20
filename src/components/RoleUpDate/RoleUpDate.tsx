@@ -37,7 +37,7 @@ const RoleUpDate = () => {
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <textarea>
-                  "Chịu trách nhiệm thống kê số liệu và kiểm toán"
+                  Chịu trách nhiệm thống kê số liệu và kiểm toán
                 </textarea>
               </div>
             </Grid>

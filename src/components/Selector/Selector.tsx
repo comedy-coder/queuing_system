@@ -4,6 +4,7 @@ import arrow from "../../assets/images/dashboard/arrow.png";
 import { useState } from "react";
 type SelectorProp = {
   title?: string;
+  option?: string;
   option1?: string;
   option2?: string;
   option3?: string;
@@ -15,6 +16,7 @@ const Selector: React.FC<SelectorProp | null> = ({
   option1,
   option2,
   option3,
+  option,
   size,
 }) => {
   const [isActive, setActive] = useState(false);
@@ -33,7 +35,7 @@ const Selector: React.FC<SelectorProp | null> = ({
         style={{ backgroundImage: arrow }}
       >
         {" "}
-        <option value="" disabled selected>
+        <option value="" disabled defaultChecked>
           Chọn dịch vụ
         </option>
         <option>{option1}</option>

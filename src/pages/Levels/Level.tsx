@@ -36,7 +36,7 @@ const Level = () => {
           />
           <Calendar />
         </div>
-        <Search />
+        <Search width="240px" title="Từ khóa" left="206.5px" />
       </div>
       <TableLevel />
       <div className="button-positon">

@@ -65,7 +65,7 @@
     &-main{
         background-color: white;
         height: 550px;
-        width: 1152px;
+        width: 1178px;
         padding: 16px 24px;
         box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
         border-radius: 16px;
@@ -92,7 +92,7 @@
             }
         }
         &__input{
-            width: 540px;
+            width: 553px;
             height: 44px;
             padding: 10px 270px 10px 12px;
             border: 1.5px solid #D4D4D7;
@@ -104,11 +104,10 @@
             margin-bottom: 16px;
 
         }
-        &__input1
-        {
-            width: 540px;
+        textarea{
+            width: 553px;
             height: 132px;
-            padding: 10px 270px 10px 12px;
+            padding: 10px 12px 10px 12px;
             border: 1.5px solid #D4D4D7;
             box-sizing: border-box;
             border-radius: 8px;
@@ -116,8 +115,11 @@
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 16px;
-           
+            color:#535261 ;
+            font-family: 'Nunito';
+        font-style: normal;
         }
+       
         &__input1::placeholder{
             text-align: start;
            }

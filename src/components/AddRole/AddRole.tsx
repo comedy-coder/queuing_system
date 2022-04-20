@@ -36,11 +36,7 @@ const AddRole = () => {
                 <div className="addrole-main__title">
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <input
-                  type="text"
-                  className="addrole-main__input1"
-                  placeholder="Mô tả dịch vụ"
-                />
+                <textarea>Nhập mô tả</textarea>
               </div>
             </Grid>
 

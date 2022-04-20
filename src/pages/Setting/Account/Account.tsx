@@ -21,7 +21,7 @@ const Account = () => {
             option3="Ngưng hoạt động"
           />
         </div>
-        <Search />
+        <Search title="Từ khóa" width="240px" left="206.5px" />
       </div>
       <TableAccount />
       <div className="button-positon">

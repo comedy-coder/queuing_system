@@ -25,6 +25,7 @@ import UpdateAcount from "./components/AccountUpdate/UpdateAcount";
 import Role from "./pages/Setting/Role/Role";
 import AddRole from "./components/AddRole/AddRole";
 import RoleUpDate from "./components/RoleUpDate/RoleUpDate";
+import User from "./pages/Setting/User/User";
 // import Addrole from "./components/AddRole/AddRole";
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path="/setting/tai-khoan" element={<Account />} />
           <Route path="/setting/tai-khoan/addaccount" element={<AddAcount />} />
           <Route path="/setting/tai-khoan/update" element={<UpdateAcount />} />
+          <Route path="/setting/nguoi-dung" element={<User />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
 

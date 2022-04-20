@@ -4,6 +4,7 @@ import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
 import "./adddevice.scss";
 import { useNavigate } from "react-router-dom";
+import Selector from "../Selector/Selector";
 const Adđevice = () => {
   const navigate = useNavigate();
   const handleBack = () => {
@@ -36,10 +37,10 @@ const Adđevice = () => {
                 <div className="adddevice-main__title">
                   Loại thiết bị : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <input
-                  type="text"
-                  className="adddevice-main__input"
-                  placeholder="Chọn loại thiết bị"
+                <Selector
+                  option="Chọn dịch vụ"
+                  option1="Kiosk"
+                  option2="Display Counter"
                 />
               </div>
             </Grid>

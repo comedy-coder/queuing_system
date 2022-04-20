@@ -12,7 +12,7 @@ const Role = () => {
       <div className="role-title">Danh sách tài khoản</div>
       <div className="role-selectorgroup">
         <div className="role-selectorgroup1"></div>
-        <Search />
+        <Search title="Từ khóa" width="240px" left="206.5px" />
       </div>
       <Tablerole />
       <div className="button-positon">

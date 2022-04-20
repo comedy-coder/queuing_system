@@ -1,0 +1,34 @@
+@use "../../../sass/mixin" as *;
+.user{
+    &-wrap {
+        position: relative;
+        margin: 0px 0px 0px 200px;
+        background-color:#F7F7F7;
+        height: 722px;
+        padding: 24px 0px 24px 24px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+    &-title
+    {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FF7506;
+        margin-bottom: 16px;
+    }
+    &-selectorgroup1{
+        @include flex(center,flex-start);
+        gap: 24px;
+
+    }
+    &-selectorgroup{
+        @include flex(center,space-between);
+        margin-right: 104px;
+    }
+}
+.button-positon{
+    position: absolute;
+    right: 0;
+    top: 16%;
+}
