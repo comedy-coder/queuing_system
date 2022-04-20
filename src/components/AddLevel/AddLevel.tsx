@@ -28,7 +28,12 @@ const Adđevice = () => {
       <div className="addlevel-main">
         <div className="addlevel-main__top">CẤP SỐ MỚI</div>
         <div className="addlevel-main__title">Dịch vụ khách hàng lựa chọn</div>
-        <Selector option1="Khám tim mạch" option2="Khám tim mạch" size="big" />
+        <Selector
+          option="Chon dich vu"
+          option1="Khám tim mạch"
+          option2="Khám tim mạch"
+          size="big"
+        />
         <div className="addlevel-main__button">
           <Button
             handleClick={handleBack}
