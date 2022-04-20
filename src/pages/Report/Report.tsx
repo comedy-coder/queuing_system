@@ -14,7 +14,7 @@ const Report = () => {
       </div>
       <TableReport />
       <div className="button-positon">
-        <Link to="/report/addreport">
+        <Link to="/bao-cao">
           <AddButton handleClick={handleChange}> Tải về</AddButton>
         </Link>
       </div>

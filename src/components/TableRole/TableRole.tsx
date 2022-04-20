@@ -20,7 +20,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -29,7 +29,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -38,7 +38,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -47,7 +47,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -56,7 +56,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -65,7 +65,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
           <tr>
@@ -74,7 +74,7 @@ const TableRole = () => {
             <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
 
             <td>
-              <Link to="setting/vai-tro/detail">Cập nhật</Link>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
         </tbody>

@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 const AddRole = () => {
   const navigate = useNavigate();
   const handleBack = () => {
-    navigate("/role");
+    navigate("/setting/vai-tro");
   };
   const handleNext = () => {
-    navigate("/role");
+    navigate("/setting/vai-tro");
   };
   return (
     <div className="addrole-wrap">
@@ -107,7 +107,7 @@ const AddRole = () => {
           Hủy bỏ
         </Button>
         <Button handleClick={handleNext} backgroundColor="orange" color="white">
-          Thêm thiết bị
+          Thêm
         </Button>
       </div>
     </div>

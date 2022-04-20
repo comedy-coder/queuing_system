@@ -24,6 +24,7 @@ import AddAcount from "./components/AddAccount/AddAcount";
 import UpdateAcount from "./components/AccountUpdate/UpdateAcount";
 import Role from "./pages/Setting/Role/Role";
 import AddRole from "./components/AddRole/AddRole";
+import RoleUpDate from "./components/RoleUpDate/RoleUpDate";
 // import Addrole from "./components/AddRole/AddRole";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/bao-cao" element={<Report />} />
           <Route path="/setting/vai-tro" element={<Role />} />
           <Route path="/setting/vai-tro/addrole" element={<AddRole />} />
+          <Route path="/setting/vai-tro/update" element={<RoleUpDate />} />
           <Route path="/setting/tai-khoan" element={<Account />} />
           <Route path="/setting/tai-khoan/addaccount" element={<AddAcount />} />
           <Route path="/setting/tai-khoan/update" element={<UpdateAcount />} />
