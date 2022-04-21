@@ -4,7 +4,7 @@ import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
 import "./adddevice.scss";
 import { useNavigate } from "react-router-dom";
-import Selector from "../Selector/Selector";
+import SelectorDD from "../SelectorDropdown/SelectorDD";
 const Adđevice = () => {
   const navigate = useNavigate();
   const handleBack = () => {
@@ -13,6 +13,16 @@ const Adđevice = () => {
   const handleNext = () => {
     navigate("/device");
   };
+  const Device = [
+    {
+      display: "Kiosk",
+      value: "Kiosk",
+    },
+    {
+      display: "Display counter",
+      value: "active",
+    },
+  ];
   return (
     <div className="adddevice-wrap">
       <div className="adddevice-title">Quản lý dịch vụ</div>
@@ -37,10 +47,10 @@ const Adđevice = () => {
                 <div className="adddevice-main__title">
                   Loại thiết bị : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <Selector
-                  option="Chọn dịch vụ"
-                  option1="Kiosk"
-                  option2="Display Counter"
+                <SelectorDD
+                  width="540px"
+                  // title="Trang thai hoat dong"
+                  Menu={Device}
                 />
               </div>
             </Grid>

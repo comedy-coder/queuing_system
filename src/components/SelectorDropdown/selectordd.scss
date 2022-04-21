@@ -17,6 +17,7 @@
     }
     
     &__button{
+        outline: none;
         display: flex;
         height: 44px;
         margin-top: 2px;
@@ -58,7 +59,7 @@
         display: none;
         position: absolute;
         outline: none;
-        height: 152px;
+        max-height: 192px;
         background: #FFFFFF;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
@@ -68,13 +69,14 @@
             display: grid;
             padding-top: 8px;
             padding-bottom: 8px;
-            height:136px;
+            
             &-item{
                 border: none;
                 display: flex;
                 align-items: center;
                 background: #FFFFFF;
                 cursor: pointer;
+                height: 44px;
                 &-title{
                     @extend .dropdown__button--title;
                     margin-left:6px;

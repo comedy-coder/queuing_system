@@ -4,14 +4,31 @@ import inso from "../../assets/images/modal/inso.png";
 import Button from "../Button/Button";
 import "./addlevel.scss";
 import { useNavigate } from "react-router-dom";
-import Selector from "../Selector/Selector";
+import SelectorDD from "../SelectorDropdown/SelectorDD";
 
 import { useState } from "react";
 import Modal, { ModalBody } from "../Modal/Modal";
 import CloseButton from "../CloseButton/CloseButton";
 const Adđevice = () => {
   const [showModal, setshowModal] = useState(false);
-
+  const State = [
+    {
+      display: "Khám tim mạch",
+      value: "all",
+    },
+    {
+      display: "Khám sản-phụ khoa",
+      value: "waiting",
+    },
+    {
+      display: "Khám răng hàm mặt",
+      value: "used",
+    },
+    {
+      display: "Khám tai mũi họng",
+      value: "passed",
+    },
+  ];
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/cap-so");
@@ -28,12 +45,7 @@ const Adđevice = () => {
       <div className="addlevel-main">
         <div className="addlevel-main__top">CẤP SỐ MỚI</div>
         <div className="addlevel-main__title">Dịch vụ khách hàng lựa chọn</div>
-        <Selector
-          option="Chon dich vu"
-          option1="Khám tim mạch"
-          option2="Khám tim mạch"
-          size="big"
-        />
+        <SelectorDD width="400px" Menu={State} />
         <div className="addlevel-main__button">
           <Button
             handleClick={handleBack}

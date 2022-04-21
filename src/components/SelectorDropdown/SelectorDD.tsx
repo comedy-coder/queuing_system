@@ -5,7 +5,7 @@ import arrowup from "../../assets/images/selector/arrow.png";
 
 export interface IDropDownProps {
   width: string;
-  title: string;
+  title?: string;
   Menu: {
     display: string;
     value: string;

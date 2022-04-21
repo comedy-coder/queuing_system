@@ -1,11 +1,11 @@
-import React from "react";
 import AddButton from "../../components/AddButton/AddButton";
 import Search from "../../components/SearchBox/Search";
-import Selector from "../../components/Selector/Selector";
+
 import Table from "../../components/Table/Table";
 import "./device.scss";
 import SelectorDD from "../../components/SelectorDropdown/SelectorDD";
 import { Link } from "react-router-dom";
+
 const Devices = () => {
   const Active = [
     {
@@ -21,6 +21,20 @@ const Devices = () => {
       value: "deactive",
     },
   ];
+  const Connect = [
+    {
+      display: "Tất cả",
+      value: "all",
+    },
+    {
+      display: "Kết nối",
+      value: "active",
+    },
+    {
+      display: "Mất kết nối",
+      value: "deactive",
+    },
+  ];
   const handleChange = () => {};
   return (
     <div className="device-wrap">
@@ -29,15 +43,10 @@ const Devices = () => {
         <div className="device-selectorgroup1">
           <SelectorDD
             width="300px"
-            title="Trang thai hoat dong"
+            title="Trạng thaí hoạt động"
             Menu={Active}
           />
-          <Selector
-            title="Trạng thái kết nối"
-            option1="Tất cả"
-            option2="Kết nối"
-            option3="Mất kết nối"
-          />
+          <SelectorDD title="Trạng thái kết nối" width="300px" Menu={Connect} />
         </div>
         <Search width="300px" title="Từ khóa" left="266.5px" />
       </div>

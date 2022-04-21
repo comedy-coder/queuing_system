@@ -77,6 +77,24 @@ const TableRole = () => {
               <Link to="/setting/vai-tro/update">Cập nhật</Link>
             </td>
           </tr>
+          <tr>
+            <td>Kế toán</td>
+            <td>6</td>
+            <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
+
+            <td>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>Kế toán</td>
+            <td>6</td>
+            <td>Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu</td>
+
+            <td>
+              <Link to="/setting/vai-tro/update">Cập nhật</Link>
+            </td>
+          </tr>
         </tbody>
       </table>
       <div className="tablerole-pages">

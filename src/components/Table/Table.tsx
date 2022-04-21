@@ -1,10 +1,22 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
 import pages from "../../assets/images/table/pages.png";
 import "./table.scss";
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../utils/init-firebase";
 const Table = () => {
+  const [User, setUser] = useState<any>([]);
+  const UserColecctionRef = collection(db, "Devices");
+  useEffect(() => {
+    const getUser = async () => {
+      const data = await getDocs(UserColecctionRef);
+      setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
+  console.log(User);
   return (
     <div className="device-data">
       <table>
@@ -19,206 +31,31 @@ const Table = () => {
             <th></th>
             <th></th>
           </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Mất kết nối</td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-            <td>
-              <img srcSet={`${greendot} 2x`} alt="" />
-              Kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-            <td>
-              <img srcSet={`${greendot} 2x`} alt="" />
-              Kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-            <td>
-              <img srcSet={`${greendot} 2x`} alt="" /> Kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>
-              <img srcSet={`${dotred} 2x`} alt="" />
-              Mất kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>
-              <img srcSet={`${dotred} 2x`} alt="" /> Mất kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>{" "}
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-            <td>
-              <img srcSet={`${greendot} 2x`} alt="" /> Kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Mất kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>KIO_01</td>
-            <td>Kiosk</td>
-            <td>192.168.1.10</td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-            <td>
-              <img srcSet={`${greendot} 2x`} alt="" /> Kết nối
-            </td>
-            <td>
-              Kham tim mạch khám mắt <br />
-              <Link to="">Xem thêm</Link>
-            </td>
-            <td>
-              <Link to="/device/detail">Chi tiết</Link>
-            </td>
-            <td>
-              <Link to="/device/update">Cập nhật</Link>
-            </td>
-          </tr>
+
+          {User.map((item: any, index: number) => (
+            <>
+              <tr>
+                <td>{item.code}</td>
+                <td>{item.name}</td>
+                <td>{item.ip}</td>
+                <td>
+                  {" "}
+                  <img srcSet={`${dotred} 2x`} alt="" /> {item.active}
+                </td>
+                <td>{item.connect}</td>
+                <td>
+                  {item.service} <br />
+                  <Link to="">Xem thêm</Link>
+                </td>
+                <td>
+                  <Link to="/device/detail">Chi tiết</Link>
+                </td>
+                <td>
+                  <Link to="/device/update">Cập nhật</Link>
+                </td>
+              </tr>
+            </>
+          ))}
         </tbody>
       </table>
       <div className="device-pages">

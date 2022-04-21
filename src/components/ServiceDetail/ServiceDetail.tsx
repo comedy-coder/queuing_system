@@ -1,12 +1,30 @@
 import React from "react";
 import Calendar from "../Calendar/Calendar";
 import AddButton from "../AddButton/AddButton";
-import Selector from "../Selector/Selector";
+import SelectorDD from "../SelectorDropdown/SelectorDD";
 import TableDetailService from "../TableDetailService/TableDetailService";
 
 import "./servicedetail.scss";
 import { useNavigate } from "react-router-dom";
 const ServiceDetail = () => {
+  const State = [
+    {
+      display: "Tất cả",
+      value: "all",
+    },
+    {
+      display: "Đã hoàn thành",
+      value: "active",
+    },
+    {
+      display: "Đã thực hiện ",
+      value: "deactive",
+    },
+    {
+      display: "Vắng ",
+      value: "none",
+    },
+  ];
   const navigate = useNavigate();
   const handleChange = () => {
     navigate("/dich-vu/update");
@@ -64,13 +82,7 @@ const ServiceDetail = () => {
       </div>
       <div className="servicedetail-main1">
         <div className="servicedetail-main1__top">
-          <Selector
-            title="Trạng thái"
-            option1="Tất cả"
-            option2="Đã hoàn thành"
-            option3="Đã thực hiện"
-            size="small"
-          />
+          <SelectorDD title="Trạng thái" width="160px" Menu={State} />
           <Calendar styles={{ marginLeft: "12px" }} />
         </div>
         <TableDetailService />
