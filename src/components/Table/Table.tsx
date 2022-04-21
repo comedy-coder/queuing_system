@@ -34,15 +34,26 @@ const Table = () => {
 
           {User.map((item: any, index: number) => (
             <>
-              <tr>
+              <tr key={index}>
                 <td>{item.code}</td>
                 <td>{item.name}</td>
                 <td>{item.ip}</td>
                 <td>
-                  {" "}
-                  <img srcSet={`${dotred} 2x`} alt="" /> {item.active}
+                  {item.active ? (
+                    <img srcSet={`${greendot} 2x`} alt="" />
+                  ) : (
+                    <img srcSet={`${dotred} 2x`} alt="" />
+                  )}
+                  <span>{item.active ? "Hoạt động" : "Ngưng hoạt động"}</span>
                 </td>
-                <td>{item.connect}</td>
+                <td>
+                  {item.connect ? (
+                    <img srcSet={`${greendot} 2x`} alt="" />
+                  ) : (
+                    <img srcSet={`${dotred} 2x`} alt="" />
+                  )}
+                  <span>{item.connect ? "Kết nối" : "Mất kết nối"}</span>
+                </td>
                 <td>
                   {item.service} <br />
                   <Link to="">Xem thêm</Link>
