@@ -6,6 +6,7 @@ import TableLevel from "../../components/TableLevel/TableLevel";
 import "./level.scss";
 import { Link } from "react-router-dom";
 import Calendar from "../../components/Calendar/Calendar";
+import addbtn from "../../assets/images/addbutton/addbtn.png";
 const Level = () => {
   const Name = [
     {
@@ -73,7 +74,10 @@ const Level = () => {
       <TableLevel />
       <div className="button-positon">
         <Link to="/cap-so/addlevel">
-          <AddButton handleClick={handleChange}> Cấp số mới</AddButton>
+          <AddButton img={addbtn} handleClick={handleChange}>
+            {" "}
+            Cấp số mới
+          </AddButton>
         </Link>
       </div>
     </div>

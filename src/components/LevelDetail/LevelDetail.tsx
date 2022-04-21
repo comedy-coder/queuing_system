@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AddButton from "../AddButton/AddButton";
+import back from "../../assets/images/addbutton/back.png";
 import "./leveldetail.scss";
 const LevelDetail = () => {
   const navigate = useNavigate();
@@ -72,7 +73,10 @@ const LevelDetail = () => {
         </Grid>
       </div>
       <div className="leveldetail-button">
-        <AddButton handleClick={handleChange}> Quay lại</AddButton>
+        <AddButton img={back} handleClick={handleChange}>
+          {" "}
+          Quay lại
+        </AddButton>
       </div>
     </div>
   );

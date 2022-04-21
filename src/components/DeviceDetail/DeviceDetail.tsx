@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
+import edit from "../../assets/images/addbutton/edit.png";
 import { useNavigate } from "react-router-dom";
 import AddButton from "../AddButton/AddButton";
 import "./devicedetail.scss";
@@ -59,7 +60,10 @@ const DeviceDetail = () => {
         </div>
       </div>
       <div className="devicedetail-button">
-        <AddButton handleClick={handleChange}> Cập nhật thiết bị</AddButton>
+        <AddButton img={edit} handleClick={handleChange}>
+          {" "}
+          Cập nhật thiết bị
+        </AddButton>
       </div>
     </div>
   );

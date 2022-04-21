@@ -3,7 +3,7 @@ import AddButton from "../../../components/AddButton/AddButton";
 import Search from "../../../components/SearchBox/Search";
 
 import Selector from "../../../components/Selector/Selector";
-
+import addbtn from "../../../assets/images/addbutton/addbtn.png";
 import "./account.scss";
 import { Link } from "react-router-dom";
 import TableAccount from "../../../components/TableAccount/TableAccount";
@@ -26,7 +26,10 @@ const Account = () => {
       <TableAccount />
       <div className="button-positon">
         <Link to="/setting/tai-khoan/addaccount">
-          <AddButton handleClick={handleChange}> Thêm Tài khoản</AddButton>
+          <AddButton img={addbtn} handleClick={handleChange}>
+            {" "}
+            Thêm Tài khoản
+          </AddButton>
         </Link>
       </div>
     </div>

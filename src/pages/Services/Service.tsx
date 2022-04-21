@@ -1,5 +1,5 @@
 import React from "react";
-
+import addbtn from "../../assets/images/addbutton/addbtn.png";
 import SelectorDD from "../../components/SelectorDropdown/SelectorDD";
 import Search from "../../components/SearchBox/Search";
 import "./service.scss";
@@ -41,7 +41,10 @@ const Service = () => {
       <TableService />
       <div className="button-positon">
         <Link to="/dich-vu/addservice">
-          <AddButton handleClick={handleChange}> Thêm dịch vụ</AddButton>
+          <AddButton img={addbtn} handleClick={handleChange}>
+            {" "}
+            Thêm dịch vụ
+          </AddButton>
         </Link>
       </div>
     </div>

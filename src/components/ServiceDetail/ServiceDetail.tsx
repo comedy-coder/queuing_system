@@ -3,7 +3,8 @@ import Calendar from "../Calendar/Calendar";
 import AddButton from "../AddButton/AddButton";
 import SelectorDD from "../SelectorDropdown/SelectorDD";
 import TableDetailService from "../TableDetailService/TableDetailService";
-
+import edit from "../../assets/images/addbutton/edit.png";
+import back from "../../assets/images/addbutton/back.png";
 import "./servicedetail.scss";
 import { useNavigate } from "react-router-dom";
 const ServiceDetail = () => {
@@ -88,10 +89,16 @@ const ServiceDetail = () => {
         <TableDetailService />
       </div>
       <div className="servicedetail-button">
-        <AddButton handleClick={handleChange}> Cập nhật danh sách</AddButton>
+        <AddButton img={edit} handleClick={handleChange}>
+          {" "}
+          Cập nhật danh sách
+        </AddButton>
       </div>
       <div className="servicedetail-button1">
-        <AddButton handleClick={handleBack}> Quay lại</AddButton>
+        <AddButton img={back} handleClick={handleBack}>
+          {" "}
+          Quay lại
+        </AddButton>
       </div>
     </div>
   );

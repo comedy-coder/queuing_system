@@ -1,7 +1,7 @@
 import React from "react";
 import AddButton from "../../../components/AddButton/AddButton";
 import Search from "../../../components/SearchBox/Search";
-
+import addbtn from "../../../assets/images/addbutton/addbtn.png";
 import "./user.scss";
 import { Link } from "react-router-dom";
 import Calendar from "../../../components/Calendar/Calendar";
@@ -19,7 +19,10 @@ const User = () => {
       <Tableuser />
       <div className="button-positon">
         <Link to="/bao-cao">
-          <AddButton handleClick={handleChange}> Tải về</AddButton>
+          <AddButton img={addbtn} handleClick={handleChange}>
+            {" "}
+            Tải về
+          </AddButton>
         </Link>
       </div>
     </div>

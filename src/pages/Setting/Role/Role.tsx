@@ -1,7 +1,7 @@
 import React from "react";
 import AddButton from "../../../components/AddButton/AddButton";
 import Search from "../../../components/SearchBox/Search";
-
+import addbtn from "../../../assets/images/addbutton/addbtn.png";
 import "./role.scss";
 import { Link } from "react-router-dom";
 import Tablerole from "../../../components/TableRole/TableRole";
@@ -17,7 +17,10 @@ const Role = () => {
       <Tablerole />
       <div className="button-positon">
         <Link to="/setting/vai-tro/addrole">
-          <AddButton handleClick={handleChange}> Thêm vai trò</AddButton>
+          <AddButton img={addbtn} handleClick={handleChange}>
+            {" "}
+            Thêm vai trò
+          </AddButton>
         </Link>
       </div>
     </div>

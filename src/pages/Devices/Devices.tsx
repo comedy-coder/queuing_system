@@ -1,6 +1,6 @@
 import AddButton from "../../components/AddButton/AddButton";
 import Search from "../../components/SearchBox/Search";
-
+import adbtn from "../../assets/images/addbutton/addbtn.png";
 import Table from "../../components/Table/Table";
 import "./device.scss";
 import SelectorDD from "../../components/SelectorDropdown/SelectorDD";
@@ -53,7 +53,10 @@ const Devices = () => {
       <Table />
       <div className="button-positon">
         <Link to="/device/adddevice">
-          <AddButton handleClick={handleChange}> Thêm thiết bị</AddButton>
+          <AddButton img={adbtn} handleClick={handleChange}>
+            {" "}
+            Thêm thiết bị
+          </AddButton>
         </Link>
       </div>
     </div>

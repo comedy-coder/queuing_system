@@ -1,18 +1,19 @@
 import React from "react";
 import "./addbutton.scss";
-import adbtn from "../../assets/images/addbutton/addbtn.png";
+
 type AddButtonProp = {
   handleClick: (event: React.MouseEvent<HTMLButtonElement>, id: number) => void;
+  img: any;
 };
 const AddButton: React.FC<AddButtonProp | null> = ({
   children,
-
+  img,
   handleClick,
 }) => {
   return (
     <button className="btnadd" onClick={(event) => handleClick(event, 1)}>
       {" "}
-      <img srcSet={`${adbtn} 2x `} alt="" />
+      <img srcSet={`${img} 2x `} alt="" />
       <span>{children}</span>{" "}
     </button>
   );
