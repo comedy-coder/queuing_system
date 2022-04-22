@@ -4,11 +4,18 @@ import edit from "../../assets/images/addbutton/edit.png";
 import { useNavigate } from "react-router-dom";
 import AddButton from "../AddButton/AddButton";
 import "./devicedetail.scss";
+import { Context } from "../../Store/Provider";
+import { useContext } from "react";
+
 const DeviceDetail = () => {
+  const [state] = useContext(Context);
   const navigate = useNavigate();
   const handleChange = () => {
     navigate("/device/update");
   };
+
+  const item = state.detaildevice[0];
+  const { code, name, type, useracc, ip, pass } = item;
   return (
     <div className="devicedetail-wrap">
       <div className="devicedetail-title">Quản lý thiết bị</div>
@@ -17,51 +24,60 @@ const DeviceDetail = () => {
         <Grid container>
           <Grid item xs={6} my={2}>
             <span className="devicedetail-main__title">
-              Mã thiết bị :{" "}
-              <span className="devicedetail-main__desc">KIO_01</span>
+              Mã thiết bị :
+              <span className="devicedetail-main__desc">
+                {code ? code : ""}
+              </span>
             </span>
           </Grid>
           <Grid item xs={6} my={2}>
             <span className="devicedetail-main__title">
-              Tên thiết bị :{" "}
-              <span className="devicedetail-main__desc">Kiosk</span>
+              Tên thiết bị :
+              <span className="devicedetail-main__desc">
+                {name ? name : ""}
+              </span>
             </span>
           </Grid>
           <Grid item xs={6} my={2}>
             <span className="devicedetail-main__title">
-              Loại thiết bị :{" "}
-              <span className="devicedetail-main__desc">Kiosk</span>
+              Loại thiết bị :
+              <span className="devicedetail-main__desc">
+                {type ? type : ""}
+              </span>
             </span>
           </Grid>
           <Grid item xs={6} my={2}>
             <span className="devicedetail-main__title">
-              Tên đăng nhập :{" "}
-              <span className="devicedetail-main__desc">Linkyo1</span>
+              Tên đăng nhập :
+              <span className="devicedetail-main__desc">
+                {useracc ? useracc : ""}
+              </span>
             </span>
           </Grid>
           <Grid item xs={6} my={2}>
             <span className="devicedetail-main__title">
-              Địa chỉ IP :{" "}
-              <span className="devicedetail-main__desc">128.172.308</span>
+              Địa chỉ IP :
+              <span className="devicedetail-main__desc">{ip ? ip : ""}</span>
             </span>
           </Grid>
 
           <Grid item xs={6} my={2}>
             <span className="devicedetail-main__title">
-              Mật khẩu : <span className="devicedetail-main__desc">CMS</span>
+              Mật khẩu :
+              <span className="devicedetail-main__desc">
+                {pass ? pass : ""}
+              </span>
             </span>
           </Grid>
         </Grid>
         <span className="devicedetail-main__noti">Dịch vụ sử dụng : </span>
         <div className="devicedetail-main__info">
-          {" "}
           Khám tim mạch, Khám sản - Phụ khoa, Khám răng hàm mặt, Khám tai mũi
           họng, Khám hô hấp, Khám tổng quát.
         </div>
       </div>
       <div className="devicedetail-button">
         <AddButton img={edit} handleClick={handleChange}>
-          {" "}
           Cập nhật thiết bị
         </AddButton>
       </div>

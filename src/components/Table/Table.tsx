@@ -6,9 +6,13 @@ import "./table.scss";
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../utils/init-firebase";
+import { Context } from "../../Store/Provider";
+import { useContext } from "react";
+import { setDetailDevice } from "../../Store/action";
 const Table = () => {
   const [User, setUser] = useState<any>([]);
   const UserColecctionRef = collection(db, "Devices");
+  const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
     const getUser = async () => {
@@ -19,7 +23,9 @@ const Table = () => {
   }, []);
   const handleEvent = (id: any) => {
     const Item = User.filter((item: any, index: any) => item.id === id);
-    console.log(Item);
+    const { ...Item1 } = Item;
+    console.log(state);
+    dispatch(setDetailDevice(Item1));
   };
   const [description, showDescription] = useState(false);
   const handleExpand = () => {
