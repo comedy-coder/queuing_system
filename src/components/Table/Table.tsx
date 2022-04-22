@@ -9,6 +9,7 @@ import { db } from "../../utils/init-firebase";
 const Table = () => {
   const [User, setUser] = useState<any>([]);
   const UserColecctionRef = collection(db, "Devices");
+
   useEffect(() => {
     const getUser = async () => {
       const data = await getDocs(UserColecctionRef);
@@ -16,6 +17,10 @@ const Table = () => {
     };
     getUser();
   }, []);
+  const handleEvent = (id: any) => {
+    const Item = User.filter((item: any, index: any) => item.id === id);
+    console.log(Item);
+  };
   const [description, showDescription] = useState(false);
   const handleExpand = () => {
     showDescription(!description);
@@ -68,32 +73,34 @@ const Table = () => {
                 </td>
 
                 <td>
-                  <div
-                    className={`device-service ${description ? "expand" : ""}`}
-                    onClick={() => {
-                      handleExpand();
-                    }}
-                  >
-                    {item.service}
+                  <div className="device-service_deactive">
+                    <div> {item.service}</div>
+
+                    <Link
+                      to=""
+                      onClick={() => {
+                        handleExpand();
+                      }}
+                    >
+                      Xem thêm
+                    </Link>
                   </div>
-                  <span></span>
-                  <Link
-                    to=""
-                    onClick={() => {
-                      handleExpand();
-                    }}
-                  >
-                    Xem thêm
-                  </Link>
                 </td>
                 <td>
                   <Link to="/device/detail">
-                    Chi tiết<span></span>
+                    <span
+                      onClick={() => {
+                        handleEvent(item.id);
+                      }}
+                    >
+                      {" "}
+                      Chi tiết
+                    </span>
                   </Link>
                 </td>
                 <td>
                   <Link to="/device/update">
-                    Cập nhật<span></span>
+                    <span> Cập nhật</span>
                   </Link>
                 </td>
               </tr>
