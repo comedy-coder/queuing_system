@@ -16,7 +16,10 @@ const Table = () => {
     };
     getUser();
   }, []);
-  console.log(User);
+  const [description, showDescription] = useState(false);
+  const handleExpand = () => {
+    showDescription(!description);
+  };
   return (
     <div className="device-data">
       <table>
@@ -63,10 +66,25 @@ const Table = () => {
                   )}
                   <span>{item.connect ? "Kết nối" : "Mất kết nối"}</span>
                 </td>
+
                 <td>
-                  {item.service} <br />
+                  <div
+                    className={`device-service ${description ? "expand" : ""}`}
+                    onClick={() => {
+                      handleExpand();
+                    }}
+                  >
+                    {item.service}
+                  </div>
                   <span></span>
-                  <Link to="">Xem thêm</Link>
+                  <Link
+                    to=""
+                    onClick={() => {
+                      handleExpand();
+                    }}
+                  >
+                    Xem thêm
+                  </Link>
                 </td>
                 <td>
                   <Link to="/device/detail">
