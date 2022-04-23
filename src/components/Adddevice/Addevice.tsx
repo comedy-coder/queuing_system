@@ -16,6 +16,10 @@ const Adđevice = () => {
   const [ip, setIp] = useState<any | null>("");
   const [pass, setPass] = useState<any | null>("");
   const [service, setService] = useState<any | null>("");
+  const [type, setType] = useState<any | null>("");
+  const getValue = (value: any) => {
+    setType(value);
+  };
   const navigate = useNavigate();
   const userCollectionRef = collection(db, "Devices");
   const createUser = async () => {
@@ -26,6 +30,7 @@ const Adđevice = () => {
       ip: ip,
       pass: pass,
       service: service,
+      type: type,
     });
   };
   const handleBack = () => {
@@ -43,7 +48,7 @@ const Adđevice = () => {
     },
     {
       display: "Display counter",
-      value: "active",
+      value: "Display counter",
     },
   ];
 
@@ -77,6 +82,7 @@ const Adđevice = () => {
                 <SelectorDD
                   width="540px"
                   // title="Trang thai hoat dong"
+                  onGetValue={getValue}
                   Menu={Device}
                 />
               </div>

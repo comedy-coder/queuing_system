@@ -6,6 +6,7 @@ import arrowup from "../../assets/images/selector/arrow.png";
 export interface IDropDownProps {
   width: string;
   title?: string;
+  onGetValue?: any;
   Menu: {
     display: string;
     value: string;
@@ -20,6 +21,7 @@ const DropDownDD = (props: IDropDownProps) => {
   const [isActive, setActive] = useState(false);
   const itemClick = (index: number) => {
     setItemShow(listMenu[index]);
+    props.onGetValue(listMenu[index].value);
   };
   const handleClick = () => {
     setActive(!isActive);

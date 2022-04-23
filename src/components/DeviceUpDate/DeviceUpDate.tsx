@@ -6,18 +6,45 @@ import Button from "../Button/Button";
 import "./updatedevice.scss";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../Store/Provider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { updateDoc, doc } from "firebase/firestore";
+import { db } from "../../utils/init-firebase";
 const UpDatedevice = () => {
-  const [state, dispatch] = useContext(Context);
+  const [updatecode, setCode] = useState<any | null>("");
+  const [userName, setUserName] = useState<any | null>("");
+  const [accuser, setAccuser] = useState<any | null>("");
+  const [updateip, setIp] = useState<any | null>("");
+  const [pass, setPass] = useState<any | null>("");
+  const [type, setType] = useState<any | null>("");
+
+  const [state] = useContext(Context);
 
   const id = state.detailid;
-  const updateUser = async(id, code, name);
+
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/device");
   };
-  const handleNext = () => {
+  const handleUpdate = (
+    id: any,
+
+    code: any
+  ) => {
     navigate("/device");
+
+    const updateUser = async (id: any, code: any) => {
+      const userDoc = doc(db, "Devices", id);
+      const newFields = {
+        code: updatecode,
+        ip: updateip,
+        name: userName,
+        type: type,
+        useracc: accuser,
+        pass: pass,
+      };
+      await updateDoc(userDoc, newFields);
+    };
+    updateUser(id, code);
   };
   return (
     <div className="updatedevice-wrap">
@@ -35,6 +62,9 @@ const UpDatedevice = () => {
                   type="text"
                   className="updatedevice-main__input"
                   placeholder="Nhập mã thiết bị"
+                  onChange={(event) => {
+                    setCode(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -47,6 +77,9 @@ const UpDatedevice = () => {
                   type="text"
                   className="updatedevice-main__input"
                   placeholder="Chọn loại thiết bị"
+                  onChange={(event) => {
+                    setType(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -59,6 +92,9 @@ const UpDatedevice = () => {
                   type="text"
                   className="updatedevice-main__input"
                   placeholder="Nhập tên thiết bị"
+                  onChange={(event) => {
+                    setUserName(event.target.value);
+                  }}
                 />
               </div>
             </Grid>{" "}
@@ -71,6 +107,9 @@ const UpDatedevice = () => {
                   type="text"
                   className="updatedevice-main__input"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setAccuser(event.target.value);
+                  }}
                 />
               </div>
             </Grid>{" "}
@@ -83,6 +122,9 @@ const UpDatedevice = () => {
                   type="text"
                   className="updatedevice-main__input"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setIp(event.target.value);
+                  }}
                 />
               </div>
             </Grid>{" "}
@@ -95,6 +137,9 @@ const UpDatedevice = () => {
                   type="text"
                   className="updatedevice-main__input"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setPass(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -161,7 +206,11 @@ const UpDatedevice = () => {
         >
           Hủy bỏ
         </Button>
-        <Button handleClick={handleNext} backgroundColor="orange" color="white">
+        <Button
+          handleClick={() => handleUpdate(id, updatecode)}
+          backgroundColor="orange"
+          color="white"
+        >
           Cập nhật
         </Button>
       </div>
