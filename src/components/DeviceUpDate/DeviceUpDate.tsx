@@ -5,7 +5,13 @@ import close from "../../assets/images/addbutton/close.png";
 import Button from "../Button/Button";
 import "./updatedevice.scss";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../Store/Provider";
+import { useContext } from "react";
 const UpDatedevice = () => {
+  const [state, dispatch] = useContext(Context);
+
+  const id = state.detailid;
+  const updateUser = async(id, code, name);
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/device");
@@ -156,7 +162,7 @@ const UpDatedevice = () => {
           Hủy bỏ
         </Button>
         <Button handleClick={handleNext} backgroundColor="orange" color="white">
-          Thêm thiết bị
+          Cập nhật
         </Button>
       </div>
     </div>

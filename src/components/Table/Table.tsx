@@ -8,7 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../utils/init-firebase";
 import { Context } from "../../Store/Provider";
 import { useContext } from "react";
-import { setDetailDevice } from "../../Store/action";
+import { setDetailDevice, getID } from "../../Store/action";
 const Table = () => {
   const [User, setUser] = useState<any>([]);
   const UserColecctionRef = collection(db, "Devices");
@@ -21,11 +21,14 @@ const Table = () => {
     };
     getUser();
   }, []);
-  const handleEvent = (id: any) => {
+  const handleDetail = (id: any) => {
     const Item = User.filter((item: any, index: any) => item.id === id);
     const { ...Item1 } = Item;
     console.log(state);
     dispatch(setDetailDevice(Item1));
+  };
+  const handleUpdate = (id: any) => {
+    dispatch(getID(id));
   };
   const [description, showDescription] = useState(false);
   const handleExpand = () => {
@@ -96,7 +99,7 @@ const Table = () => {
                   <Link to="/device/detail">
                     <span
                       onClick={() => {
-                        handleEvent(item.id);
+                        handleDetail(item.id);
                       }}
                     >
                       {" "}
@@ -106,7 +109,14 @@ const Table = () => {
                 </td>
                 <td>
                   <Link to="/device/update">
-                    <span> Cập nhật</span>
+                    <span
+                      onClick={() => {
+                        handleUpdate(item.id);
+                      }}
+                    >
+                      {" "}
+                      Cập nhật
+                    </span>
                   </Link>
                 </td>
               </tr>

@@ -1,16 +1,39 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
+import { useState } from "react";
 import Button from "../Button/Button";
 import "./adddevice.scss";
 import { useNavigate } from "react-router-dom";
 import SelectorDD from "../SelectorDropdown/SelectorDD";
+import { db } from "../../utils/init-firebase";
+import { collection, addDoc } from "firebase/firestore";
+
 const Adđevice = () => {
+  const [code, setCode] = useState<any | null>("");
+  const [name, setName] = useState<any | null>("");
+  const [accuser, setAccuser] = useState<any | null>("");
+  const [ip, setIp] = useState<any | null>("");
+  const [pass, setPass] = useState<any | null>("");
+  const [service, setService] = useState<any | null>("");
   const navigate = useNavigate();
+  const userCollectionRef = collection(db, "Devices");
+  const createUser = async () => {
+    await addDoc(userCollectionRef, {
+      code: code,
+      name: name,
+      useracc: accuser,
+      ip: ip,
+      pass: pass,
+      service: service,
+    });
+  };
   const handleBack = () => {
     navigate("/device");
   };
+
   const handleNext = () => {
+    createUser();
     navigate("/device");
   };
   const Device = [
@@ -23,6 +46,7 @@ const Adđevice = () => {
       value: "active",
     },
   ];
+
   return (
     <div className="adddevice-wrap">
       <div className="adddevice-title">Quản lý dịch vụ</div>
@@ -39,6 +63,9 @@ const Adđevice = () => {
                   type="text"
                   className="adddevice-main__input"
                   placeholder="Nhập mã thiết bị"
+                  onChange={(event) => {
+                    setCode(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -63,6 +90,9 @@ const Adđevice = () => {
                   type="text"
                   className="adddevice-main__input"
                   placeholder="Nhập tên thiết bị"
+                  onChange={(event) => {
+                    setName(event.target.value);
+                  }}
                 />
               </div>
             </Grid>{" "}
@@ -75,6 +105,9 @@ const Adđevice = () => {
                   type="text"
                   className="adddevice-main__input"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setAccuser(event.target.value);
+                  }}
                 />
               </div>
             </Grid>{" "}
@@ -87,6 +120,9 @@ const Adđevice = () => {
                   type="text"
                   className="adddevice-main__input"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setIp(event.target.value);
+                  }}
                 />
               </div>
             </Grid>{" "}
@@ -99,6 +135,9 @@ const Adđevice = () => {
                   type="text"
                   className="adddevice-main__input"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setPass(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -111,6 +150,9 @@ const Adđevice = () => {
                   type="text"
                   className="adddevice-main__input1"
                   placeholder="Nhập tài khoản"
+                  onChange={(event) => {
+                    setService(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
