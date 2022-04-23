@@ -38,8 +38,21 @@ const Adđevice = () => {
   };
 
   const handleNext = () => {
-    createUser();
-    navigate("/device");
+    if (
+      code !== "" &&
+      name !== "" &&
+      accuser !== "" &&
+      ip !== "" &&
+      pass !== "" &&
+      service !== "" &&
+      type !== ""
+    ) {
+      createUser();
+      alert("Thêm thiết bị thành công");
+      navigate("/device");
+    } else {
+      return alert("Nhập đầy đủ thông tin");
+    }
   };
   const Device = [
     {

@@ -5,6 +5,7 @@ import "./report.scss";
 import { Link } from "react-router-dom";
 import Calendar from "../../components/Calendar/Calendar";
 import TableReport from "../../components/TableReport/TableReport";
+import Pages from "../../components/PaginatonPages/Pages";
 const Report = () => {
   const handleChange = () => {};
   return (
@@ -13,6 +14,9 @@ const Report = () => {
         <Calendar />
       </div>
       <TableReport />
+      <div className="level-pages">
+        <Pages />
+      </div>
       <div className="button-positon">
         <Link to="/bao-cao">
           <AddButton img={download} handleClick={handleChange}>

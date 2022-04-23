@@ -1,7 +1,7 @@
 import React from "react";
 import AddButton from "../../../components/AddButton/AddButton";
 import Search from "../../../components/SearchBox/Search";
-
+import Pages from "../../../components/PaginatonPages/Pages";
 import Selector from "../../../components/Selector/Selector";
 import addbtn from "../../../assets/images/addbutton/addbtn.png";
 import "./account.scss";
@@ -24,6 +24,9 @@ const Account = () => {
         <Search title="Từ khóa" width="240px" left="206.5px" />
       </div>
       <TableAccount />
+      <div className="level-pages">
+        <Pages />
+      </div>
       <div className="button-positon">
         <Link to="/setting/tai-khoan/addaccount">
           <AddButton img={addbtn} handleClick={handleChange}>

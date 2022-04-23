@@ -129,9 +129,6 @@ const TableReport = () => {
           </tr>
         </tbody>
       </table>
-      <div className="tablereport-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 
-import pages from "../../assets/images/table/pages.png";
 import "./tableuser.scss";
 const TableUser = () => {
   return (
@@ -78,9 +77,6 @@ const TableUser = () => {
           </tr>
         </tbody>
       </table>
-      <div className="tableuser-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

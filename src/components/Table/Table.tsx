@@ -9,25 +9,47 @@ import { db } from "../../utils/init-firebase";
 import { Context } from "../../Store/Provider";
 import { useContext } from "react";
 import { setDetailDevice, getID } from "../../Store/action";
-
-const Table = () => {
+type TableProps = {
+  ActiveState: any;
+  ConnectState: any;
+};
+const Table = ({ ActiveState, ConnectState }: TableProps) => {
   const [User, setUser] = useState<any>([]);
+  const [fiterUser, setUserFilter] = useState<any>([]);
   const UserColecctionRef = collection(db, "Devices");
   const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
     const getUser = async () => {
       const data = await getDocs(UserColecctionRef);
+
       setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getUser();
   }, []);
+  useEffect(() => {
+    const defaultUser = User;
+    if (ActiveState) {
+      const filterActive = User.filter(
+        (item: any, index: any) => item.active === Boolean(ActiveState)
+      );
+      setUser(filterActive);
+    }
+    if (ConnectState) {
+      const filterConect = User.filter(
+        (item: any, index: any) => item.active === Boolean(ConnectState)
+      );
+      setUser(filterConect);
+    } else setUser(defaultUser);
+  }, [ActiveState, ConnectState]);
+
   const handleDetail = (id: any) => {
     const Item = User.filter((item: any, index: any) => item.id === id);
     const { ...Item1 } = Item;
     console.log(state);
     dispatch(setDetailDevice(Item1));
   };
+
   const handleUpdate = (id: any) => {
     dispatch(getID(id));
   };

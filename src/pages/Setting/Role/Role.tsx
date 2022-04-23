@@ -2,6 +2,7 @@ import React from "react";
 import AddButton from "../../../components/AddButton/AddButton";
 import Search from "../../../components/SearchBox/Search";
 import addbtn from "../../../assets/images/addbutton/addbtn.png";
+import Pages from "../../../components/PaginatonPages/Pages";
 import "./role.scss";
 import { Link } from "react-router-dom";
 import Tablerole from "../../../components/TableRole/TableRole";
@@ -15,6 +16,9 @@ const Role = () => {
         <Search title="Từ khóa" width="240px" left="206.5px" />
       </div>
       <Tablerole />
+      <div className="level-pages">
+        <Pages />
+      </div>
       <div className="button-positon">
         <Link to="/setting/vai-tro/addrole">
           <AddButton img={addbtn} handleClick={handleChange}>

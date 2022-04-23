@@ -97,9 +97,6 @@ const TableRole = () => {
           </tr>
         </tbody>
       </table>
-      <div className="tablerole-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

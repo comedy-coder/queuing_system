@@ -79,9 +79,6 @@ const TableDetailService = () => {
           </tr>
         </tbody>
       </table>
-      <div className="tabledetailservice-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

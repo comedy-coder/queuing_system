@@ -7,7 +7,7 @@ import Calendar from "../../components/Calendar/Calendar";
 import TableService from "../../components/TableService/TableService";
 import { Link } from "react-router-dom";
 import AddButton from "../../components/AddButton/AddButton";
-
+import Pages from "../../components/PaginatonPages/Pages";
 const Service = () => {
   const Active = [
     {
@@ -39,6 +39,9 @@ const Service = () => {
         <Search width="300px" left="265.5px" title="Từ khóa" />
       </div>
       <TableService />
+      <div className="level-pages">
+        <Pages />
+      </div>
       <div className="button-positon">
         <Link to="/dich-vu/addservice">
           <AddButton img={addbtn} handleClick={handleChange}>

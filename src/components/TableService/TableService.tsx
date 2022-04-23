@@ -164,9 +164,6 @@ const TableService = () => {
           </tr>
         </tbody>
       </table>
-      <div className="tableservice-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

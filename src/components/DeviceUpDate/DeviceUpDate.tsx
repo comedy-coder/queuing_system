@@ -25,26 +25,34 @@ const UpDatedevice = () => {
   const handleBack = () => {
     navigate("/device");
   };
-  const handleUpdate = (
-    id: any,
+  const handleUpdate = (id: any, code: any) => {
+    if (
+      updatecode !== "" &&
+      userName !== "" &&
+      accuser !== "" &&
+      updateip !== "" &&
+      pass !== "" &&
+      type !== ""
+    ) {
+      const updateUser = async (id: any, code: any) => {
+        const userDoc = doc(db, "Devices", id);
+        const newFields = {
+          code: updatecode,
+          ip: updateip,
+          name: userName,
+          type: type,
+          useracc: accuser,
+          pass: pass,
+        };
+        await updateDoc(userDoc, newFields);
 
-    code: any
-  ) => {
-    navigate("/device");
-
-    const updateUser = async (id: any, code: any) => {
-      const userDoc = doc(db, "Devices", id);
-      const newFields = {
-        code: updatecode,
-        ip: updateip,
-        name: userName,
-        type: type,
-        useracc: accuser,
-        pass: pass,
+        alert("Cập nhật thiết bị thành công");
+        navigate("/device");
       };
-      await updateDoc(userDoc, newFields);
-    };
-    updateUser(id, code);
+      updateUser(id, code);
+    } else {
+      return alert("Nhập đầy đủ thông tin");
+    }
   };
   return (
     <div className="updatedevice-wrap">
