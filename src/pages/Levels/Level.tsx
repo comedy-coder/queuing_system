@@ -7,6 +7,7 @@ import "./level.scss";
 import { Link } from "react-router-dom";
 import Calendar from "../../components/Calendar/Calendar";
 import addbtn from "../../assets/images/addbutton/addbtn.png";
+import Pages from "../../components/PaginatonPages/Pages";
 const Level = () => {
   const Name = [
     {
@@ -72,6 +73,9 @@ const Level = () => {
         <Search width="240px" title="Từ khóa" left="206.5px" />
       </div>
       <TableLevel />
+      <div className="level-pages">
+        <Pages />
+      </div>
       <div className="button-positon">
         <Link to="/cap-so/addlevel">
           <AddButton img={addbtn} handleClick={handleChange}>

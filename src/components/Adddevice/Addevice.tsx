@@ -125,7 +125,7 @@ const Adđevice = () => {
                 <input
                   type="text"
                   className="adddevice-main__input"
-                  placeholder="Nhập tài khoản"
+                  placeholder="Nhập địa chỉ IP"
                   onChange={(event) => {
                     setIp(event.target.value);
                   }}
@@ -140,7 +140,7 @@ const Adđevice = () => {
                 <input
                   type="text"
                   className="adddevice-main__input"
-                  placeholder="Nhập tài khoản"
+                  placeholder="Nhập lại mật khẩu"
                   onChange={(event) => {
                     setPass(event.target.value);
                   }}
@@ -155,7 +155,7 @@ const Adđevice = () => {
                 <input
                   type="text"
                   className="adddevice-main__input1"
-                  placeholder="Nhập tài khoản"
+                  placeholder="Nhập dịch vụ"
                   onChange={(event) => {
                     setService(event.target.value);
                   }}

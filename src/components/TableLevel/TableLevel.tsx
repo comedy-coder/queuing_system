@@ -156,9 +156,6 @@ const Table = () => {
           </tr>
         </tbody>
       </table>
-      <div className="level-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
-import pages from "../../assets/images/table/pages.png";
+
 import "./table.scss";
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
@@ -9,6 +9,7 @@ import { db } from "../../utils/init-firebase";
 import { Context } from "../../Store/Provider";
 import { useContext } from "react";
 import { setDetailDevice, getID } from "../../Store/action";
+
 const Table = () => {
   const [User, setUser] = useState<any>([]);
   const UserColecctionRef = collection(db, "Devices");
@@ -124,9 +125,6 @@ const Table = () => {
           ))}
         </tbody>
       </table>
-      <div className="device-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

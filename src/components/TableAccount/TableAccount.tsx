@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
-import pages from "../../assets/images/table/pages.png";
+
 import "./tableaccount.scss";
 const TableAccount = () => {
   return (
@@ -173,9 +173,6 @@ const TableAccount = () => {
           </tr>
         </tbody>
       </table>
-      <div className="account-pages">
-        <img srcSet={`${pages} 2x`} alt="" />
-      </div>
     </div>
   );
 };

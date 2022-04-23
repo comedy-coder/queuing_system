@@ -1,0 +1,61 @@
+.sdp{
+    margin-left: 9px;
+    margin-top: 4px !important;
+    width: 332px !important;
+    height: 319px !important;
+    box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 0px !important;
+}
+
+.sdp--month-picker{
+    & button{
+        color: #FF7506 !important;
+        border: none !important;
+        box-shadow: none;
+    }
+    & .sdp--month-name{
+      
+        font-style: normal!important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        line-height: 22px !important;
+        color: #FF7506 !important;
+    }
+    & svg{
+        width: 20px;
+        height: 20px;
+    }
+}
+.sdp--dates-grid{
+    border-top: 1px solid #DCDDFD;
+    & p{
+       
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: #FF9138 !important;
+    }
+    & .sdp--text{
+     
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: #535261;
+    }
+    & .sdp--text__inactive{
+      
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: #7E7D88 ;
+    }
+    & .sdp--date-btn__selected{
+        background: #FF7506;
+        color: #ffffff;
+        border-radius: 8px;
+    }
+}

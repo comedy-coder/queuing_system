@@ -1,0 +1,32 @@
+.pagination{
+    display: flex;
+    width: 288px;
+    height: 32px;
+    & li {
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        padding: 5px 11px;  
+        &:hover{
+            background: #FFF2E7;
+            & a{
+                color: #FF7506;
+            }
+        }   
+        & a{
+            
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            color: #7E7D88;  
+        }
+    }
+    & .selected{
+        background: #FF7506;
+        border-radius: 4px;
+        & a{
+            color: #FFFFFF;
+        }
+    }
+}

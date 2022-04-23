@@ -1,5 +1,11 @@
 @use "../../sass/mixin" as *;
-.device{
+.device{ 
+    position: relative;
+    &-pages{
+       position: absolute;
+       bottom: 0px;
+       right: 0px;
+    }
     &-wrap {
         position: relative;
         margin: 0px 0px 0px 200px;

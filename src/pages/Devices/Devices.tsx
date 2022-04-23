@@ -5,6 +5,7 @@ import Table from "../../components/Table/Table";
 import "./device.scss";
 import SelectorDD from "../../components/SelectorDropdown/SelectorDD";
 import { Link } from "react-router-dom";
+import Pages from "../../components/PaginatonPages/Pages";
 
 const Devices = () => {
   const Active = [
@@ -51,6 +52,10 @@ const Devices = () => {
         <Search width="300px" title="Từ khóa" left="266.5px" />
       </div>
       <Table />
+      <div className="device-pages">
+        <Pages />
+      </div>
+
       <div className="button-positon">
         <Link to="/device/adddevice">
           <AddButton img={adbtn} handleClick={handleChange}>

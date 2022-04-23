@@ -3,8 +3,9 @@ import "./dashboardcover.scss";
 import device from "../../assets/images/dashboard/device.png";
 import service from "../../assets/images/dashboard/service.png";
 import level from "../../assets/images/dashboard/level.png";
-import calender from "../../assets/images/dashboard/calenderreal.png";
+
 import { Link } from "react-router-dom";
+import DashboardCalendar from "../DashboardCalendar/DashboardCalendar";
 const DashboardCover = () => {
   return (
     <div className="dashboardcover-wrap">
@@ -25,7 +26,7 @@ const DashboardCover = () => {
         </div>
       </Link>
       <div className="dashboardcover-calender">
-        <img srcSet={calender} alt="" />
+        <DashboardCalendar />
       </div>
     </div>
   );
