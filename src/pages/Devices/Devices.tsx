@@ -38,7 +38,16 @@ const Devices = () => {
         return result.filter(
           (data: any) => data.connect === Boolean(valueConnect)
         );
+      } else if (inputSearch !== "") {
+        return result.filter(
+          (item: any) =>
+            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.service.toLowerCase().indexOf(inputSearch) > -1
+        );
       }
+
       return result;
     } else if (valueState === 0) {
       let result = datas.filter(
@@ -53,28 +62,36 @@ const Devices = () => {
         return result.filter(
           (data: any) => data.connect === Boolean(valueConnect)
         );
+      } else if (inputSearch !== "") {
+        return result.filter(
+          (item: any) =>
+            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.service.toLowerCase().indexOf(inputSearch) > -1
+        );
       }
       return result;
-    } else if (inputSearch) {
-      console.log(typeof datas[1].code);
-      return datas.filter(
-        (item: any) =>
-          item.code.toLowerCase().indexOf(inputSearch) > -1 ||
-          item.name.toLowerCase().indexOf(inputSearch) > -1 ||
-          item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
-          item.service.toLowerCase().indexOf(inputSearch) > -1
-      );
     } else {
-      if (valueConnect === 1) {
+      if (valueConnect === 0) {
         return datas.filter(
-          (data: any) => data.connect === Boolean(valueConnect)
+          (item: any) => item.connect === Boolean(valueConnect)
         );
-      } else if (valueConnect) {
+      } else if (valueConnect === 1)
         return datas.filter(
-          (data: any) => data.connect === Boolean(valueConnect)
+          (item: any) => item.connect === Boolean(valueConnect)
         );
-      } else return datas;
+      else if (inputSearch !== "") {
+        return datas.filter(
+          (item: any) =>
+            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.service.toLowerCase().indexOf(inputSearch) > -1
+        );
+      }
     }
+    return datas;
   };
 
   const Active = [
