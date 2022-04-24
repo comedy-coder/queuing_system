@@ -10,6 +10,9 @@ import addbtn from "../../assets/images/addbutton/addbtn.png";
 import Pages from "../../components/PaginatonPages/Pages";
 
 const Level = () => {
+  const getNameValue = (value: any) => {
+    console.log(value);
+  };
   const Name = [
     {
       display: "Tất cả",
@@ -66,7 +69,12 @@ const Level = () => {
       <div className="level-title">Danh sách thiết bị</div>
       <div className="level-selectorgroup">
         <div className="level-selectorgroup1">
-          <SelectorDD title="Tên dịch vụ" width="154px" Menu={Name} />
+          <SelectorDD
+            title="Tên dịch vụ"
+            width="154px"
+            Menu={Name}
+            onGetValue={getNameValue}
+          />
           <SelectorDD title="Tình trạng" width="154px" Menu={State} />
           <SelectorDD title="Nguồn cấp" width="154px" Menu={Source} />
           <Calendar />

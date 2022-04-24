@@ -15,6 +15,7 @@ const Devices = () => {
   const [valueConnect, setvalueConnect] = useState<any | null>();
   const UserColecctionRef = collection(db, "Devices");
   const [User, setUser] = useState<any>([]);
+  const [inputSearch, setInputSearch] = useState<any | "">("");
   useEffect(() => {
     const getUser = async () => {
       const data = await getDocs(UserColecctionRef);
@@ -24,7 +25,6 @@ const Devices = () => {
     getUser();
   }, []);
   const filterData = (datas: any) => {
-    console.log(typeof valueState);
     if (valueState === 1) {
       let result = datas.filter(
         (data: any) => data.active === Boolean(valueState)
@@ -55,18 +55,28 @@ const Devices = () => {
         );
       }
       return result;
+    } else if (inputSearch) {
+      console.log(typeof datas[1].code);
+      return datas.filter(
+        (item: any) =>
+          item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.service.toLowerCase().indexOf(inputSearch) > -1
+      );
     } else {
       if (valueConnect === 1) {
         return datas.filter(
           (data: any) => data.connect === Boolean(valueConnect)
         );
-      } else if (valueConnect === 0) {
+      } else if (valueConnect) {
         return datas.filter(
           (data: any) => data.connect === Boolean(valueConnect)
         );
       } else return datas;
     }
   };
+
   const Active = [
     {
       display: "Tất cả",
@@ -83,6 +93,9 @@ const Devices = () => {
   ];
   const getValueState = (value: any) => {
     setvalueState(Number(value));
+  };
+  const getInputValue = (input: any) => {
+    setInputSearch(input);
   };
 
   const Connect = [
@@ -122,13 +135,14 @@ const Devices = () => {
             onGetValue={getValueConnet}
           />
         </div>
-        <Search width="300px" title="Từ khóa" left="266.5px" />
+        <Search
+          width="300px"
+          title="Từ khóa"
+          left="266.5px"
+          onGetValue={getInputValue}
+        />
       </div>
-      <Table
-        ActiveState={valueState}
-        ConnectState={valueConnect}
-        data={filterData(User)}
-      />
+      <Table data={filterData(User)} />
       <div className="device-pages">
         <Pages />
       </div>

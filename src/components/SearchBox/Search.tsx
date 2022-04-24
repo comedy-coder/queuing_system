@@ -5,12 +5,15 @@ export interface ISearchInputProps {
   width: string;
   left: string;
   title: string;
+  onGetValue?: any;
 }
 
 const Search = (props: ISearchInputProps) => {
   const width = { width: `${props.width}` };
   const title = props.title;
-
+  const getValue = (e: any) => {
+    props.onGetValue(e);
+  };
   return (
     <div className="searchinput" style={{ width: `${props.width}` }}>
       <div className="searchinput__title"> {title}</div>
@@ -20,6 +23,7 @@ const Search = (props: ISearchInputProps) => {
           style={width}
           type="text"
           placeholder="Nhập từ khóa"
+          onChange={(event) => getValue(event.target.value)}
         />
         <img
           srcSet={`${search} 2x`}

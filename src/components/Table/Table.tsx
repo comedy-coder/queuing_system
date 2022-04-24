@@ -9,8 +9,6 @@ import { Context } from "../../Store/Provider";
 import { useContext } from "react";
 import { setDetailDevice, getID } from "../../Store/action";
 type TableProps = {
-  ActiveState: any;
-  ConnectState: any;
   data: any;
 };
 const Table = ({ data }: TableProps) => {
