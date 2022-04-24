@@ -3,14 +3,70 @@ import Search from "../../components/SearchBox/Search";
 import adbtn from "../../assets/images/addbutton/addbtn.png";
 import Table from "../../components/Table/Table";
 import "./device.scss";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../utils/init-firebase";
 import SelectorDD from "../../components/SelectorDropdown/SelectorDD";
 import { Link } from "react-router-dom";
 import Pages from "../../components/PaginatonPages/Pages";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Devices = () => {
   const [valueState, setvalueState] = useState<any | null>();
   const [valueConnect, setvalueConnect] = useState<any | null>();
+  const UserColecctionRef = collection(db, "Devices");
+  const [User, setUser] = useState<any>([]);
+  useEffect(() => {
+    const getUser = async () => {
+      const data = await getDocs(UserColecctionRef);
+
+      setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
+  const filterData = (datas: any) => {
+    console.log(typeof valueState);
+    if (valueState === 1) {
+      let result = datas.filter(
+        (data: any) => data.active === Boolean(valueState)
+      );
+
+      if (valueConnect === 1) {
+        return result.filter(
+          (data: any) => data.connect === Boolean(valueConnect)
+        );
+      } else if (valueConnect === 0) {
+        return result.filter(
+          (data: any) => data.connect === Boolean(valueConnect)
+        );
+      }
+      return result;
+    } else if (valueState === 0) {
+      let result = datas.filter(
+        (data: any) => data.active === Boolean(valueState)
+      );
+
+      if (valueConnect === 1) {
+        return result.filter(
+          (data: any) => data.connect === Boolean(valueConnect)
+        );
+      } else if (valueConnect === 0) {
+        return result.filter(
+          (data: any) => data.connect === Boolean(valueConnect)
+        );
+      }
+      return result;
+    } else {
+      if (valueConnect === 1) {
+        return datas.filter(
+          (data: any) => data.connect === Boolean(valueConnect)
+        );
+      } else if (valueConnect === 0) {
+        return datas.filter(
+          (data: any) => data.connect === Boolean(valueConnect)
+        );
+      } else return datas;
+    }
+  };
   const Active = [
     {
       display: "Tất cả",
@@ -32,7 +88,7 @@ const Devices = () => {
   const Connect = [
     {
       display: "Tất cả",
-      value: "1",
+      value: "-1",
     },
     {
       display: "Kết nối",
@@ -68,7 +124,11 @@ const Devices = () => {
         </div>
         <Search width="300px" title="Từ khóa" left="266.5px" />
       </div>
-      <Table ActiveState={valueState} ConnectState={valueConnect} />
+      <Table
+        ActiveState={valueState}
+        ConnectState={valueConnect}
+        data={filterData(User)}
+      />
       <div className="device-pages">
         <Pages />
       </div>

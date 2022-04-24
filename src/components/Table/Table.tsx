@@ -3,48 +3,21 @@ import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
 
 import "./table.scss";
-import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../utils/init-firebase";
+import React, { useState } from "react";
+
 import { Context } from "../../Store/Provider";
 import { useContext } from "react";
 import { setDetailDevice, getID } from "../../Store/action";
 type TableProps = {
   ActiveState: any;
   ConnectState: any;
+  data: any;
 };
-const Table = ({ ActiveState, ConnectState }: TableProps) => {
-  const [User, setUser] = useState<any>([]);
-  const [fiterUser, setUserFilter] = useState<any>([]);
-  const UserColecctionRef = collection(db, "Devices");
+const Table = ({ data }: TableProps) => {
   const [state, dispatch] = useContext(Context);
 
-  useEffect(() => {
-    const getUser = async () => {
-      const data = await getDocs(UserColecctionRef);
-
-      setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getUser();
-  }, []);
-  useEffect(() => {
-    const defaultUser = User;
-    if (ActiveState) {
-      const filterActive = User.filter(
-        (item: any, index: any) => item.active === Boolean(ActiveState)
-      );
-      setUser(filterActive);
-    }
-    if (ConnectState) {
-      const filterConect = User.filter(
-        (item: any, index: any) => item.active === Boolean(ConnectState)
-      );
-      setUser(filterConect);
-    } else setUser(defaultUser);
-  }, [ActiveState, ConnectState]);
-
   const handleDetail = (id: any) => {
-    const Item = User.filter((item: any, index: any) => item.id === id);
+    const Item = data.filter((item: any, index: any) => item.id === id);
     const { ...Item1 } = Item;
     console.log(state);
     dispatch(setDetailDevice(Item1));
@@ -57,6 +30,7 @@ const Table = ({ ActiveState, ConnectState }: TableProps) => {
   const handleExpand = () => {
     showDescription(!description);
   };
+
   return (
     <div className="device-data">
       <table>
@@ -72,7 +46,7 @@ const Table = ({ ActiveState, ConnectState }: TableProps) => {
             <th></th>
           </tr>
 
-          {User.map((item: any, index: number) => (
+          {data.map((item: any, index: number) => (
             <>
               <tr key={index}>
                 <td>

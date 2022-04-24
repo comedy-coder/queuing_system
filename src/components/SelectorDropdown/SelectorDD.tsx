@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./selectordd.scss";
 import arrowdown from "../../assets/images/dashboard/arrow.png";
 import arrowup from "../../assets/images/selector/arrow.png";
@@ -22,7 +22,10 @@ const DropDownDD = (props: IDropDownProps) => {
   const itemClick = (index: number) => {
     setItemShow(listMenu[index]);
     props.onGetValue(listMenu[index].value);
+    setActive(!isActive);
   };
+  const ref = useRef<any | null>(null);
+
   const handleClick = () => {
     setActive(!isActive);
   };
@@ -49,7 +52,7 @@ const DropDownDD = (props: IDropDownProps) => {
           className={`dropdown__list  ${isActive ? "active" : ""}`}
           style={width}
         >
-          <div className="dropdown__list--content" style={width}>
+          <div className="dropdown__list--content" style={width} ref={ref}>
             {listMenu.map((item, index, listMenu) => {
               return (
                 <button
