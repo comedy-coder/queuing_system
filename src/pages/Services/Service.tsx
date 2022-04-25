@@ -33,17 +33,24 @@ const Service = () => {
   }, []);
   const filterData = (data: any) => {
     if (valueState === 1) {
-      let result = data.filter(
+      const result = data.filter(
         (data: any) => data.active === Boolean(valueState)
       );
-      if (inputSearch)
+      if (inputSearch !== "") {
+        result.filter(
+          (item: any) =>
+            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.desservice.toLowerCase().indexOf(inputSearch) > -1
+        );
+
         return result.filter(
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||
             item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.desservice.toLowerCase().indexOf(inputSearch)
+            item.desservice.toLowerCase().indexOf(inputSearch) > -1
         );
-      else return result;
+      } else return result;
     } else if (valueState === 0) {
       let result = data.filter(
         (data: any) => data.active === Boolean(valueState)
@@ -53,7 +60,7 @@ const Service = () => {
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||
             item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.desservice.toLowerCase().indexOf(inputSearch)
+            item.desservice.toLowerCase().indexOf(inputSearch) > -1
         );
       else return result;
     } else if (inputSearch) {
@@ -63,15 +70,7 @@ const Service = () => {
           item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
           item.desservice.toLowerCase().indexOf(inputSearch) > -1
       );
-    }
-    //   data.filter(
-    //     (item: any) =>
-    //       item.code.toLowerCase().indexOf(inputSearch) > -1 ||
-    //       item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
-    //       item.desservice.toLowerCase().indexOf(inputSearch)
-    //   )
-    // );
-    else return data;
+    } else return data;
   };
 
   const Active = [
