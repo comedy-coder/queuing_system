@@ -81,7 +81,7 @@ const Devices = () => {
         return datas.filter(
           (item: any) => item.connect === Boolean(valueConnect)
         );
-      else if (inputSearch !== "") {
+      else if (inputSearch) {
         return datas.filter(
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||

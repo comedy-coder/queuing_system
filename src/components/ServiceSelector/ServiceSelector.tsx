@@ -1,9 +1,7 @@
 import React, { useRef, useState } from "react";
-import "./selectordd.scss";
-import arrowdown from "../../assets/images/dashboard/arrow.png";
-import arrowup from "../../assets/images/selector/arrow.png";
+import "./serviceselector.scss";
 
-export interface IDropDownProps {
+export interface IservicedropdownProps {
   width: string;
   title?: string;
   onGetValue?: any;
@@ -14,7 +12,7 @@ export interface IDropDownProps {
   special?: boolean;
 }
 
-const DropDownDD = (props: IDropDownProps) => {
+const ServiceSelector = (props: IservicedropdownProps) => {
   const width = { width: `${props.width}` };
   const title = props.title;
   const listMenu = props.Menu;
@@ -33,36 +31,35 @@ const DropDownDD = (props: IDropDownProps) => {
   };
 
   return (
-    <div className="dropdown" style={width}>
-      <div className="dropdown__header">
-        <span className="dropdown__header--title">{title}</span>
+    <div className="servicedropdown" style={width}>
+      <div className="servicedropdown__header">
+        <span className="servicedropdown__header--title">{title}</span>
       </div>
-      <div className="dropdown__content ">
+      <div className="servicedropdown__content ">
         <button
-          className={`dropdown__button  ${isActive ? "active" : ""} ${special}`}
+          className={`servicedropdown__button  ${
+            isActive ? "active" : ""
+          } ${special}`}
           style={width}
           onClick={handleClick}
-        >
-          <span className="dropdown__button--title">{itemShow.display}</span>
-          <img
-            srcSet={`${isActive ? arrowup : arrowdown} 2x `}
-            className="dropdown__button--icon"
-            alt="Dropdown"
-          />
-        </button>
+        ></button>
         <div
-          className={`dropdown__list  ${isActive ? "active" : ""}`}
+          className={`servicedropdown__list  ${isActive ? "active" : ""}`}
           style={width}
         >
-          <div className="dropdown__list--content" style={width} ref={ref}>
+          <div
+            className="servicedropdown__list--content"
+            style={width}
+            ref={ref}
+          >
             {listMenu.map((item, index, listMenu) => {
               return (
                 <button
-                  className="dropdown__list--content-item"
+                  className="servicedropdown__list--content-item"
                   key={index}
                   onClick={() => itemClick(index)}
                 >
-                  <span className="dropdown__list--content-item-title">
+                  <span className="servicedropdown__list--content-item-title">
                     {item.display}
                   </span>
                 </button>
@@ -75,4 +72,4 @@ const DropDownDD = (props: IDropDownProps) => {
   );
 };
 
-export default DropDownDD;
+export default ServiceSelector;

@@ -1,5 +1,5 @@
 
-.dropdown{
+.servicedropdown{
     height: 72px;
     padding: 0px;
   
@@ -19,21 +19,20 @@
     &__button{
         outline: none;
         display: flex;
-        height: 44px;
+        height: 88px;
         margin-top: 2px;
         padding: 0px;
-        border: 1.5px solid #D4D4D7;
+     
         border-radius: 8px;
         background: #ffffff;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        &.special{
-            height: 80px;
+      
             border: 1.5px solid #FFAC6A;
             box-sizing: border-box;
             border-radius: 8px;
-        }
+      
         &--title{
           
             font-style: normal;
@@ -83,7 +82,7 @@
                 cursor: pointer;
                 height: 44px;
                 &-title{
-                    @extend .dropdown__button--title;
+                    @extend .servicedropdown__button--title;
                     margin-left:6px;
                 }
                 &:hover{

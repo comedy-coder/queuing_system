@@ -6,11 +6,13 @@ import AddButton from "../AddButton/AddButton";
 import "./devicedetail.scss";
 import { Context } from "../../Store/Provider";
 import { useContext } from "react";
-
+import { getID } from "../../Store/action";
 const DeviceDetail = () => {
-  const [state] = useContext(Context);
+  const [state, dispatch] = useContext(Context);
+
   const navigate = useNavigate();
   const handleChange = () => {
+    dispatch(getID(item.id));
     navigate("/device/update");
   };
 

@@ -9,6 +9,8 @@ import { Context } from "../../Store/Provider";
 import { useContext, useState } from "react";
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../../utils/init-firebase";
+
+import ServiceSelector from "../ServiceSelector/ServiceSelector";
 const UpDatedevice = () => {
   const [updatecode, setCode] = useState<any | null>("");
   const [userName, setUserName] = useState<any | null>("");
@@ -16,11 +18,47 @@ const UpDatedevice = () => {
   const [updateip, setIp] = useState<any | null>("");
   const [pass, setPass] = useState<any | null>("");
   const [type, setType] = useState<any | null>("");
-
+  const [service, setService] = useState<any | null>([]);
   const [state] = useContext(Context);
 
   const id = state.detailid;
-
+  const getValueService = (value: any) => {
+    setService((prev: any) => [...prev, value]);
+  };
+  const filterService = (index: any, services: any) => {
+    const firstArr = services.slice(0, index);
+    const secondArr = services.slice(index + 1);
+    return [...firstArr, ...secondArr];
+  };
+  const CloseTab = (index: any) => {
+    setService(filterService(index, service));
+  };
+  const ServiceActive = [
+    {
+      display: "Khám tim mạch",
+      value: "Khám tim mạch",
+    },
+    {
+      display: "Khám phụ khoa",
+      value: "Khám phụ khoa",
+    },
+    {
+      display: "Khám răng hàm mạch",
+      value: "Khám răng hàm mạch",
+    },
+    {
+      display: "Khám tai mũi họng",
+      value: "Khám tai mũi họng",
+    },
+    {
+      display: "Khám hô hấp",
+      value: "Khám hô hấp",
+    },
+    {
+      display: "Khám tổng quát",
+      value: "Khám tổng quát",
+    },
+  ];
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/device");
@@ -156,46 +194,28 @@ const UpDatedevice = () => {
                 <div className="updatedevice-main__title">
                   Dịch vụ sử dụng : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <div className="updatedevice-main__group1">
-                  <Grid container columnSpacing={3.2}>
-                    <Grid item>
+
+                <ServiceSelector
+                  width="1104px"
+                  Menu={ServiceActive}
+                  onGetValue={getValueService}
+                />
+                <Grid container columnSpacing={3.2}>
+                  {service.map((item: any, index: any) => (
+                    <Grid item key={index}>
                       <button className="updatedevice-main__item">
-                        <span>Khám tim mạch</span>
-                        <img srcSet={`${close} 2x`} alt="" />
+                        <span>{item}</span>
+                        <img
+                          srcSet={`${close} 2x`}
+                          alt=""
+                          onClick={() => {
+                            CloseTab(index);
+                          }}
+                        />
                       </button>
                     </Grid>
-                    <Grid item>
-                      <button className="updatedevice-main__item">
-                        <span>Khám sản phụ khoa</span>
-                        <img srcSet={`${close} 2x`} alt="" />
-                      </button>
-                    </Grid>
-                    <Grid item>
-                      <button className="updatedevice-main__item">
-                        <span>Khám răng hàm mặt</span>
-                        <img srcSet={`${close} 2x`} alt="" />
-                      </button>
-                    </Grid>
-                    <Grid item>
-                      <button className="updatedevice-main__item">
-                        <span>Khám tai mũi họng</span>
-                        <img srcSet={`${close} 2x`} alt="" />
-                      </button>
-                    </Grid>
-                    <Grid item>
-                      <button className="updatedevice-main__item">
-                        <span>Khám hô hấp</span>
-                        <img srcSet={`${close} 2x`} alt="" />
-                      </button>
-                    </Grid>
-                    <Grid item>
-                      <button className="updatedevice-main__item">
-                        <span>Khám tổng quát</span>
-                        <img srcSet={`${close} 2x`} alt="" />
-                      </button>
-                    </Grid>
-                  </Grid>
-                </div>
+                  ))}
+                </Grid>
               </div>
             </Grid>
           </Grid>

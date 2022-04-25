@@ -17,7 +17,7 @@ const Table = ({ data }: TableProps) => {
   const handleDetail = (id: any) => {
     const Item = data.filter((item: any, index: any) => item.id === id);
     const { ...Item1 } = Item;
-    console.log(state);
+
     dispatch(setDetailDevice(Item1));
   };
 
