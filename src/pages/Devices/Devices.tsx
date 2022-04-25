@@ -13,17 +13,20 @@ import { useState, useEffect } from "react";
 const Devices = () => {
   const [valueState, setvalueState] = useState<any | null>();
   const [valueConnect, setvalueConnect] = useState<any | null>();
-  const UserColecctionRef = collection(db, "Devices");
+
   const [User, setUser] = useState<any>([]);
   const [inputSearch, setInputSearch] = useState<any | "">("");
+
   useEffect(() => {
     const getUser = async () => {
+      const UserColecctionRef = collection(db, "Devices");
       const data = await getDocs(UserColecctionRef);
 
       setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getUser();
   }, []);
+
   const filterData = (datas: any) => {
     if (valueState === 1) {
       let result = datas.filter(

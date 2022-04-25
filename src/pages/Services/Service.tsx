@@ -8,19 +8,36 @@ import TableService from "../../components/TableService/TableService";
 import { Link } from "react-router-dom";
 import AddButton from "../../components/AddButton/AddButton";
 import Pages from "../../components/PaginatonPages/Pages";
+import { useEffect, useState } from "react";
+import { db } from "../../utils/init-firebase";
+import { collection, getDocs } from "firebase/firestore";
 const Service = () => {
+  const [User, setUser] = useState<any>([]);
+  useEffect(() => {
+    const getUser = async () => {
+      const UserColecctionRef = collection(db, "Devices");
+      const data = await getDocs(UserColecctionRef);
+
+      setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
+  const filterData = (data: any) => {
+    return data;
+  };
+  console.log(User);
   const Active = [
     {
       display: "Tất cả",
-      value: "all",
+      value: "-1",
     },
     {
       display: "Hoạt động",
-      value: "active",
+      value: "1",
     },
     {
       display: "Ngưng hoạt động",
-      value: "deactive",
+      value: "0",
     },
   ];
   const handleChange = () => {};
@@ -38,7 +55,7 @@ const Service = () => {
         </div>
         <Search width="300px" left="265.5px" title="Từ khóa" />
       </div>
-      <TableService />
+      <TableService data={filterData(User)} />
       <div className="level-pages">
         <Pages />
       </div>

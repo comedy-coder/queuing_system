@@ -28,12 +28,18 @@ const UpDatedevice = () => {
   const filterService = (index: any, services: any) => {
     const firstArr = services.slice(0, index);
     const secondArr = services.slice(index + 1);
+
     return [...firstArr, ...secondArr];
   };
+
   const CloseTab = (index: any) => {
     setService(filterService(index, service));
   };
   const ServiceActive = [
+    {
+      display: "Tất cả",
+      value: "Tất cả",
+    },
     {
       display: "Khám tim mạch",
       value: "Khám tim mạch",
@@ -43,8 +49,8 @@ const UpDatedevice = () => {
       value: "Khám phụ khoa",
     },
     {
-      display: "Khám răng hàm mạch",
-      value: "Khám răng hàm mạch",
+      display: "Khám răng hàm mặt",
+      value: "Khám răng hàm mặt",
     },
     {
       display: "Khám tai mũi họng",
@@ -59,6 +65,7 @@ const UpDatedevice = () => {
       value: "Khám tổng quát",
     },
   ];
+
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/device");
@@ -70,7 +77,8 @@ const UpDatedevice = () => {
       accuser !== "" &&
       updateip !== "" &&
       pass !== "" &&
-      type !== ""
+      type !== "" &&
+      service.join() !== ""
     ) {
       const updateUser = async (id: any, code: any) => {
         const userDoc = doc(db, "Devices", id);
@@ -81,6 +89,7 @@ const UpDatedevice = () => {
           type: type,
           useracc: accuser,
           pass: pass,
+          service: service.join(),
         };
         await updateDoc(userDoc, newFields);
 
@@ -194,28 +203,31 @@ const UpDatedevice = () => {
                 <div className="updatedevice-main__title">
                   Dịch vụ sử dụng : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-
-                <ServiceSelector
-                  width="1104px"
-                  Menu={ServiceActive}
-                  onGetValue={getValueService}
-                />
-                <Grid container columnSpacing={3.2}>
-                  {service.map((item: any, index: any) => (
-                    <Grid item key={index}>
-                      <button className="updatedevice-main__item">
-                        <span>{item}</span>
-                        <img
-                          srcSet={`${close} 2x`}
-                          alt=""
-                          onClick={() => {
-                            CloseTab(index);
-                          }}
-                        />
-                      </button>
+                <div className="updatedevice-main__selector">
+                  <ServiceSelector
+                    width="1104px"
+                    Menu={ServiceActive}
+                    onGetValue={getValueService}
+                  />
+                  <div className="updatedevice-main__group1">
+                    <Grid container columnSpacing={3.2} rowSpacing={1.2}>
+                      {service.map((item: any, index: any) => (
+                        <Grid item key={index}>
+                          <button className="updatedevice-main__item">
+                            <span>{item}</span>
+                            <img
+                              srcSet={`${close} 2x`}
+                              alt=""
+                              onClick={() => {
+                                CloseTab(index);
+                              }}
+                            />
+                          </button>
+                        </Grid>
+                      ))}
                     </Grid>
-                  ))}
-                </Grid>
+                  </div>
+                </div>
               </div>
             </Grid>
           </Grid>

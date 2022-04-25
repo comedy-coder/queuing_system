@@ -17,7 +17,7 @@ const DeviceDetail = () => {
   };
 
   const item = state.detaildevice[0];
-  const { code, name, type, useracc, ip, pass } = item;
+  const { code, name, type, useracc, ip, pass, service } = item;
   return (
     <div className="devicedetail-wrap">
       <div className="devicedetail-title">Quản lý thiết bị</div>
@@ -73,10 +73,7 @@ const DeviceDetail = () => {
           </Grid>
         </Grid>
         <span className="devicedetail-main__noti">Dịch vụ sử dụng : </span>
-        <div className="devicedetail-main__info">
-          Khám tim mạch, Khám sản - Phụ khoa, Khám răng hàm mặt, Khám tai mũi
-          họng, Khám hô hấp, Khám tổng quát.
-        </div>
+        <div className="devicedetail-main__info">{service}</div>
       </div>
       <div className="devicedetail-button">
         <AddButton img={edit} handleClick={handleChange}>

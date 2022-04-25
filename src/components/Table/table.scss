@@ -25,9 +25,29 @@
             z-index : 2 ;
             display: none;
             position: absolute;
-            &.expand{
+            &.expand:nth-child(0){
+                display: block;
+                top: 30%;
+                right: 29%;
+            }
+            &.expand:nth-child(1){
                 display: block;
                 top: 78%;
+                right: 20%;
+            }
+            &.expand:nth-child(2){
+                display: block;
+                top: 50%;
+                right: 29%;
+            }
+            &.expand:nth-child(3){
+                display: block;
+                top: 40%;
+                right: 29%;
+            }
+            &.expand:nth-child(4){
+                display: block;
+                top: 50%;
                 right: 29%;
             }
         }

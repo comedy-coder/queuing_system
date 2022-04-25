@@ -77,17 +77,13 @@ const Table = ({ data }: TableProps) => {
                 </td>
 
                 <td>
-                  <div className="device-service_deactive">
-                    <div> {item.service}</div>
-
-                    <Link
-                      to=""
-                      onClick={() => {
-                        handleExpand();
-                      }}
-                    >
-                      Xem thêm
-                    </Link>
+                  <div
+                    className={`device-service_deactive ${
+                      description ? "expand" : ""
+                    }`}
+                  >
+                    {item.service}
+                    <span></span>
                   </div>
                 </td>
                 <td>

@@ -26,6 +26,15 @@
         padding: 16px 24px;
         box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
         border-radius: 16px;
+        &__selector{
+            position: relative;
+        }
+        &__group1{
+            
+            position: absolute;
+            left: 16px;
+            top: 8px;
+        }
         &__top{
             font-style: normal;
                 font-weight: 700;
@@ -58,18 +67,7 @@
             margin-bottom: 16px;
 
         }
-        &__group1{
-            
-/* white */
-width: 1104px;
-height: 80px;
-background: #FFFFFF;
-/* Orange/$-Orange-300 */
-            padding: 8px 16px;
-border: 1.5px solid #FFAC6A;
-box-sizing: border-box;
-border-radius: 8px;
-        }
+       
         &__item{
             background: #FFAC6A;
             padding: 4.5px 12px;
