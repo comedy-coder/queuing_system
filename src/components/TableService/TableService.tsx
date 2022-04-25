@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
-import User from "../../pages/Setting/User/User";
 
 import "./tableservice.scss";
 type TableProps = {

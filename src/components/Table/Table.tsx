@@ -3,7 +3,7 @@ import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
 
 import "./table.scss";
-import React, { useState } from "react";
+import React from "react";
 
 import { Context } from "../../Store/Provider";
 import { useContext } from "react";
@@ -12,7 +12,7 @@ type TableProps = {
   data: any;
 };
 const Table = ({ data }: TableProps) => {
-  const [state, dispatch] = useContext(Context);
+  const [dispatch] = useContext(Context);
 
   const handleDetail = (id: any) => {
     const Item = data.filter((item: any, index: any) => item.id === id);
@@ -23,10 +23,6 @@ const Table = ({ data }: TableProps) => {
 
   const handleUpdate = (id: any) => {
     dispatch(getID(id));
-  };
-  const [description, showDescription] = useState(false);
-  const handleExpand = () => {
-    showDescription(!description);
   };
 
   return (
@@ -77,11 +73,7 @@ const Table = ({ data }: TableProps) => {
                 </td>
 
                 <td>
-                  <div
-                    className={`device-service_deactive ${
-                      description ? "expand" : ""
-                    }`}
-                  >
+                  <div className="device-service_deactive">
                     {item.service}
                     <span></span>
                   </div>

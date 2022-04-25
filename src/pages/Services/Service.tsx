@@ -12,6 +12,15 @@ import { useEffect, useState } from "react";
 import { db } from "../../utils/init-firebase";
 import { collection, getDocs } from "firebase/firestore";
 const Service = () => {
+  const [valueState, setvalueState] = useState<any | null>();
+  const [inputSearch, setInputSearch] = useState<any | "">("");
+  const getInputValue = (input: any) => {
+    setInputSearch(input);
+  };
+  const getValueState = (value: any) => {
+    setvalueState(Number(value));
+  };
+  console.log(inputSearch);
   const [User, setUser] = useState<any>([]);
   useEffect(() => {
     const getUser = async () => {
@@ -23,9 +32,43 @@ const Service = () => {
     getUser();
   }, []);
   const filterData = (data: any) => {
-    return data;
+    if (valueState === 1) {
+      let result = data.filter(
+        (data: any) => data.active === Boolean(valueState)
+      );
+      if (inputSearch)
+        return result.filter(
+          (item: any) =>
+            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.service.toLowerCase().indexOf(inputSearch) > -1
+        );
+      else return result;
+    } else if (valueState === 0) {
+      let result = data.filter(
+        (data: any) => data.active === Boolean(valueState)
+      );
+      if (inputSearch)
+        return result.filter(
+          (item: any) =>
+            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.service.toLowerCase().indexOf(inputSearch) > -1
+        );
+      else return result;
+    } else if (inputSearch)
+      return data.filter(
+        (item: any) =>
+          item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.service.toLowerCase().indexOf(inputSearch) > -1
+      );
+    else return data;
   };
-  console.log(User);
+
   const Active = [
     {
       display: "Tất cả",
@@ -50,10 +93,16 @@ const Service = () => {
             width="300px"
             title="Trạng thaí hoạt động"
             Menu={Active}
+            onGetValue={getValueState}
           />
           <Calendar />
         </div>
-        <Search width="300px" left="265.5px" title="Từ khóa" />
+        <Search
+          width="300px"
+          left="265.5px"
+          title="Từ khóa"
+          onGetValue={getInputValue}
+        />
       </div>
       <TableService data={filterData(User)} />
       <div className="level-pages">

@@ -77,14 +77,33 @@ const Devices = () => {
       return result;
     } else {
       if (valueConnect === 0) {
-        return datas.filter(
+        let result = datas.filter(
           (item: any) => item.connect === Boolean(valueConnect)
         );
-      } else if (valueConnect === 1)
-        return datas.filter(
+        console.log(result);
+        if (inputSearch)
+          return result.filter(
+            (item: any) =>
+              item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+              item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+              item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+              item.service.toLowerCase().indexOf(inputSearch) > -1
+          );
+        else return result;
+      } else if (valueConnect === 1) {
+        let result = datas.filter(
           (item: any) => item.connect === Boolean(valueConnect)
         );
-      else if (inputSearch) {
+        if (inputSearch)
+          return result.filter(
+            (item: any) =>
+              item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+              item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+              item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
+              item.service.toLowerCase().indexOf(inputSearch) > -1
+          );
+        else return result;
+      } else if (inputSearch) {
         return datas.filter(
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||
