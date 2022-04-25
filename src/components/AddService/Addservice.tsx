@@ -3,14 +3,34 @@ import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
 import "./addservice.scss";
+import { useState } from "react";
+import { db } from "../../utils/init-firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 const Addservice = () => {
+  const userCollectionRef = collection(db, "Services");
+  const [code, setCode] = useState<any | null>("");
+  const [name, setName] = useState<any | null>("");
+  const [desservice, setDesservice] = useState<any | null>("");
+  const createUser = async () => {
+    await addDoc(userCollectionRef, {
+      code: code,
+      nameservice: name,
+      desservice: desservice,
+    });
+  };
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/dich-vu");
   };
   const handleNext = () => {
-    navigate("/dich-vu");
+    if (code !== "" && name !== "" && desservice !== "") {
+      createUser();
+      alert("Thêm dịch vụ thành công");
+      navigate("/dich-vu");
+    } else {
+      return alert("Nhập đầy đủ thông tin");
+    }
   };
   return (
     <div className="addservice-wrap">
@@ -27,7 +47,10 @@ const Addservice = () => {
                 <input
                   type="text"
                   className="addservice-main__input"
-                  placeholder="201"
+                  placeholder="Nhập mã"
+                  onChange={(event) => {
+                    setCode(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -36,7 +59,13 @@ const Addservice = () => {
                 <div className="addservice-main__title">
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <textarea>Mô tả dịch vụ</textarea>
+                <textarea
+                  onChange={(event) => {
+                    setDesservice(event.target.value);
+                  }}
+                >
+                  Mô tả dịch vụ
+                </textarea>
               </div>
             </Grid>
             <div className="test">
@@ -49,6 +78,9 @@ const Addservice = () => {
                     type="text"
                     className="addservice-main__input"
                     placeholder="Khám tim mạch"
+                    onChange={(event) => {
+                      setName(event.target.value);
+                    }}
                   />
                 </div>
               </Grid>{" "}

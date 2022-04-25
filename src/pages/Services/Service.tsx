@@ -20,11 +20,11 @@ const Service = () => {
   const getValueState = (value: any) => {
     setvalueState(Number(value));
   };
-  console.log(inputSearch);
+
   const [User, setUser] = useState<any>([]);
   useEffect(() => {
     const getUser = async () => {
-      const UserColecctionRef = collection(db, "Devices");
+      const UserColecctionRef = collection(db, "Services");
       const data = await getDocs(UserColecctionRef);
 
       setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -40,9 +40,8 @@ const Service = () => {
         return result.filter(
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.service.toLowerCase().indexOf(inputSearch) > -1
+            item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.desservice.toLowerCase().indexOf(inputSearch)
         );
       else return result;
     } else if (valueState === 0) {
@@ -53,19 +52,25 @@ const Service = () => {
         return result.filter(
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.name.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.service.toLowerCase().indexOf(inputSearch) > -1
+            item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
+            item.desservice.toLowerCase().indexOf(inputSearch)
         );
       else return result;
-    } else if (inputSearch)
+    } else if (inputSearch) {
       return data.filter(
         (item: any) =>
           item.code.toLowerCase().indexOf(inputSearch) > -1 ||
-          item.name.toLowerCase().indexOf(inputSearch) > -1 ||
-          item.ip.toLowerCase().indexOf(inputSearch) > -1 ||
-          item.service.toLowerCase().indexOf(inputSearch) > -1
+          item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.desservice.toLowerCase().indexOf(inputSearch) > -1
       );
+    }
+    //   data.filter(
+    //     (item: any) =>
+    //       item.code.toLowerCase().indexOf(inputSearch) > -1 ||
+    //       item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
+    //       item.desservice.toLowerCase().indexOf(inputSearch)
+    //   )
+    // );
     else return data;
   };
 

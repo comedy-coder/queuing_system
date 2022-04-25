@@ -6,8 +6,13 @@ import TableDetailService from "../TableDetailService/TableDetailService";
 import edit from "../../assets/images/addbutton/edit.png";
 import back from "../../assets/images/addbutton/back.png";
 import "./servicedetail.scss";
+import { Context } from "../../Store/Provider";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 const ServiceDetail = () => {
+  const [state, dispatch] = useContext(Context);
+  const item = state.detaildevice[0];
+
   const State = [
     {
       display: "Tất cả",
@@ -39,13 +44,13 @@ const ServiceDetail = () => {
         <div className="servicedetail-title">Quản lý dịch vụ</div>
         <div className="servicedetail-main__top">Thông tin dịch vụ</div>
         <div className="servicedetail-main__info">
-          Mã dịch vụ : <span> 201</span>
+          Mã dịch vụ : <span> {item.code}</span>
         </div>
         <div className="servicedetail-main__info">
-          Tên dịch vụ : <span> Khám tim mạch</span>
+          Tên dịch vụ : <span> {item.nameservice}</span>
         </div>
         <div className="servicedetail-main__info">
-          Mô tả : <span> Chuyên các bệnh lý về tim</span>
+          Mô tả : <span> {item.desservice}</span>
         </div>
 
         <div className="addservice-main__top">Quy tắc cấp số</div>

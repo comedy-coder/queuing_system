@@ -64,7 +64,7 @@ const Homepage = () => {
       display: "Dịch vụ",
       path: "/dich-vu/addservice",
       sub: "Danh sách dịch vụ",
-      sub1: "Thêm thiết bị",
+      sub1: "Thêm dịch vụ",
     },
     {
       display: "Dịch vụ",
