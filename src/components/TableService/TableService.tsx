@@ -23,9 +23,17 @@ const TableService = ({ data }: TableProps) => {
           </tr>
           {data.map((item: any, index: any) => (
             <tr>
-              <td>{item.code}</td>
-              <td>{item.name}</td>
-              <td>Mô tả dịch vụ </td>
+              <td>
+                {item.code}
+                <span></span>
+              </td>
+              <td>
+                {item.name}
+                <span></span>
+              </td>
+              <td>
+                Mô tả dịch vụ <span></span>
+              </td>
               <td>
                 {item.active ? (
                   <img srcSet={`${greendot} 2x`} alt="" />
@@ -37,9 +45,11 @@ const TableService = ({ data }: TableProps) => {
 
               <td>
                 <Link to="/dich-vu/detail">Chi tiết</Link>
+                <span></span>
               </td>
               <td>
                 <Link to="/dich-vu/update">Cập nhật</Link>
+                <span></span>
               </td>
             </tr>
           ))}
