@@ -1,0 +1,100 @@
+.react-datetimerange-picker__wrapper {
+    display: flex !important;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-items: center;
+    border: thin solid gray;
+  }
+.react-datetimerange-picker__inputGroup__input.react-datetimerange-picker__inputGroup__minutereact-datetimerange-picker__inputGroup__input--hasLeadingZero{
+      display: none;
+  }
+.react-datetimerange-picker__inputGroup__input.react-datetimerange-picker__inputGroup__minute{
+      display: none;
+  }
+.react-datetimerange-picker__inputGroup__input.react-datetimerange-picker__inputGroup__hour{
+    display: none;
+}
+.react-datetimerange-picker__inputGroup__input.react-datetimerange-picker__inputGroup__hour{
+
+        display: none;
+}
+
+.react-datetimerange-picker__clear-button__icon.react-datetimerange-picker__button__icon{
+    display: none;
+}
+.react-datetimerange-picker__range-divider{
+    display: none;
+}
+.react-datetimerange-picker__calendar-button.react-datetimerange-picker__button{
+    display: none;
+}
+
+.react-datetimerange-picker__clear-button.react-datetimerange-picker__button{
+    display: none;
+}
+
+.calender-button {
+    
+        img {position: relative !important;}
+       
+    
+}
+.react-datetimerange-picker__wrapper{
+    border: none;
+   
+   
+}
+.react-datetimerange-picker__inputGroup__input.react-datetimerange-picker__inputGroup__minute.react-datetimerange-picker__inputGroup__input--hasLeadingZero
+{
+    display: none;
+}
+.react-datetimerange-picker__inputGroup__leadingZero{
+    display: none;
+}
+.react-calendar{
+  position: absolute;
+    width: 320px;
+height: 336px;
+top :6px ;
+left : -45px;
+padding: 16px;
+
+background: #FFFFFF;
+/* dropdown */
+
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+
+}
+.react-calendar__navigation__arrow.react-calendar__navigation__next-button{
+        color: #FF7506;
+        
+}
+.react-calendar__navigation__arrow.react-calendar__navigation__prev-button{
+    color: #FF7506;
+}
+
+
+.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day{
+    background-color: #FF7506 ;
+}
+// .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend{
+//     background-color: #FFF2E7;
+// }
+.react-calendar__tile.react-calendar__tile--hasActive.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__month-view__days__day{
+    background-color:#FF7506;
+    color: white;
+}
+.react-calendar__tile.react-calendar__tile--hasActive.react-calendar__tile--range.react-calendar__tile--rangeEnd.react-calendar__month-view__days__day{
+    background-color:#FF7506;
+    color: white;
+}
+.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__month-view__days__day{
+    background-color: #FFF2E7;
+    color: #535261;
+}
+.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend{
+        color: #A9A9B0;
+}
+.react-calendar__tile:enabled.hover, .react-calendar__tile:enabled:focus {
+    background-color: #FFF2E7;
+}

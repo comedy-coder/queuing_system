@@ -29,8 +29,42 @@
     }
     &-group {
         @include flex(center,flex-start);
-        img {
-            margin: 4px;
-        }
+        position: relative;
+       &-button{
+           img {position: relative;}
+       }
+       
     }
 }
+.arrow-button{
+    position: absolute;
+    right:57% ;
+}
+.react-calendar__navigation__arrow.react-calendar__navigation__prev2-button{
+     display: none;
+}
+.react-calendar__navigation__arrow.react-calendar__navigation__next2-button{
+    display: none;
+}
+.react-datetimerange-picker__inputGroup{
+    font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #A9A9B0;
+  }
+  .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from{
+    font-family: 'Nunito'!important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  /* identical to box height */
+  
+  
+  /* Orange/$-Orange-500 */
+  
+  color: #FF7506 !important;
+  
+  }
