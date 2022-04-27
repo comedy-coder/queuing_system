@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import DateTimeRangePicker from "@wojtekmaj/react-datetimerange-picker";
 import "./datetime.scss";
-import moment from "moment";
+import { useContext } from "react";
+import { Context } from "../../Store/Provider";
+import { getDateTime } from "../../Store/action";
 const Datatimepicker = () => {
   const [value, onChange] = useState<any | null>([new Date(), new Date()]);
-
-  var x = Date.parse(value[0]);
-  var y = Date.parse(value[1]);
-
-  console.log(x, y);
-
+  const [state, dispatch] = useContext(Context);
+  var start = Date.parse(value[0]);
+  var end = Date.parse(value[1]);
+  console.log(value[0]);
+  useEffect(() => {
+    dispatch(getDateTime({ start, end }));
+  }, [dispatch, start, end]);
   return (
     <div>
-      <DateTimeRangePicker onChange={onChange} value={value} />
+      <DateTimeRangePicker
+        onChange={onChange}
+        value={value}
+        dayPlaceholder="--"
+      />
     </div>
   );
 };

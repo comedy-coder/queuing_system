@@ -11,9 +11,16 @@ import Pages from "../../components/PaginatonPages/Pages";
 import { useEffect, useState } from "react";
 import { db } from "../../utils/init-firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useContext } from "react";
+import { Context } from "../../Store/Provider";
+import { updateProfile } from "firebase/auth";
 const Service = () => {
   const [valueState, setvalueState] = useState<any | null>();
   const [inputSearch, setInputSearch] = useState<any | "">("");
+  const [state] = useContext(Context);
+  const datetime = state.datetime;
+  const now = new Date().getTime();
+  console.log(now);
   const getInputValue = (input: any) => {
     setInputSearch(input);
   };
@@ -36,15 +43,12 @@ const Service = () => {
       const result = data.filter(
         (data: any) => data.active === Boolean(valueState)
       );
-      if (inputSearch !== "") {
-        result.filter(
-          (item: any) =>
-            item.code.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
-            item.desservice.toLowerCase().indexOf(inputSearch) > -1
-        );
 
-        return result.filter(
+      if (inputSearch !== "") {
+        const filtertime = result.filter(
+          (item: any) => datetime.x <= result.date && result.date <= datetime.y
+        );
+        return filtertime.filter(
           (item: any) =>
             item.code.toLowerCase().indexOf(inputSearch) > -1 ||
             item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
@@ -73,6 +77,17 @@ const Service = () => {
     } else return data;
   };
 
+  const fiterTime = (Data: any) => {
+    if (datetime.start !== datetime.end) {
+      return Data.filter(
+        (item: any) =>
+          item.date.seconds * 1000 >= datetime.start &&
+          item.date.seconds * 1000 <= datetime.end
+      );
+    } else return Data;
+  };
+  const Datatimepicker = fiterTime(filterData(User));
+  console.log(Datatimepicker);
   const Active = [
     {
       display: "Tất cả",
@@ -108,7 +123,7 @@ const Service = () => {
           onGetValue={getInputValue}
         />
       </div>
-      <TableService data={filterData(User)} />
+      <TableService data={fiterTime(filterData(User))} />
       <div className="level-pages">
         <Pages />
       </div>
