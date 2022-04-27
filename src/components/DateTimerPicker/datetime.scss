@@ -150,3 +150,35 @@ color: #A9A9B0;
 .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth{
     border-radius: 8px;
 }
+.react-datetimerange-picker__inputGroup:nth-child(1){
+    margin-right: 70px;
+    
+}.react-datetimerange-picker__inputGroup:nth-child(1)::after{
+    content: "";
+    display: block;
+    height: 44px;
+    position: absolute;
+    top: -10px;
+    transition: 0;
+    left: 80px;
+    z-index: 3;
+    width: 17px;
+    background-color: white;
+    border-right: 1.5px solid #D4D4D7;
+    border-top-right-radius : 8px;
+    border-bottom-right-radius :8px;
+    border-top: 1.5px solid #D4D4D7;
+    border-bottom: 1.5px solid #D4D4D7;
+}
+.react-datetimerange-picker__inputGroup::after{
+    content: "";
+    display: block;
+    height: 20px;
+    position: absolute;
+    top: 8%;
+    transition: 50%;
+    right: -3px;
+    width: 10px;
+    background-color: white;
+  
+}
