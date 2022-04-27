@@ -2,8 +2,7 @@ import React from "react";
 import calendar from "../../assets/images/addbutton/calendar.png";
 import arrow from "../../assets/images/addbutton/arrow.png";
 import "./calendar.scss";
-import { Box } from "@mui/material";
-import { useState } from "react";
+
 import Datatimepicker from "../DateTimerPicker/Datatimepicker";
 
 type CalendarProp = {

@@ -26,7 +26,7 @@ const Devices = () => {
     };
     getUser();
   }, []);
-
+  console.log(User[1].date.seconds);
   const filterData = (datas: any) => {
     if (valueState === 1) {
       let result = datas.filter(
