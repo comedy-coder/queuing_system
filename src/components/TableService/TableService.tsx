@@ -20,7 +20,9 @@ const TableService = ({ data }: TableProps) => {
 
   const handleUpdate = (id: any) => {
     dispatch(getID(id));
+    console.log(id);
   };
+
   return (
     <div className="tableservice-data">
       <table>

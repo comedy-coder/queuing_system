@@ -9,15 +9,17 @@ export const initState = {
 const reducer = (state :any, action :any ) => {
     switch(action.type){
         case SET_DETAIL_DEVICE :
-            return {
+            return {...state,
                 detaildevice : action.payload
             }
         case GET_DETAIL_ID :
             return {
+                ...state,
                 detailid : action.payload
             }
         case GET_DETAIL_DATETIME :
             return {
+                ...state,
                 datetime : action.payload
             }
             default :

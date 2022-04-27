@@ -1,0 +1,150 @@
+@use "../../sass/mixin" as *;
+.updateservice
+{
+    &-wrap {
+        margin: 0px 0px 0px 200px;
+        background-color:#F7F7F7;
+        height: 722px;
+        padding: 24px 0px 24px 24px;
+       border-bottom-left-radius: 12px;
+       border-bottom-right-radius: 12px;
+    
+       
+    }
+    &-text{
+      
+            border: 1.5px solid #D4D4D7;
+            box-sizing: border-box;
+            border-radius: 8px;
+             color: #D4D4D7;
+            padding : 8px ;
+            width: 50px;
+            background-color: white;
+            outline: none;
+            margin: 4px;
+           
+            &.red{
+                margin-left: 77px;
+            }
+            &.green{
+                margin-left: 86px;
+            }
+    }
+   
+    
+    &-rules{
+        @include flex(center,flex-start); 
+        span {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #535261;
+            margin: 6px;
+        }
+       
+    }
+        &-checkbox{
+      border: none;
+      outline: 2px solid #4277FF;
+      width: 15px;
+      height: 15px;
+     
+    }
+        
+
+    
+
+    &-title
+    {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FF7506;
+        margin-bottom: 16px;
+    }
+    &-main{
+        background-color: white;
+        height: 550px;
+        width: 1178px;
+        padding: 16px 24px;
+        box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+        border-radius: 16px;
+        &__group{
+            position: relative;
+        }
+        &__top{
+            font-style: normal;
+                font-weight: 700;
+        font-size: 20px;
+            line-height: 30px;   
+            color: #FF7506;
+        }
+       
+        &__title{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #282739;
+            margin-bottom: 8px;
+            @include flex(center,flex-start);
+            img {
+                margin-left : 4px;
+            }
+        }
+        &__input{
+            width: 553px;
+            height: 44px;
+            padding: 10px 270px 10px 12px;
+            border: 1.5px solid #D4D4D7;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 16px;
+
+        }
+        textarea{
+            width: 553px;
+            height: 132px;
+            padding: 10px 12px 10px 12px;
+            border: 1.5px solid #D4D4D7;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 16px;
+            color:#535261 ;
+            font-family: 'Nunito';
+        font-style: normal;
+        }
+       
+        &__input1::placeholder{
+            text-align: start;
+           }
+        
+        &__desc{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            @include flex(center,flex-start);
+            margin-top: 24px;
+            img {
+                margin-right: 4px;
+            }
+        }
+        &__button{
+            margin:24px 396px auto 368px;
+            button {
+                margin-left: 32px;
+            }
+        }
+    }
+}
+.test
+{position: absolute;
+    top: 49.5%;
+    left:0;
+
+}

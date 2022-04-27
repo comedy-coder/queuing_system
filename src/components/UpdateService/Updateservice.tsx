@@ -2,30 +2,38 @@ import { Grid } from "@mui/material";
 import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
-import "./addservice.scss";
-import { useState } from "react";
+import "./updateservice.scss";
+import { Context } from "../../Store/Provider";
+import { useContext, useState } from "react";
+
 import { db } from "../../utils/init-firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, updateDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-const Addservice = () => {
-  const userCollectionRef = collection(db, "Services");
+const Updateservice = () => {
   const [code, setCode] = useState<any | null>("");
   const [name, setName] = useState<any | null>("");
   const [desservice, setDesservice] = useState<any | null>("");
-  const createUser = async () => {
-    await addDoc(userCollectionRef, {
-      code: code,
-      nameservice: name,
-      desservice: desservice,
-    });
-  };
+  const [state] = useContext(Context);
+  const id = state.detailid;
+
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/dich-vu");
   };
-  const handleNext = () => {
+  const handleNext = (id: any, code: any) => {
     if (code !== "" && name !== "" && desservice !== "") {
-      createUser();
+      console.log(id);
+      const updateservice = async (id: any, code: any) => {
+        const userDoc = doc(db, "Service", id);
+
+        const newFields = {
+          code: code,
+          desservice: desservice,
+          nameservice: name,
+        };
+        await updateDoc(userDoc, newFields);
+      };
+      updateservice(id, code);
       alert("Thêm dịch vụ thành công");
       navigate("/dich-vu");
     } else {
@@ -33,20 +41,20 @@ const Addservice = () => {
     }
   };
   return (
-    <div className="addservice-wrap">
-      <div className="addservice-title">Quản lý dịch vụ</div>
-      <div className="addservice-main">
-        <div className="addservice-main__top">Thông tin dịch vụ</div>
-        <div className="addservice-main__group">
+    <div className="updateservice-wrap">
+      <div className="updateservice-title">Quản lý dịch vụ</div>
+      <div className="updateservice-main">
+        <div className="updateservice-main__top">Thông tin dịch vụ</div>
+        <div className="updateservice-main__group">
           <Grid container my={2} columnSpacing={4}>
             <Grid item xs={6}>
-              <div className="addservice-main__info">
-                <div className="addservice-main__title">
+              <div className="updateservice-main__info">
+                <div className="updateservice-main__title">
                   Mã dịch vụ: <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <input
                   type="text"
-                  className="addservice-main__input"
+                  className="updateservice-main__input"
                   placeholder="Nhập mã"
                   onChange={(event) => {
                     setCode(event.target.value);
@@ -55,27 +63,26 @@ const Addservice = () => {
               </div>
             </Grid>
             <Grid item xs={6}>
-              <div className="addservice-main__info">
-                <div className="addservice-main__title">
+              <div className="updateservice-main__info">
+                <div className="updateservice-main__title">
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
                 <textarea
                   onChange={(event) => {
                     setDesservice(event.target.value);
                   }}
-                  placeholder="Mô tả dịch vụ"
                 ></textarea>
               </div>
             </Grid>
             <div className="test">
               <Grid item xs={6}>
-                <div className="addservice-main__info">
-                  <div className="addservice-main__title">
+                <div className="updateservice-main__info">
+                  <div className="updateservice-main__title">
                     Tên dịch vụ : <img srcSet={`${sao} 2x`} alt="" />
                   </div>
                   <input
                     type="text"
-                    className="addservice-main__input"
+                    className="updateservice-main__input"
                     placeholder="Khám tim mạch"
                     onChange={(event) => {
                       setName(event.target.value);
@@ -86,56 +93,60 @@ const Addservice = () => {
             </div>
           </Grid>
         </div>
-        <div className="addservice-main__top">Quy tắc cấp số</div>
-        <div className="addservice-rules">
-          <input type="checkbox" className="addservice-checkbox"></input>
+        <div className="updateservice-main__top">Quy tắc cấp số</div>
+        <div className="updateservice-rules">
+          <input type="checkbox" className="updateservice-checkbox"></input>
           <span>
             {" "}
             Tăng tự động từ :{" "}
             <input
               type="text"
-              className="addservice-text"
+              className="updateservice-text"
               placeholder="0001"
             />{" "}
             đến{" "}
-            <input className="addservice-text" type="text" placeholder="9999" />
+            <input
+              className="updateservice-text"
+              type="text"
+              placeholder="9999"
+            />
           </span>
         </div>
-        <div className="addservice-rules">
-          <input type="checkbox" className="addservice-checkbox"></input>
+        <div className="updateservice-rules">
+          <input type="checkbox" className="updateservice-checkbox"></input>
           <span>
             {" "}
             Prelix:{" "}
             <input
               type="text"
-              className="addservice-text green"
+              className="updateservice-text green"
               placeholder="0001"
             />{" "}
           </span>
         </div>
-        <div className="addservice-rules">
-          <input type="checkbox" className="addservice-checkbox"></input>
+        <div className="updateservice-rules">
+          <input type="checkbox" className="updateservice-checkbox"></input>
           <span>
             {" "}
             Surflix:{" "}
             <input
               type="text"
-              className="addservice-text red"
+              className="updateservice-text red"
               placeholder="0001"
             />{" "}
           </span>
         </div>
-        <div className="addservice-rules ">
-          <input type="checkbox" className="addservice-checkbox"></input>
+        <div className="updateservice-rules ">
+          <input type="checkbox" className="updateservice-checkbox"></input>
           <span> Reset mỗi ngày: </span>
         </div>
 
-        <span className="addservice-main__desc">
+        <span className="updateservice-main__desc">
           {" "}
           <img srcSet={`${sao} 2x`} alt="" /> Là trường thông tin bắt buộc
         </span>
       </div>
-      <div className="addservice-main__button">
+      <div className="updateservice-main__button">
         <Button
           handleClick={handleBack}
           backgroundColor="orange1"
@@ -144,12 +155,18 @@ const Addservice = () => {
         >
           Hủy bỏ
         </Button>
-        <Button handleClick={handleNext} backgroundColor="orange" color="white">
-          Thêm thiết bị
+        <Button
+          handleClick={() => {
+            handleNext(id, code);
+          }}
+          backgroundColor="orange"
+          color="white"
+        >
+          Cập nhật
         </Button>
       </div>
     </div>
   );
 };
 
-export default Addservice;
+export default Updateservice;

@@ -13,14 +13,12 @@ import { db } from "../../utils/init-firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useContext } from "react";
 import { Context } from "../../Store/Provider";
-import { updateProfile } from "firebase/auth";
 const Service = () => {
   const [valueState, setvalueState] = useState<any | null>();
   const [inputSearch, setInputSearch] = useState<any | "">("");
   const [state] = useContext(Context);
   const datetime = state.datetime;
-  const now = new Date().getTime();
-  console.log(now);
+
   const getInputValue = (input: any) => {
     setInputSearch(input);
   };
@@ -87,7 +85,7 @@ const Service = () => {
     } else return Data;
   };
   const Datatimepicker = fiterTime(filterData(User));
-  console.log(Datatimepicker);
+
   const Active = [
     {
       display: "Tất cả",

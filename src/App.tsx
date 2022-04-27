@@ -26,6 +26,7 @@ import Role from "./pages/Setting/Role/Role";
 import AddRole from "./components/AddRole/AddRole";
 import RoleUpDate from "./components/RoleUpDate/RoleUpDate";
 import User from "./pages/Setting/User/User";
+import Updateservice from "./components/UpdateService/Updateservice";
 // import Addrole from "./components/AddRole/AddRole";
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <Route path="/dich-vu" element={<Service />} />
           <Route path="/dich-vu/addservice" element={<Addservice />} />
           <Route path="/dich-vu/detail" element={<ServiceDetail />} />
-          <Route path="/dich-vu/update" element={<Addservice />} />
+          <Route path="/dich-vu/update" element={<Updateservice />} />
           <Route path="/cap-so" element={<Level />} />
           <Route path="/cap-so/addlevel" element={<AddLevel />} />
           <Route path="/cap-so/detail" element={<LevelDetail />} />

@@ -10,7 +10,7 @@ const Datatimepicker = () => {
   const [state, dispatch] = useContext(Context);
   var start = Date.parse(value[0]);
   var end = Date.parse(value[1]);
-  console.log(value[0]);
+
   useEffect(() => {
     dispatch(getDateTime({ start, end }));
   }, [dispatch, start, end]);
