@@ -83,7 +83,6 @@ const TableService = ({ data }: TableProps) => {
                     {" "}
                     Cập nhật
                   </span>
-                  t
                 </Link>
                 <span></span>
               </td>

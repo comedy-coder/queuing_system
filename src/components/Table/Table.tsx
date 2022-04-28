@@ -12,7 +12,7 @@ type TableProps = {
   data: any;
 };
 const Table = ({ data }: TableProps) => {
-  const [dispatch] = useContext(Context);
+  const [state, dispatch] = useContext(Context);
 
   const handleDetail = (id: any) => {
     const Item = data.filter((item: any, index: any) => item.id === id);
@@ -73,9 +73,12 @@ const Table = ({ data }: TableProps) => {
                 </td>
 
                 <td>
-                  <div className="device-service_deactive">
+                  <div className="devicetable__service--title">
                     {item.service}
-                    <span></span>
+                  </div>
+                  <span className="devicetable__service--more">Xem thêm</span>
+                  <div className="devicetable__service--popup">
+                    {item.service}
                   </div>
                 </td>
                 <td>

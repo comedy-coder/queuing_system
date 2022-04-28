@@ -4,10 +4,24 @@ import date from "../../assets/images/dashboard/graphicdate.png";
 import week from "../../assets/images/dashboard/graphicweek.png";
 import month from "../../assets/images/dashboard/graphicmonth.png";
 import arrow from "../../assets/images/dashboard/arrow.png";
-
+import SelectorDD from "../SelectorDropdown/SelectorDD";
 const DashboardGraph = () => {
-  const handleChange = (e: any) => {
-    setValue(e.target.value);
+  const Active = [
+    {
+      display: "Ngày",
+      value: "ngày",
+    },
+    {
+      display: "Tháng",
+      value: "tuần",
+    },
+    {
+      display: "năm",
+      value: "năm",
+    },
+  ];
+  const handleChange = (value: any) => {
+    setValue(value);
   };
   const [grahic, setGraphic] = useState<any>(date);
   const [value, setValue] = useState("ngày");
@@ -29,15 +43,7 @@ const DashboardGraph = () => {
         </div>
         <div className="dashboardgraph-gruop" onChange={(e) => handleChange(e)}>
           <label>Xem theo</label>
-          <select
-            name="cars"
-            className="dashboardgraph-select"
-            style={{ backgroundImage: arrow }}
-          >
-            <option value="ngày">Ngày</option>
-            <option value="tuần">Tuần</option>
-            <option value="tháng">Tháng</option>
-          </select>
+          <SelectorDD width="106px" Menu={Active} onGetValue={handleChange} />
         </div>
       </div>
       <img src={grahic} alt="" />
