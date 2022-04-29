@@ -27,6 +27,7 @@
     "logger": "^0.0.1",
     "moment": "^2.29.3",
     "react": "^18.0.0",
+    "react-circular-progressbar": "^2.0.4",
     "react-date-range": "^1.4.0",
     "react-datetime": "^2.16.3",
     "react-datetime-picker": "^3.5.0",
@@ -68,6 +69,7 @@
     ]
   },
   "devDependencies": {
+    "@tomik23/react-circular-progress-bar": "^1.1.1",
     "@types/logger": "^0.0.1",
     "@types/react-date-range": "^1.4.3",
     "@types/wojtekmaj__react-datetimerange-picker": "^3.0.2",
