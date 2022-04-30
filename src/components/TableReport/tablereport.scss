@@ -29,7 +29,7 @@
         th::before{
             content: "";
             width: 1px;
-            height: 490px;
+            height: 48px;
             background-color: #FFE3CD;
             display: block;
             position: absolute;
@@ -54,10 +54,24 @@
             line-height: 21px;
             overflow-x: hidden;
             height: 49px;
+            position: relative;
+            &::before{
+                content: "";
+                width: 1px;
+                height: 48px;
+                background-color: #FFE3CD;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
             a{
                 cursor: pointer;
                 text-decoration: underline;
                 color: #4277FF;
+            }
+            span{
+                margin-left: 5px;
             }
       
             

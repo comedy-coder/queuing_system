@@ -1,11 +1,19 @@
 import React from "react";
 
 import dotred from "../../assets/images/table/dotred.png";
-import greendot from "../../assets/images/table/greendot.png";
+import bluedot from "../../assets/images/table/bluedot.png";
 
 import "./tablereport.scss";
+import { ConsoleSqlOutlined } from "@ant-design/icons";
 const TableReport = ({ data }: any) => {
-  console.log(data);
+  // const date = new Date(data[0].date.seconds * 1000);
+  const datetime: any = [];
+  data.forEach((item: any, index: any) =>
+    datetime.push(new Date(item.date.seconds * 1000).toLocaleString())
+  );
+  JSON.stringify(datetime);
+  console.log(datetime[0]);
+
   return (
     <div className="tablereport-data">
       <table>
@@ -18,17 +26,23 @@ const TableReport = ({ data }: any) => {
 
             <th>Nguồn cấp</th>
           </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Đang chờ
-            </td>
+          {data.map((item: any, index: any) => (
+            <tr>
+              <td>2010001</td>
+              <td> {item.service}</td>
+              <td>{datetime[index]}</td>
+              <td>
+                {item.active ? (
+                  <img srcSet={`${bluedot} 2x`} alt="" />
+                ) : (
+                  <img srcSet={`${dotred} 2x`} alt="" />
+                )}
+                <span>{item.active ? "Đang chờ" : "Bỏ qua"}</span>
+              </td>
 
-            <td>Kiosk</td>
-          </tr>
+              <td>{item.name}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
