@@ -4,7 +4,11 @@ import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
 
 import "./tabledetailservice.scss";
-const TableDetailService = () => {
+
+type TableProps = {
+  data: any;
+};
+const TableDetailService = ({ data }: TableProps) => {
   return (
     <div className="tabledetailservice-data">
       <table>
@@ -13,70 +17,20 @@ const TableDetailService = () => {
             <th>Số thứ tự</th>
             <th>Trạng thái</th>
           </tr>
-          <tr>
-            <td>2010001</td>
+          {data.map((item: any, index: any) => (
+            <tr>
+              <td>2010001</td>
 
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đã hoàn thành
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đã hoàn thành
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-          </tr>
+              <td>
+                {item.active ? (
+                  <img srcSet={`${greendot} 2x`} alt="" />
+                ) : (
+                  <img srcSet={`${dotred} 2x`} alt="" />
+                )}
+                <span>{item.active ? "Đã hoàn thành" : "Vắng"}</span>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

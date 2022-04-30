@@ -38,6 +38,7 @@
                 line-height: 24px;
                 height: 100%;
                color: white;
+               width: 200px;
             }
 
             span {
@@ -114,8 +115,8 @@
 
     &-group {
         position: absolute !important;
-        bottom: -107px;
-        right: -213px;
+        bottom: -113px;
+        right: -216px;
         background-color: white;
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;

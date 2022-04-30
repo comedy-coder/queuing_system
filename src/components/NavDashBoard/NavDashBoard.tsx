@@ -5,8 +5,8 @@ import image from "../../exportimage/image";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 
-import { useRef } from "react";
 import icon from "../../assets/images/homepage/dot.png";
+import NavSub from "./NavSub";
 const NavDashBoard = () => {
   const handleLogout = () => {};
   const Navbar = [
@@ -44,23 +44,7 @@ const NavDashBoard = () => {
   ];
   const { pathname } = useLocation();
   const ativeNav = Navbar.findIndex((e) => e.path === pathname);
-  const Navdashboard = [
-    {
-      display: "Quản lý vai trò",
-      path: "/setting/vai-tro",
-    },
-    {
-      display: "Quản lý tài khoản",
-      path: "/setting/tai-khoan",
-    },
-    {
-      display: "Quản lý người dùng",
-      path: "/setting/nguoi-dung",
-    },
-  ];
-  const subRef = useRef(null);
 
-  const Navindex = Navdashboard.findIndex((e) => e.path === pathname);
   return (
     <div className="container-wrapper">
       <div className="navbar__logo">
@@ -78,24 +62,9 @@ const NavDashBoard = () => {
               <img srcSet={`${item.img} 2x`} alt="" />
               <span>{item.display}</span>
               {index === 5 ? (
-                <div>
+                <div style={{ display: "flex", width: "12px" }}>
                   <img srcSet={`${icon} 2x`} alt="" />
-                  <div className="navdashboardsub-group">
-                    {Navdashboard.map((item, index) => (
-                      <Link to={item.path} key={index}>
-                        <div
-                          className={`navdashboardsub-item ${
-                            index === 0 ? "bd-top" : ""
-                          } ${index === 2 ? "bd-bot" : ""} ${
-                            Navindex === index ? "active" : ""
-                          }`}
-                          ref={subRef}
-                        >
-                          {item.display}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                  <NavSub />
                 </div>
               ) : (
                 ""

@@ -6,29 +6,61 @@ import TableDetailService from "../TableDetailService/TableDetailService";
 import edit from "../../assets/images/addbutton/edit.png";
 import back from "../../assets/images/addbutton/back.png";
 import "./servicedetail.scss";
+import { db } from "../../utils/init-firebase";
+import { collection, getDocs } from "firebase/firestore";
 import { Context } from "../../Store/Provider";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const ServiceDetail = () => {
   const [state, dispatch] = useContext(Context);
   const item = state.detaildevice[0];
 
+  const [User, setUser] = useState<any>([]);
+  useEffect(() => {
+    const getUser = async () => {
+      const UserColecctionRef = collection(db, "Services");
+      const data = await getDocs(UserColecctionRef);
+
+      setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
+  console.log(User);
+  const datetime = state.datetime;
+  const [valueState, setvalueState] = useState<any | null>();
+  const getValueState = (value: any) => {
+    setvalueState(Number(value));
+  };
+  const filterData = (data: any) => {
+    if (valueState === 1) {
+      return data.filter((data: any) => data.active === Boolean(valueState));
+    } else if (valueState === 0) {
+      return data.filter((data: any) => data.active === Boolean(valueState));
+    } else return data;
+  };
+
+  const fiterTime = (Data: any) => {
+    if (datetime.start !== datetime.end) {
+      return Data.filter(
+        (item: any) =>
+          item.date.seconds * 1000 >= datetime.start &&
+          item.date.seconds * 1000 <= datetime.end
+      );
+    } else return Data;
+  };
+
   const State = [
     {
       display: "Tất cả",
-      value: "all",
+      value: "-1",
     },
     {
-      display: "Đã hoàn thành",
-      value: "active",
+      display: "Vắng",
+      value: "0",
     },
     {
-      display: "Đã thực hiện ",
-      value: "deactive",
-    },
-    {
-      display: "Vắng ",
-      value: "none",
+      display: "Đã hoàn thành ",
+      value: "1",
     },
   ];
   const navigate = useNavigate();
@@ -88,10 +120,15 @@ const ServiceDetail = () => {
       </div>
       <div className="servicedetail-main1">
         <div className="servicedetail-main1__top">
-          <SelectorDD title="Trạng thái" width="160px" Menu={State} />
+          <SelectorDD
+            title="Trạng thái"
+            width="160px"
+            Menu={State}
+            onGetValue={getValueState}
+          />
           <Calendar styles={{ marginLeft: "12px" }} />
         </div>
-        <TableDetailService />
+        <TableDetailService data={fiterTime(filterData(User))} />
       </div>
       <div className="servicedetail-button">
         <AddButton img={edit} handleClick={handleChange}>

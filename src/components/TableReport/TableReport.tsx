@@ -4,7 +4,8 @@ import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
 
 import "./tablereport.scss";
-const TableReport = () => {
+const TableReport = ({ data }: any) => {
+  console.log(data);
   return (
     <div className="tablereport-data">
       <table>
@@ -24,105 +25,6 @@ const TableReport = () => {
             <td>
               {" "}
               <img srcSet={`${dotred} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>{" "}
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Đang chờ
-            </td>
-
-            <td>Kiosk</td>
-          </tr>{" "}
-          <tr>
-            <td>2010001</td>
-            <td>Khám tim mạch</td>
-            <td>07:20 - 07/10/2021 </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Đang chờ
             </td>
 
             <td>Kiosk</td>
