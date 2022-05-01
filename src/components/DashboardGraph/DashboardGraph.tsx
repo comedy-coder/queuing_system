@@ -16,7 +16,7 @@ const DashboardGraph = () => {
       value: "tuần",
     },
     {
-      display: "năm",
+      display: "Năm",
       value: "năm",
     },
   ];

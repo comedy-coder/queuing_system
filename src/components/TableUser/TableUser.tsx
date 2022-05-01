@@ -1,7 +1,11 @@
 import React from "react";
 
 import "./tableuser.scss";
-const TableUser = () => {
+const TableUser = ({ data }: any) => {
+  const datetime: any = [];
+  data.forEach((item: any, index: any) =>
+    datetime.push(new Date(item.date.seconds * 1000).toLocaleString())
+  );
   return (
     <div className="tableuser-data">
       <table>
@@ -12,69 +16,15 @@ const TableUser = () => {
             <th>IP thực hiện </th>
             <th>Thao tác thực hiện</th>
           </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
+          {data.map((item: any, index: any) => (
+            <tr>
+              <td>{item.name}</td>
+              <td>{datetime[index]}</td>
+              <td>{item.ip} </td>
 
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>01/12/2021 15:12:17</td>
-            <td>192.168.3.1 </td>
-
-            <td>Cập nhật thông tin dịch vụ DV_01</td>
-          </tr>
+              <td>{item.desc}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

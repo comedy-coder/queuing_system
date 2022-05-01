@@ -2,9 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
-
+import { Context } from "../../Store/Provider";
+import { useContext } from "react";
 import "./tableaccount.scss";
+import { getID } from "../../Store/action";
 const TableAccount = ({ data }: any) => {
+  const [state, dispatch] = useContext(Context);
+  const handleUpdate = (id: any) => {
+    dispatch(getID(id));
+  };
+
   return (
     <div className="account-data">
       <table>
@@ -37,7 +44,15 @@ const TableAccount = ({ data }: any) => {
               </td>
 
               <td>
-                <Link to="/setting/tai-khoan/update">Cập nhật</Link>
+                <Link to="/setting/tai-khoan/update">
+                  <span
+                    onClick={() => {
+                      handleUpdate(item.id);
+                    }}
+                  >
+                    Cập nhật
+                  </span>
+                </Link>
               </td>
             </tr>
           ))}

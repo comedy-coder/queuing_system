@@ -4,14 +4,13 @@ import dotred from "../../assets/images/table/dotred.png";
 import bluedot from "../../assets/images/table/bluedot.png";
 
 import "./tablereport.scss";
-import { ConsoleSqlOutlined } from "@ant-design/icons";
+
 const TableReport = ({ data }: any) => {
   // const date = new Date(data[0].date.seconds * 1000);
   const datetime: any = [];
   data.forEach((item: any, index: any) =>
     datetime.push(new Date(item.date.seconds * 1000).toLocaleString())
   );
-  JSON.stringify(datetime);
 
   return (
     <div className="tablereport-data">
