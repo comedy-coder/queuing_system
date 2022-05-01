@@ -2,7 +2,7 @@ import * as React from "react";
 import "./circularprogress.scss";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import a from "../../assets/images/homepage/logo.png";
+
 export interface IModelCardProps {
   percent: number;
   percentBigColor: string;

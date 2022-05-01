@@ -84,7 +84,6 @@ const Service = () => {
       );
     } else return Data;
   };
-  const Datatimepicker = fiterTime(filterData(User));
 
   const Active = [
     {

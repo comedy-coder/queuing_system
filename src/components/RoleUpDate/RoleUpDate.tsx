@@ -3,13 +3,37 @@ import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
 import "./roleupdate.scss";
+import { Context } from "../../Store/Provider";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../utils/init-firebase";
+import { collection, updateDoc, doc } from "firebase/firestore";
 const RoleUpDate = () => {
+  const [name, setName] = useState<any | null>("");
+  const [desc, setDesc] = useState<any | null>("");
+  const [state] = useContext(Context);
+  const id = state.detailid;
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/setting/vai-tro");
   };
   const handleNext = () => {
+    if (name !== "" && desc !== "") {
+      const updateservice = async (id: any) => {
+        const userDoc = doc(db, "Roles", id);
+
+        const newFields = {
+          name: name,
+          desc: desc,
+        };
+        await updateDoc(userDoc, newFields);
+      };
+      updateservice(id);
+      alert("Cập nhật vai trò thành công");
+    } else {
+      return alert("Nhập đầy đủ thông tin");
+    }
+
     navigate("/setting/vai-tro");
   };
   return (
@@ -28,6 +52,9 @@ const RoleUpDate = () => {
                   type="text"
                   className="roleupdate-main__input"
                   placeholder="Nhập mã thiết bị"
+                  onChange={(event) => {
+                    setName(event.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -36,9 +63,12 @@ const RoleUpDate = () => {
                 <div className="roleupdate-main__title">
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <textarea>
-                  Chịu trách nhiệm thống kê số liệu và kiểm toán
-                </textarea>
+                <textarea
+                  onChange={(event) => {
+                    setDesc(event.target.value);
+                  }}
+                  placeholder="Nhập mô tả"
+                ></textarea>
               </div>
             </Grid>
 

@@ -4,7 +4,7 @@ import dotred from "../../assets/images/table/dotred.png";
 import greendot from "../../assets/images/table/greendot.png";
 
 import "./tableaccount.scss";
-const TableAccount = () => {
+const TableAccount = ({ data }: any) => {
   return (
     <div className="account-data">
       <table>
@@ -18,159 +18,29 @@ const TableAccount = () => {
             <th>Trạng thái hoạt động</th>
             <th></th>
           </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
+          {data.map((item: any, index: any) => (
+            <tr>
+              <td>{item.acc}</td>
+              <td>{item.name}</td>
+              <td>{item.sdt}</td>
+              <td>{item.email}</td>
+              <td>
+                {item.role} <br />
+              </td>
+              <td>
+                {item.state ? (
+                  <img srcSet={`${greendot} 2x`} alt="" />
+                ) : (
+                  <img srcSet={`${dotred} 2x`} alt="" />
+                )}
+                <span>{item.state ? "Hoạt động" : "Ngưng hoạt động"}</span>
+              </td>
 
-            <td>
-              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-
-            <td>
-              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/setting/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-
-            <td>
-              <Link to="/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>tuyetnguyen@12</td>
-            <td>Nguyen Văn A</td>
-            <td>0919256712</td>
-            <td>tuyetnguyen123@gmail.comi</td>
-            <td>
-              Kế toán <br />
-            </td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Hoạt động
-            </td>
-
-            <td>
-              <Link to="/tai-khoan/update">Cập nhật</Link>
-            </td>
-          </tr>
+              <td>
+                <Link to="/setting/tai-khoan/update">Cập nhật</Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

@@ -3,14 +3,31 @@ import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
 import "./addrole.scss";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../utils/init-firebase";
+import { collection, addDoc } from "firebase/firestore";
 const AddRole = () => {
+  const [desc, setDesc] = useState<any | null>("");
+  const [name, setName] = useState<any | null>("");
+  const userCollectionRef = collection(db, "Roles");
+  const createUser = async () => {
+    await addDoc(userCollectionRef, {
+      desc: desc,
+      name: name,
+      nbusers: 4,
+    });
+  };
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/setting/vai-tro");
   };
   const handleNext = () => {
-    navigate("/setting/vai-tro");
+    if (desc !== "" && name !== "") {
+      createUser();
+      alert("Thêm vai trò thành công");
+      navigate("/setting/vai-tro");
+    } else return alert("Nhập đầy đủ thông tin");
   };
   return (
     <div className="addrole-wrap">
@@ -28,6 +45,9 @@ const AddRole = () => {
                   type="text"
                   className="addrole-main__input"
                   placeholder="Nhập mã thiết bị"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                 />
               </div>
             </Grid>
@@ -36,7 +56,12 @@ const AddRole = () => {
                 <div className="addrole-main__title">
                   Mô tả : <img srcSet={`${sao} 2x`} alt="" />
                 </div>
-                <textarea>Nhập mô tả</textarea>
+                <textarea
+                  placeholder="Nhập mô tả"
+                  onChange={(e) => {
+                    setDesc(e.target.value);
+                  }}
+                ></textarea>
               </div>
             </Grid>
 

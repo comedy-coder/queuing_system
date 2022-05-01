@@ -5,9 +5,9 @@ import Button from "../Button/Button";
 import "./updateservice.scss";
 import { Context } from "../../Store/Provider";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+
 import { db } from "../../utils/init-firebase";
-import { updateDoc, doc } from "firebase/firestore";
+import { collection, updateDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 const Updateservice = () => {
   const [code, setCode] = useState<any | null>("");
@@ -24,7 +24,7 @@ const Updateservice = () => {
     if (code !== "" && name !== "" && desservice !== "") {
       console.log(id);
       const updateservice = async (id: any, code: any) => {
-        const userDoc = doc(db, "Services", id);
+        const userDoc = doc(db, "Service", id);
 
         const newFields = {
           code: code,
@@ -34,7 +34,7 @@ const Updateservice = () => {
         await updateDoc(userDoc, newFields);
       };
       updateservice(id, code);
-      alert("Cập nhật thành công");
+      alert("Thêm dịch vụ thành công");
       navigate("/dich-vu");
     } else {
       return alert("Nhập đầy đủ thông tin");
@@ -155,17 +155,15 @@ const Updateservice = () => {
         >
           Hủy bỏ
         </Button>
-        <Link to="/dich-vu">
-          <Button
-            handleClick={() => {
-              handleNext(id, code);
-            }}
-            backgroundColor="orange"
-            color="white"
-          >
-            Cập nhật
-          </Button>
-        </Link>
+        <Button
+          handleClick={() => {
+            handleNext(id, code);
+          }}
+          backgroundColor="orange"
+          color="white"
+        >
+          Cập nhật
+        </Button>
       </div>
     </div>
   );

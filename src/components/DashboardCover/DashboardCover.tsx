@@ -39,7 +39,7 @@ const DashboardCover = () => {
     else return (InActiveDevices = ActivDevices + 1);
   });
   percentDevices = Math.floor((ActivDevices / totalDevices) * 100);
-  console.log(ActivDevices, InActiveDevices, percentDevices);
+
   let totalServices = 0;
   let percentServices = 0;
   let ActivServices = 0;
@@ -50,7 +50,7 @@ const DashboardCover = () => {
     else return (InActiveServies = InActiveServies + 1);
   });
   percentServices = Math.floor((ActivServices / totalServices) * 100);
-  console.log(ActivServices, InActiveServies, percentServices);
+
   return (
     <div className="dashboardcover-wrap">
       <span className="dashboardcover-title">Tổng quan</span>

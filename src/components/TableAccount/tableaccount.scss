@@ -30,7 +30,7 @@
         th::before{
             content: "";
             width: 1px;
-            height: 490px;
+            height: 48px;
             background-color: #FFE3CD;
             display: block;
             position: absolute;
@@ -54,12 +54,22 @@
             font-size: 14px;
             line-height: 21px;
             overflow-x: hidden;
+            position: relative;
             a{
                 cursor: pointer;
                 text-decoration: underline;
                 color: #4277FF;
             }
-      
+            &::before{
+                content: "";
+                width: 1px;
+                height: 48px;
+                background-color: #FFE3CD;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
             
         }
         td:first-child{

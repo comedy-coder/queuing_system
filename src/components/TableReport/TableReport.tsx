@@ -12,7 +12,6 @@ const TableReport = ({ data }: any) => {
     datetime.push(new Date(item.date.seconds * 1000).toLocaleString())
   );
   JSON.stringify(datetime);
-  console.log(datetime[0]);
 
   return (
     <div className="tablereport-data">

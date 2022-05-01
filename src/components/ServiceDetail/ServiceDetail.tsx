@@ -11,6 +11,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { Context } from "../../Store/Provider";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getID } from "../../Store/action";
 const ServiceDetail = () => {
   const [state, dispatch] = useContext(Context);
   const item = state.detaildevice[0];
@@ -25,7 +26,7 @@ const ServiceDetail = () => {
     };
     getUser();
   }, []);
-  console.log(User);
+
   const datetime = state.datetime;
   const [valueState, setvalueState] = useState<any | null>();
   const getValueState = (value: any) => {
@@ -65,6 +66,7 @@ const ServiceDetail = () => {
   ];
   const navigate = useNavigate();
   const handleChange = () => {
+    dispatch(getID(item.id));
     navigate("/dich-vu/update");
   };
   const handleBack = () => {
