@@ -5,6 +5,7 @@ import greendot from "../../assets/images/table/greendot.png";
 
 import "./tablelevel.scss";
 const Table = () => {
+  const stt = 20000;
   return (
     <div className="level-data">
       <table>
@@ -35,7 +36,7 @@ const Table = () => {
             </td>
           </tr>
           <tr>
-            <td>2010001</td>
+            <td>{stt}</td>
             <td>Kiosk</td>
             <td>Khám tim mạch</td>
             <td>14:35 - 07/11/2021</td>
