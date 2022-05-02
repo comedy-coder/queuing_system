@@ -10,6 +10,29 @@ import { useEffect, useState } from "react";
 const DashboardCover = () => {
   const [User, setUser] = useState<any>([]);
   const [UserServices, setUerSerivces] = useState<any>([]);
+  const [UserLevel, setUserLevel] = useState<any>([]);
+  useEffect(() => {
+    const getUser = async () => {
+      const UserColecctionRef = collection(db, "Numbers");
+      const data = await getDocs(UserColecctionRef);
+
+      setUserLevel(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
+  console.log(User);
+  let total = 0;
+  let used = 0;
+  let waitting = 0;
+  let passed = 0;
+  UserLevel.forEach((item: any, index: any) => {
+    total = index + 1;
+    if (item.state.toLowerCase() === "đã sử dụng") used += 1;
+    if (item.state.toLowerCase() === "bỏ qua") passed += 1;
+    if (item.state.toLowerCase() === "đang chờ") waitting += 1;
+  });
+  let percentUserd = Math.floor((used / total) * 100);
+  let percentwaiting = Math.floor((waitting / total) * 100);
   // const [activeDevices, setActiveDevices] = useState(0);
   useEffect(() => {
     const getUser = async () => {
@@ -93,25 +116,25 @@ const DashboardCover = () => {
         item2Color={"#7E7D88"}
       />
       <ModelCardCustom
-        percent={86}
-        percent1={11.5}
+        percent={percentUserd}
+        percent1={percentwaiting}
         percentBigColor={"#35C75A"}
         percentSmallColor={"#7E7D88"}
         percentSmallestColor={"#F178B6"}
         icon={"4"}
-        count={4.221}
+        count={total}
         title={"Cấp số"}
         mainColor={"#35C75A"}
         iconColor={
           " invert(53%) sepia(89%) saturate(370%) hue-rotate(83deg) brightness(101%) contrast(92%)"
         }
-        item1Count={3.621}
+        item1Count={used}
         item1Title={"Đã sử dụng"}
         item1Color={"#35C75A"}
-        item2Count={486}
+        item2Count={waitting}
         item2Title={"Đang chờ"}
         item2Color={"#7E7D88"}
-        item3Count={32}
+        item3Count={passed}
         item3Title={"Bỏ qua"}
         item3Color={"#F178B6"}
       />
