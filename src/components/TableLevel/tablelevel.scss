@@ -16,7 +16,7 @@
         
         th {
    
-           padding: 12.5px 17px;
+           padding: 12.5px 15px;
            background-color: #FF9138;
            color: white;
            font-weight: 600;
@@ -30,7 +30,7 @@
         th::before{
             content: "";
             width: 1px;
-            height: 490px;
+            height: 48px;
             background-color: #FFE3CD;
             display: block;
             position: absolute;
@@ -49,17 +49,27 @@
             border-top-right-radius :12px;
         }
         td {
-            padding: 14px 16px 14px 17px;
+            padding: 14px 14px 14px 14px;
             font-weight: 400;
             font-size: 14px;
             line-height: 21px;
             overflow-x: hidden;
+            position: relative;
             a{
                 cursor: pointer;
                 text-decoration: underline;
                 color: #4277FF;
             }
-      
+            &::before{
+                content: "";
+                width: 1px;
+                height: 48px;
+                background-color: #FFE3CD;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
             
         }
         td:first-child{

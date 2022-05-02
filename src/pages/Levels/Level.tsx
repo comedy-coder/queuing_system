@@ -8,11 +8,88 @@ import { Link } from "react-router-dom";
 import Calendar from "../../components/Calendar/Calendar";
 import addbtn from "../../assets/images/addbutton/addbtn.png";
 import Pages from "../../components/PaginatonPages/Pages";
-
+import { Context } from "../../Store/Provider";
+import { useContext, useEffect, useState } from "react";
+import { db } from "../../utils/init-firebase";
+import { collection, getDocs } from "firebase/firestore";
 const Level = () => {
+  const [nameValue, setNameValue] = useState<any | null>("");
+  const [stateValue, setStateValue] = useState<any | null>("");
+  const [sourceValue, setSourceValue] = useState<any | null>("");
+  const [inputSearch, setInputSearch] = useState<any | null>("");
   const getNameValue = (value: any) => {
-    console.log(value);
+    setNameValue(value);
   };
+  const getStateValue = (value: any) => {
+    setStateValue(value);
+  };
+  const getSourceValue = (value: any) => {
+    setSourceValue(value);
+  };
+  const handleInput = (value: any) => {
+    setInputSearch(value);
+  };
+  const [state, dispatch] = useContext(Context);
+  const datetime = state.datetime;
+  const [User, setUser] = useState<any>([]);
+  useEffect(() => {
+    const getUser = async () => {
+      const UserColecctionRef = collection(db, "Numbers");
+      const data = await getDocs(UserColecctionRef);
+
+      setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
+  const filterService = (data: any) => {
+    if (nameValue !== "all")
+      return data.filter(
+        (item: any) =>
+          item.nameservice.toLowerCase().indexOf(nameValue.toLowerCase()) > -1
+      );
+    else return data;
+  };
+  const filterState = (data: any) => {
+    if (stateValue !== "all")
+      return data.filter(
+        (item: any) =>
+          item.state.toLowerCase().indexOf(stateValue.toLowerCase()) > -1
+      );
+    else return data;
+  };
+  const filterSource = (data: any) => {
+    if (sourceValue !== "all")
+      return data.filter(
+        (item: any) =>
+          item.source.toLowerCase().indexOf(sourceValue.toLowerCase()) > -1
+      );
+    else return data;
+  };
+  const fiterTime = (Data: any) => {
+    if (datetime.start !== datetime.end) {
+      return Data.filter(
+        (item: any) =>
+          item.time1.seconds * 1000 >= datetime.start &&
+          item.time1.seconds * 1000 <= datetime.end
+      );
+    } else return Data;
+  };
+  const fiterInput = (data: any) => {
+    if (inputSearch !== "") {
+      return data.filter(
+        (item: any) =>
+          item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.nameservice.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.source.toLowerCase().indexOf(inputSearch) > -1 ||
+          item.state.toLowerCase().indexOf(inputSearch) > -1
+      );
+    } else return data;
+  };
+
+  const filterData = fiterInput(
+    filterService(filterSource(filterState(fiterTime(User))))
+  );
+
   const Name = [
     {
       display: "Tất cả",
@@ -20,15 +97,15 @@ const Level = () => {
     },
     {
       display: "Đang chờ",
-      value: "waiting",
+      value: "Đang chờ",
     },
     {
       display: "Đã sử dụng",
-      value: "used",
+      value: "Đã sử dụng",
     },
     {
       display: "Bỏ qua",
-      value: "passed",
+      value: "Bỏ qua",
     },
   ];
   const State = [
@@ -38,15 +115,23 @@ const Level = () => {
     },
     {
       display: "Khám sản-phụ khoa",
-      value: "waiting",
+      value: "khám sản phụ khoa",
     },
     {
       display: "Khám răng hàm mặt",
-      value: "used",
+      value: "khám răng hàm mặt",
     },
     {
       display: "Khám tai mũi họng",
-      value: "passed",
+      value: "khám tai mũi họng",
+    },
+    {
+      display: "Khám tim mạch",
+      value: "khám tim mạch",
+    },
+    {
+      display: "Khám hô hấp",
+      value: "khám tổng quát",
     },
   ];
   const Source = [
@@ -56,11 +141,11 @@ const Level = () => {
     },
     {
       display: "Kiosk",
-      value: "waiting",
+      value: "Kiosk",
     },
     {
       display: "Hệ thống",
-      value: "used",
+      value: "Hệ thống",
     },
   ];
   const handleChange = () => {};
@@ -72,16 +157,31 @@ const Level = () => {
           <SelectorDD
             title="Tên dịch vụ"
             width="154px"
-            Menu={Name}
+            Menu={State}
             onGetValue={getNameValue}
           />
-          <SelectorDD title="Tình trạng" width="154px" Menu={State} />
-          <SelectorDD title="Nguồn cấp" width="154px" Menu={Source} />
+          <SelectorDD
+            title="Tình trạng"
+            width="154px"
+            Menu={Name}
+            onGetValue={getStateValue}
+          />
+          <SelectorDD
+            title="Nguồn cấp"
+            width="154px"
+            Menu={Source}
+            onGetValue={getSourceValue}
+          />
           <Calendar />
         </div>
-        <Search width="240px" title="Từ khóa" left="206.5px" />
+        <Search
+          width="240px"
+          title="Từ khóa"
+          left="206.5px"
+          onGetValue={handleInput}
+        />
       </div>
-      <TableLevel />
+      <TableLevel data={filterData} />
       <div className="level-pages">
         <Pages />
       </div>

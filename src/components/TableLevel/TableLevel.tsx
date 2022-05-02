@@ -1,11 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
-import greendot from "../../assets/images/table/greendot.png";
+import bluedot from "../../assets/images/table/bluedot.png";
+import blackdot from "../../assets/images/table/blackdot.png";
 
 import "./tablelevel.scss";
-const Table = () => {
-  const stt = 20000;
+const Table = ({ data }: any) => {
+  const stt = 200000;
+  const datetime1: any = [];
+  data.forEach((item: any, index: any) =>
+    datetime1.push(new Date(item.time1.seconds * 1000).toLocaleString())
+  );
+  const datetime2: any = [];
+  data.forEach((item: any, index: any) =>
+    datetime2.push(new Date(item.time2.seconds * 1000).toLocaleString())
+  );
+
+  const dot = (data: any) => {
+    if (data === "Đang chờ") return bluedot;
+    if (data === "Đã sử dụng") return blackdot;
+    else return dotred;
+  };
+
   return (
     <div className="level-data">
       <table>
@@ -20,141 +36,23 @@ const Table = () => {
             <th>Nguồn cấp </th>
             <th></th>
           </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>{stt}</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${dotred} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2010001</td>
-            <td>Kiosk</td>
-            <td>Khám tim mạch</td>
-            <td>14:35 - 07/11/2021</td>
-            <td>14:35 - 12/11/2021</td>
-            <td>
-              {" "}
-              <img srcSet={`${greendot} 2x`} alt="" /> Ngưng hoạt động
-            </td>
-            <td>Kiosk</td>
-            <td>
-              <Link to="/cap-so/detail">Chi tiết</Link>
-            </td>
-          </tr>
+          {data.map((item: any, index: any) => (
+            <tr>
+              <td>{stt + index}</td>
+              <td>{item.name}</td>
+              <td>{item.nameservice}</td>
+              <td>{datetime1[index]}</td>
+              <td>{datetime2[index]}</td>
+              <td>
+                {" "}
+                <img srcSet={`${dot(item.state)} 2x`} alt="" /> {item.state}
+              </td>
+              <td>{item.source}</td>
+              <td>
+                <Link to="/cap-so/detail">Chi tiết</Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
