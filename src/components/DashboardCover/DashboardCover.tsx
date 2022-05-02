@@ -97,47 +97,51 @@ const DashboardCover = () => {
           item2Color={"#7E7D88"}
         />
       </Link>
-      <CircularProgress
-        percent={percentServices}
-        percentBigColor={"#4277FF"}
-        percentSmallColor={"#7E7D88"}
-        icon={"3"}
-        count={totalServices}
-        title={"Dịch vụ"}
-        mainColor={"#4277FF"}
-        iconColor={
-          "invert(48%) sepia(69%) saturate(4951%) hue-rotate(212deg) brightness(102%) contrast(102%)"
-        }
-        item1Count={ActivServices}
-        item1Title={"Đang hoạt động"}
-        item1Color={"#4277FF"}
-        item2Count={InActiveServies}
-        item2Title={"Ngưng hoạt động"}
-        item2Color={"#7E7D88"}
-      />
-      <ModelCardCustom
-        percent={percentUserd}
-        percent1={percentwaiting}
-        percentBigColor={"#35C75A"}
-        percentSmallColor={"#7E7D88"}
-        percentSmallestColor={"#F178B6"}
-        icon={"4"}
-        count={total}
-        title={"Cấp số"}
-        mainColor={"#35C75A"}
-        iconColor={
-          " invert(53%) sepia(89%) saturate(370%) hue-rotate(83deg) brightness(101%) contrast(92%)"
-        }
-        item1Count={used}
-        item1Title={"Đã sử dụng"}
-        item1Color={"#35C75A"}
-        item2Count={waitting}
-        item2Title={"Đang chờ"}
-        item2Color={"#7E7D88"}
-        item3Count={passed}
-        item3Title={"Bỏ qua"}
-        item3Color={"#F178B6"}
-      />
+      <Link to="/dich-vu">
+        <CircularProgress
+          percent={percentServices}
+          percentBigColor={"#4277FF"}
+          percentSmallColor={"#7E7D88"}
+          icon={"3"}
+          count={totalServices}
+          title={"Dịch vụ"}
+          mainColor={"#4277FF"}
+          iconColor={
+            "invert(48%) sepia(69%) saturate(4951%) hue-rotate(212deg) brightness(102%) contrast(102%)"
+          }
+          item1Count={ActivServices}
+          item1Title={"Đang hoạt động"}
+          item1Color={"#4277FF"}
+          item2Count={InActiveServies}
+          item2Title={"Ngưng hoạt động"}
+          item2Color={"#7E7D88"}
+        />
+      </Link>
+      <Link to="/cap-so">
+        <ModelCardCustom
+          percent={percentUserd}
+          percent1={percentwaiting}
+          percentBigColor={"#35C75A"}
+          percentSmallColor={"#7E7D88"}
+          percentSmallestColor={"#F178B6"}
+          icon={"4"}
+          count={total}
+          title={"Cấp số"}
+          mainColor={"#35C75A"}
+          iconColor={
+            " invert(53%) sepia(89%) saturate(370%) hue-rotate(83deg) brightness(101%) contrast(92%)"
+          }
+          item1Count={used}
+          item1Title={"Đã sử dụng"}
+          item1Color={"#35C75A"}
+          item2Count={waitting}
+          item2Title={"Đang chờ"}
+          item2Color={"#7E7D88"}
+          item3Count={passed}
+          item3Title={"Bỏ qua"}
+          item3Color={"#F178B6"}
+        />
+      </Link>
       <DashboardCalendar />
     </div>
   );

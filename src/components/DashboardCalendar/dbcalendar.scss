@@ -5,9 +5,11 @@
     box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1) !important;
     border-radius: 12px !important;
     padding: 0px !important;
+    margin-top: 16px;
 }
 
 .sdp--month-picker{
+    margin:16px;
     & button{
         color: #FF7506 !important;
         border: none !important;
@@ -22,12 +24,13 @@
         color: #FF7506 !important;
     }
     & svg{
-        width: 20px;
-        height: 20px;
+        width: 40px;
+        height: 40px;
     }
 }
 .sdp--dates-grid{
     border-top: 1px solid #DCDDFD;
+   
     & p{
        
         font-style: normal;
@@ -56,5 +59,6 @@
         background: #FF7506;
         color: #ffffff;
         border-radius: 8px;
+      
     }
 }

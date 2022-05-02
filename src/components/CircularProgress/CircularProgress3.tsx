@@ -79,7 +79,7 @@ export function ModelCardCustom(props: IModelCardCustomProps) {
           />
           <CircularProgressbar
             className="modelcard__left--chart-small"
-            value={100 - percent}
+            value={100 - percent - percent}
             strokeWidth={5}
             styles={buildStyles({
               pathColor: `${percentSmallColor}`,
