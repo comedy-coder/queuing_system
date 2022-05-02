@@ -3,9 +3,18 @@ import { Link } from "react-router-dom";
 import dotred from "../../assets/images/table/dotred.png";
 import bluedot from "../../assets/images/table/bluedot.png";
 import blackdot from "../../assets/images/table/blackdot.png";
-
+import { Context } from "../../Store/Provider";
+import { useContext } from "react";
 import "./tablelevel.scss";
-const Table = ({ data }: any) => {
+import { setDetailDevice } from "../../Store/action";
+const TableLevel = ({ data }: any) => {
+  const [state, dispatch] = useContext(Context);
+  const handleDetail = (id: any) => {
+    const Item = data.filter((item: any, index: any) => item.id === id);
+    const { ...Item1 } = Item;
+
+    dispatch(setDetailDevice(Item1));
+  };
   const stt = 200000;
   const datetime1: any = [];
   data.forEach((item: any, index: any) =>
@@ -49,7 +58,15 @@ const Table = ({ data }: any) => {
               </td>
               <td>{item.source}</td>
               <td>
-                <Link to="/cap-so/detail">Chi tiết</Link>
+                <Link to="/cap-so/detail">
+                  <span
+                    onClick={() => {
+                      handleDetail(item.id);
+                    }}
+                  >
+                    Chi tiết
+                  </span>
+                </Link>
               </td>
             </tr>
           ))}
@@ -59,4 +76,4 @@ const Table = ({ data }: any) => {
   );
 };
 
-export default Table;
+export default TableLevel;
