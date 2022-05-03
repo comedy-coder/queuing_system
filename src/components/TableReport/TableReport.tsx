@@ -11,6 +11,7 @@ const TableReport = ({ data }: any) => {
   data.forEach((item: any, index: any) =>
     datetime.push(new Date(item.date.seconds * 1000).toLocaleString())
   );
+  let stt = 200000;
 
   return (
     <div className="tablereport-data">
@@ -26,7 +27,7 @@ const TableReport = ({ data }: any) => {
           </tr>
           {data.map((item: any, index: any) => (
             <tr>
-              <td>2010001</td>
+              <td>{stt + index}</td>
               <td> {item.service}</td>
               <td>{datetime[index]}</td>
               <td>
