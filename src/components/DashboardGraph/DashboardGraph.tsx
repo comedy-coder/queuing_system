@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./dashboardgraph.scss";
 import date from "../../assets/images/dashboard/graphicdate.png";
-import week from "../../assets/images/dashboard/graphicweek.png";
-import month from "../../assets/images/dashboard/graphicmonth.png";
-import arrow from "../../assets/images/dashboard/arrow.png";
+
+import ChartDay from "./ChartWeek/ChartDay";
+import ChartWeek from "./ChartWeek/ChartWeek";
+import ChartMonth from "./ChartWeek/ChartMonth";
 import SelectorDD from "../SelectorDropdown/SelectorDD";
 const DashboardGraph = () => {
   const Active = [
@@ -12,12 +13,12 @@ const DashboardGraph = () => {
       value: "ngày",
     },
     {
-      display: "Tháng",
+      display: "Tuần ",
       value: "tuần",
     },
     {
-      display: "Năm",
-      value: "năm",
+      display: "Tháng",
+      value: "tháng",
     },
   ];
   const handleChange = (value: any) => {
@@ -26,9 +27,9 @@ const DashboardGraph = () => {
   const [grahic, setGraphic] = useState<any>(date);
   const [value, setValue] = useState("ngày");
   useEffect(() => {
-    if (value === "tuần") setGraphic(week);
-    else if (value === "tháng") setGraphic(month);
-    else setGraphic(date);
+    if (value === "tuần") setGraphic(<ChartWeek />);
+    else if (value === "tháng") setGraphic(<ChartMonth />);
+    else setGraphic(<ChartDay />);
   }, [value]);
 
   return (
@@ -46,7 +47,7 @@ const DashboardGraph = () => {
           <SelectorDD width="106px" Menu={Active} onGetValue={handleChange} />
         </div>
       </div>
-      <img src={grahic} alt="" />
+      {grahic}
     </>
   );
 };
