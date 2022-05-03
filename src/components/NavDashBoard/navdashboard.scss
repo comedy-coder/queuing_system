@@ -50,13 +50,16 @@
                 color: #7E7D88;
             &:hover{
                 color:#FF7506;
+                
             }
             }
 
 
             &.active { 
                 background-color: #FF7506;
-                
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
                     color: white;
                 
                 span{
@@ -72,13 +75,22 @@
         &__item:hover {
            
             background-color: #FFF2E7;
+            img {
+                filter: invert(66%) sepia(53%) saturate(6187%) hue-rotate(356deg) brightness(100%) contrast(102%);
+            }
             span{
                 color:#FF7506;
+              
             }
         }
 
         &__item.active:hover {
             background-color: #FF7506;
+            img {
+                filter: brightness(0) invert(1);
+
+            }
+            color: white;
         }
 
 

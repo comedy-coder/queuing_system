@@ -31,6 +31,7 @@ const Adđevice = () => {
       pass: pass,
       service: service,
       type: type,
+      date: new Date(),
     });
   };
   const handleBack = () => {

@@ -27,7 +27,7 @@ const Adđevice = () => {
     result.setDate(result.getDate() + days);
     return result;
   }
-  const date2 = addDays(date1, 7).toLocaleString();
+
   const text1 = addDays(date1, 7).toLocaleString().slice(10, 16);
   const text2 = addDays(date1, 7).toLocaleString().slice(0, 9);
   const datenext = text1 + " " + text2;
