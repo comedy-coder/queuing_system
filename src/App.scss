@@ -71,4 +71,7 @@ img {
     border-radius: 43px;
   }
   
-  
+  input:focus {
+      outline: none;
+      border: 1.5px solid #FFAC6A;
+  }
