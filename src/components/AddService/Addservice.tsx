@@ -18,6 +18,7 @@ const Addservice = () => {
       nameservice: name,
       desservice: desservice,
       date: new Date(),
+      active: true,
     });
   };
   const navigate = useNavigate();

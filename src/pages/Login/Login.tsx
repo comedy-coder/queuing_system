@@ -126,7 +126,11 @@ const Login = () => {
           style={{
             backgroundImage: `url(${backgournd})`,
           }}
-        ></div>
+        >
+          <div className="login_right-title">Hệ thống</div>
+
+          <div className="login_right-title-sub">QUẢN LÝ XẾP HÀNG</div>
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import AddButton from "../../../components/AddButton/AddButton";
 import Search from "../../../components/SearchBox/Search";
 import Pages from "../../../components/PaginatonPages/Pages";
-import Selector from "../../../components/Selector/Selector";
+
 import addbtn from "../../../assets/images/addbutton/addbtn.png";
 import "./account.scss";
 import { collection, getDocs } from "firebase/firestore";

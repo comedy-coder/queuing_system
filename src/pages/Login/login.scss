@@ -84,14 +84,47 @@
     }
 }
 .login_right{
-    @include flex(center,center);
-    flex :1;
+    
+   text-align: left;
     width: 848px;
     background-size:contain;
    background-position:top;
    background: cover;
    height: 100%;
    background-repeat: no-repeat;
+   flex-direction: column;
+   &-title{
+       margin-top: 407px;
+       margin-left: 454px;
+       font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 34px;
+line-height: 51px;
+/* or 150% */
+
+
+
+/* Orange/$-Orange-500 */
+
+color: #FF7506;
+    &-sub{
+        margin-left: 454px;
+        font-family: 'Nunito';
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height, or 150% */
+
+
+
+/* Orange/$-Orange-500 */
+
+color: #FF7506;
+
+    }
+   }
 }
 
 .eye_icon{

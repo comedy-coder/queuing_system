@@ -56,3 +56,19 @@ img {
         color:  $val;
     }
 }
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #FFC89B;
+    border-radius: 43px;
+  }
+  
+  

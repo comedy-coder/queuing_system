@@ -39,7 +39,21 @@
         height: 100%;
         &__noti{
             margin-right: 24px;
+            position: relative;
+            &:hover &__popup{
+                display: block;
+            }
+            &__popup{
+                position: absolute;
+                top: 40px;
+                left :-40px;
+                width: 360px;
+                height: 526px;
+                z-index: 99;
+                display: none;
+            }
         }
+
         &__profile{
             @include flex(center,center)
         }

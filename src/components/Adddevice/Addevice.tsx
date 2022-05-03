@@ -32,6 +32,8 @@ const Adđevice = () => {
       service: service,
       type: type,
       date: new Date(),
+      active: true,
+      connect: false,
     });
   };
   const handleBack = () => {

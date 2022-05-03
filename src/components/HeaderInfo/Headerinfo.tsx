@@ -5,7 +5,7 @@ import avatar from "../../assets/images/homepage/avatar.png";
 import arrow from "../../assets/images/homepage/arrow.png";
 import { useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import popup from "../../assets/images/homepage/popup.png";
 type PropsType = {
   title?: string;
   sub?: string;
@@ -67,6 +67,9 @@ const Headerinfo = ({ title, sub, sub1 }: PropsType) => {
       <div className="headerinfo-right" ref={backGroundRightRef}>
         <div className="headerinfo-right__noti">
           <img srcSet={`${bell} 2x`} alt="" />
+          <div className="headerinfo-right__noti__popup">
+            <img srcSet={`${popup} 2x`} alt="" />
+          </div>
         </div>
 
         <div className="headerinfo-right__profile">
