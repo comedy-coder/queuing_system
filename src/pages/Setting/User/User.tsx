@@ -16,6 +16,10 @@ const User = () => {
   const [state] = useContext(Context);
   const datetime = state.datetime;
   const [User, setUser] = useState<any>([]);
+  const [inputSearch, setInputSearch] = useState<any | "">("");
+  const getInputValue = (input: any) => {
+    setInputSearch(input);
+  };
   useEffect(() => {
     const getUser = async () => {
       const UserColecctionRef = collection(db, "DiaryActive");
@@ -34,6 +38,13 @@ const User = () => {
       );
     } else return Data;
   };
+  const filterData = (datas: any) =>
+    datas.filter(
+      (item: any) =>
+        item.desc.toLowerCase().indexOf(inputSearch) > -1 ||
+        item.name.toLowerCase().indexOf(inputSearch) > -1 ||
+        item.ip.toLowerCase().indexOf(inputSearch) > -1
+    );
   const handleChange = () => {};
   return (
     <div className="user-wrap">
@@ -41,9 +52,14 @@ const User = () => {
         <div className="device-selectorgroup1">
           <Calendar />
         </div>
-        <Search title="Từ khóa" width="300px" left="266.5px" />
+        <Search
+          title="Từ khóa"
+          width="300px"
+          left="266.5px"
+          onGetValue={getInputValue}
+        />
       </div>
-      <Tableuser data={fiterTime(User)} />
+      <Tableuser data={filterData(fiterTime(User))} />
       <div className="level-pages">
         <Pages />
       </div>
