@@ -48,11 +48,18 @@ margin-left: 43px;
         }
      
     }
+    &__info{
+        margin-top: 10px;color: #535261;
+        font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+    }
 }
-
     &-button{
         position: absolute;
         top: 11%;
         right: 0;
+        
     }
 }
