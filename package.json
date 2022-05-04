@@ -50,9 +50,7 @@
     "start": "  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy" : "npm run build",
-    "deploy" :"gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -80,7 +78,7 @@
     "dotenv": "^16.0.0",
     "node-sass": "^7.0.1",
     "sass": "^1.49.10"
-  },
-  "homepage": "http://comedy-coder.github.io/queuing_system"
+  }
+ 
 
 }
