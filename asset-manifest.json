@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/queuing_system/static/css/main.60052971.css",
+    "main.js": "/queuing_system/static/js/main.420444e6.js",
+    "static/media/avatar.png": "/queuing_system/static/media/avatar.4631ff04380173b7d37e.png",
+    "static/media/popup.png": "/queuing_system/static/media/popup.97a898f72e53aff37067.png",
+    "static/media/Frame.png": "/queuing_system/static/media/Frame.3660aa149d3e17f98d39.png",
+    "static/media/Group341.png": "/queuing_system/static/media/Group341.eaa44c774a5a73435710.png",
+    "static/media/graphicdate.png": "/queuing_system/static/media/graphicdate.04850580032068c2ccd9.png",
+    "static/media/Logo_alta.png": "/queuing_system/static/media/Logo_alta.6ec5dac026f90ff96f5f.png",
+    "index.html": "/queuing_system/index.html",
+    "main.60052971.css.map": "/queuing_system/static/css/main.60052971.css.map",
+    "main.420444e6.js.map": "/queuing_system/static/js/main.420444e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60052971.css",
+    "static/js/main.420444e6.js"
+  ]
+}
