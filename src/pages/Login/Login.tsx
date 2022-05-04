@@ -66,7 +66,7 @@ const Login = () => {
                   type="email"
                   name="name"
                   id="name"
-                  placeholder=""
+                  placeholder="acc:123@gmail.com pass:123456"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   ref={EmailRef}
