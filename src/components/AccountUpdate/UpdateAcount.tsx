@@ -3,7 +3,7 @@ import React from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import Button from "../Button/Button";
 import { db } from "../../utils/init-firebase";
-import { collection } from "firebase/firestore";
+
 import DropDownDD from "../SelectorDropdown/SelectorDD";
 import { useState } from "react";
 import "./updateaccount.scss";
