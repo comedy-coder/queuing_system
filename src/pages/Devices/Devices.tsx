@@ -56,7 +56,6 @@ const Devices = () => {
       let result = datas.filter(
         (data: any) => data.active === Boolean(valueState)
       );
-      console.log(result);
 
       if (valueConnect === 1) {
         return result.filter(
@@ -81,7 +80,7 @@ const Devices = () => {
         let result = datas.filter(
           (item: any) => item.connect === Boolean(valueConnect)
         );
-        console.log(result);
+
         if (inputSearch)
           return result.filter(
             (item: any) =>

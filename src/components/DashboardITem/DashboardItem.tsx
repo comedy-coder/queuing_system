@@ -8,7 +8,7 @@ type ItemProp = {
 };
 const DashboardItem = ({ icon, title, number, image }: ItemProp) => {
   const number1 = number.toString();
-  console.log(number1);
+
   return (
     <div className="dashboarditem-wrap">
       <div className="dashboarditem-main">

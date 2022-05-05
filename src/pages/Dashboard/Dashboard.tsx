@@ -20,7 +20,7 @@ const Dashboard = () => {
     };
     getUser();
   }, []);
-  console.log(User);
+
   let total = 0;
   let used = 0;
   let waitting = 0;
