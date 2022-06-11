@@ -7,43 +7,63 @@ import Button from "../Button/Button";
 
 import icon from "../../assets/images/homepage/dot.png";
 import NavSub from "./NavSub";
+import { ListItem } from "@mui/material";
 const NavDashBoard = () => {
   const handleLogout = () => {};
   const Navbar = [
     {
       display: "Dashboard",
-      path: "/",
+      path: ["/"],
       img: image.img1,
     },
 
     {
       display: "Thiết bị",
-      path: "/device",
+      path: [
+        "/device",
+        "/device/detail",
+        "/device/update",
+        "/device/adddevice",
+      ],
       img: image.img2,
     },
     {
       display: "Dịch vụ",
-      path: "/dich-vu",
+      path: [
+        "/dich-vu",
+        "/dich-vu/detail",
+        "/dich-vu/update",
+        "/dich-vu/addservice",
+      ],
       img: image.img3,
     },
     {
       display: "Cấp số",
-      path: "/cap-so",
+      path: ["/cap-so", "/cap-so/addlevel", "/cap-so/detail"],
       img: image.img4,
     },
     {
       display: "Báo cáo",
-      path: "/bao-cao",
+      path: ["/bao-cao"],
       img: image.img5,
     },
     {
       display: "Cài đặt hệ thống",
-
+      path: [
+        "#",
+        "/setting/vai-tro/update",
+        "/setting/vai-tro/addrole",
+        "/setting/vai-tro",
+        "/setting/tai-khoan",
+        "/setting/tai-khoan/update",
+        "/setting/tai-khoan/addaccount",
+        "/setting/nguoi-dung",
+      ],
       img: image.img6,
     },
   ];
   const { pathname } = useLocation();
-  const ativeNav = Navbar.findIndex((e) => e.path === pathname);
+  const ativeNav = Navbar.findIndex((e) => e.path.some((e) => e === pathname));
 
   return (
     <div className="container-wrapper">
@@ -58,7 +78,7 @@ const NavDashBoard = () => {
             }`}
             key={index}
           >
-            <Link to={item.path ? item.path : "#"}>
+            <Link to={item.path[0]}>
               <img srcSet={`${item.img} 2x`} alt="" />
               <span>{item.display}</span>
               {index === 5 ? (
