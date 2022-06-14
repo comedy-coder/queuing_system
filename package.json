@@ -25,7 +25,6 @@
     "chart.js": "^3.7.1",
     "env-cmd": "^10.1.0",
     "firebase": "^9.6.10",
-    "lodash": "^4.17.21",
     "logger": "^0.0.1",
     "moment": "^2.29.3",
     "react": "^18.0.0",
@@ -72,6 +71,7 @@
   },
   "devDependencies": {
     "@tomik23/react-circular-progress-bar": "^1.1.1",
+    "@types/lodash": "^4.14.182",
     "@types/logger": "^0.0.1",
     "@types/react-date-range": "^1.4.3",
     "@types/wojtekmaj__react-datetimerange-picker": "^3.0.2",

@@ -9,11 +9,13 @@ import SelectorDD from "../../components/SelectorDropdown/SelectorDD";
 import { Link } from "react-router-dom";
 import Pages from "../../components/PaginatonPages/Pages";
 import { useState, useEffect } from "react";
+import { PaginationEntity } from "../../components/PaginatonPages/entity";
 
 const Devices = () => {
   const [valueState, setvalueState] = useState<any | null>();
   const [valueConnect, setvalueConnect] = useState<any | null>();
-
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
   const [User, setUser] = useState<any>([]);
   const [inputSearch, setInputSearch] = useState<any | "">("");
 
@@ -27,6 +29,9 @@ const Devices = () => {
     getUser();
   }, []);
 
+  const indexOfLastUser = currentPage * userPerPage;
+  const indexOfFirstUser = indexOfLastUser - userPerPage;
+  const currentUser = User.slice(indexOfFirstUser, indexOfLastUser);
   const filterData = (datas: any) => {
     if (valueState === 1) {
       let result = datas.filter(
@@ -136,7 +141,7 @@ const Devices = () => {
   const getInputValue = (input: any) => {
     setInputSearch(input);
   };
-
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   const Connect = [
     {
       display: "Tất cả",
@@ -181,9 +186,13 @@ const Devices = () => {
           onGetValue={getInputValue}
         />
       </div>
-      <Table data={filterData(User)} />
+      <Table data={filterData(currentUser)} />
       <div className="device-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
 
       <div className="button-positon">
