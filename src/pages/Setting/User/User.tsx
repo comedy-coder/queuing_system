@@ -17,6 +17,9 @@ const User = () => {
   const datetime = state.datetime;
   const [User, setUser] = useState<any>([]);
   const [inputSearch, setInputSearch] = useState<any | "">("");
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   const getInputValue = (input: any) => {
     setInputSearch(input);
   };
@@ -61,7 +64,11 @@ const User = () => {
       </div>
       <Tableuser data={filterData(fiterTime(User))} />
       <div className="level-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
       <div className="button-positon">
         <Link to="/bao-cao">

@@ -20,6 +20,9 @@ const Level = () => {
   const getNameValue = (value: any) => {
     setNameValue(value);
   };
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   const getStateValue = (value: any) => {
     setStateValue(value);
   };
@@ -183,7 +186,11 @@ const Level = () => {
       </div>
       <TableLevel data={filterData} />
       <div className="level-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
       <div className="button-positon">
         <Link to="/cap-so/addlevel">

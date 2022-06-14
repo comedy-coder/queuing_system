@@ -15,6 +15,9 @@ const Report = () => {
   const [User, setUser] = useState<any>([]);
   const [state] = useContext(Context);
   const datetime = state.datetime;
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   useEffect(() => {
     const getUser = async () => {
       const UserColecctionRef = collection(db, "Devices");
@@ -41,7 +44,11 @@ const Report = () => {
       </div>
       <TableReport data={fiterTime(User)} />
       <div className="level-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
       <div className="button-positon">
         <Link to="/bao-cao">

@@ -14,6 +14,9 @@ import { collection, getDocs } from "firebase/firestore";
 import { useContext } from "react";
 import { Context } from "../../Store/Provider";
 const Service = () => {
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   const [valueState, setvalueState] = useState<any | null>();
   const [inputSearch, setInputSearch] = useState<any | "">("");
   const [state] = useContext(Context);
@@ -122,7 +125,11 @@ const Service = () => {
       </div>
       <TableService data={fiterTime(filterData(User))} />
       <div className="level-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
       <div className="button-positon">
         <Link to="/dich-vu/addservice">

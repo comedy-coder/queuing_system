@@ -13,6 +13,9 @@ import { Link } from "react-router-dom";
 import TableAccount from "../../../components/TableAccount/TableAccount";
 import DropDownDD from "../../../components/SelectorDropdown/SelectorDD";
 const Account = () => {
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   const [User, setUser] = useState<any>([]);
   useEffect(() => {
     const getUser = async () => {
@@ -99,7 +102,11 @@ const Account = () => {
       </div>
       <TableAccount data={filterData(User)} />
       <div className="level-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
       <div className="button-positon">
         <Link to="/setting/tai-khoan/addaccount">

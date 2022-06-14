@@ -10,6 +10,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Tablerole from "../../../components/TableRole/TableRole";
 const Role = () => {
+  const [currentPage, setCurrentPage] = useState<any | null>(1);
+  const [userPerPage, setUserPerPage] = useState<any | null>(8);
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
   const [inputSearch, setInputSearch] = useState<any | "">("");
   const getInputValue = (input: any) => {
     setInputSearch(input);
@@ -48,7 +51,11 @@ const Role = () => {
       </div>
       <Tablerole data={filterData(User)} />
       <div className="level-pages">
-        <Pages />
+        <Pages
+          userPerPage={userPerPage}
+          totalUsers={User.length}
+          paginate={paginate}
+        />
       </div>
       <div className="button-positon">
         <Link to="/setting/vai-tro/addrole">
