@@ -24,14 +24,12 @@ const DropDownDD = (props: IDropDownProps) => {
 
   useEffect(() => {
     let handler = (event: any) => {
-      if (!ref.current.contains(event.target)) {
+      if (!ref.current?.contains(event.target)) {
         setActive(false);
       }
       document.addEventListener("mousedown", handler);
-      return () => {
-        document.removeEventListener("mousedown", handler);
-      };
     };
+    return () => document.removeEventListener("mousedown", handler);
   });
 
   const itemClick = (index: number) => {
