@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import sao from "../../assets/images/addbutton/sao.png";
 import { useState } from "react";
 import Button from "../Button/Button";
@@ -17,9 +17,11 @@ const Adđevice = () => {
   const [pass, setPass] = useState<any | null>("");
   const [service, setService] = useState<any | null>("");
   const [type, setType] = useState<any | null>("");
+
   const getValue = (value: any) => {
     setType(value);
   };
+
   const navigate = useNavigate();
   const userCollectionRef = collection(db, "Devices");
   const createUser = async () => {
@@ -53,6 +55,8 @@ const Adđevice = () => {
       createUser();
       alert("Thêm thiết bị thành công");
       navigate("/device");
+    } else if (!type) {
+      alert("Vui lòng lựa chọn loại thiết bị");
     } else {
       return alert("Nhập đầy đủ thông tin");
     }
