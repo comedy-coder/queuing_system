@@ -1,5 +1,6 @@
 import React from "react";
 import "./pages.scss";
+import { useState } from "react";
 type PagesProps = {
   userPerPage: any;
   totalUsers: any;
@@ -10,16 +11,21 @@ const Pages = ({ userPerPage, totalUsers, paginate }: PagesProps) => {
   for (let i = 1; i <= Math.ceil(totalUsers / userPerPage); i++) {
     pagesNumber.push(i);
   }
-
+  const [selected, setSelected] = useState(0);
   return (
     <nav>
       <ul className="pagination">
-        {pagesNumber.map((number) => (
-          <li key={number} className="page-item">
+        {pagesNumber.map((number, index) => (
+          <li
+            onClick={() => {
+              paginate(number);
+              setSelected(index);
+            }}
+            key={number}
+            className={`${index === selected ? "selected" : ""}`}
+          >
             {" "}
-            <a onClick={() => paginate(number)} className="page-link">
-              {number}
-            </a>
+            <a className="page-link">{number}</a>
           </li>
         ))}
       </ul>

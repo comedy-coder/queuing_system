@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./selectordd.scss";
 import arrowdown from "../../assets/images/dashboard/arrow.png";
 import arrowup from "../../assets/images/selector/arrow.png";
@@ -21,6 +21,19 @@ const DropDownDD = (props: IDropDownProps) => {
   const special = props.special ? "special" : "";
   const [itemShow, setItemShow] = useState(listMenu[0]);
   const [isActive, setActive] = useState(false);
+
+  useEffect(() => {
+    let handler = (event: any) => {
+      if (!ref.current.contains(event.target)) {
+        setActive(false);
+      }
+      document.addEventListener("mousedown", handler);
+      return () => {
+        document.removeEventListener("mousedown", handler);
+      };
+    };
+  });
+
   const itemClick = (index: number) => {
     setItemShow(listMenu[index]);
     props.onGetValue(listMenu[index].value);
@@ -34,10 +47,10 @@ const DropDownDD = (props: IDropDownProps) => {
 
   return (
     <div className="dropdown" style={width}>
-      <div className="dropdown__header">
+      <div className="dropdown__header ">
         <span className="dropdown__header--title">{title}</span>
       </div>
-      <div className="dropdown__content ">
+      <div className="dropdown__content  " ref={ref}>
         <button
           className={`dropdown__button  ${isActive ? "active" : ""} ${special}`}
           style={width}

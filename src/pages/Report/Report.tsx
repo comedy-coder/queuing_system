@@ -18,6 +18,9 @@ const Report = () => {
   const [currentPage, setCurrentPage] = useState<any | null>(1);
   const [userPerPage, setUserPerPage] = useState<any | null>(8);
   const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
+  const indexOfLastUser = currentPage * userPerPage;
+  const indexOfFirstUser = indexOfLastUser - userPerPage;
+  const currentUser = User.slice(indexOfFirstUser, indexOfLastUser);
   useEffect(() => {
     const getUser = async () => {
       const UserColecctionRef = collection(db, "Devices");
@@ -42,7 +45,7 @@ const Report = () => {
       <div className="report-selectorgroup">
         <Calendar />
       </div>
-      <TableReport data={fiterTime(User)} />
+      <TableReport data={fiterTime(currentUser)} />
       <div className="level-pages">
         <Pages
           userPerPage={userPerPage}
