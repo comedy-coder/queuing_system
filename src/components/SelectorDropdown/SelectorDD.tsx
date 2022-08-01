@@ -24,11 +24,11 @@ const DropDownDD = (props: IDropDownProps) => {
 
   useEffect(() => {
     let handler = (event: any) => {
-      if (!ref.current?.contains(event.target)) {
+      if (!ref.current.contains(event.target)) {
         setActive(false);
       }
-      document.addEventListener("mousedown", handler);
     };
+    document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   });
 
@@ -37,7 +37,7 @@ const DropDownDD = (props: IDropDownProps) => {
     props.onGetValue(listMenu[index].value);
     setActive(!isActive);
   };
-  const ref = useRef<any | null>(null);
+  const ref = useRef<any | null>();
 
   const handleClick = () => {
     setActive(!isActive);
@@ -65,7 +65,7 @@ const DropDownDD = (props: IDropDownProps) => {
           className={`dropdown__list  ${isActive ? "active" : ""}`}
           style={width}
         >
-          <div className="dropdown__list--content" style={width} ref={ref}>
+          <div className="dropdown__list--content" style={width}>
             {listMenu.map((item, index, listMenu) => {
               return (
                 <button
